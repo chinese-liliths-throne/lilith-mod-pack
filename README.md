@@ -21,7 +21,6 @@ A repo to collect interesting Lilith's Throme mods.
    1. [dragon_ball_mod](/dragon_ball_mod)
    1. [Fate_mod](/Fate_mod)
    1. [Genshin_impact_weapons___nerf_version](/Genshin_impact_weapons___nerf_version)
-   1. [genshin_impact_weapons___non_nerfed_version](/genshin_impact_weapons___non_nerfed_version)
    1. [heartless_KH_mod](/heartless_KH_mod)
    1. [heartless_tatoo](/heartless_tatoo)
    1. [KH_nobody_mod](/KH_nobody_mod)
@@ -29,6 +28,8 @@ A repo to collect interesting Lilith's Throme mods.
    1. [organisation_XIII_mod](/organisation_XIII_mod)
    1. [orks_40K_mod](/orks_40K_mod)
    1. [SSJ_Hair_mod](/SSJ_Hair_mod)
+ - ISSUE_TEMPLATE
+   1. [.github](/.github)
  - Phobos
    1. [Armageddon](/Armageddon)
    1. [Color_pack](/Color_pack)
