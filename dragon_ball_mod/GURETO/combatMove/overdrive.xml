@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK_DEFEND</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[OVERDRIVE]]></name>
+	<description><![CDATA[
+		With this protocol, an android can expand their power to their limitations, granting [style.boldRed(Power to withstand even stronger attacks and deliver stronger ones)].
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		10
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>SSJ.svg</imageName>
+	
+
+	<colourPrimary>BASE_GREEN</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_android]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the KI manipulation. Requires to be at least level 15.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getLevel() < 15)
+            0
+        #ELSE
+            4.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Fully loading the overdrive protocol, the user goes full power, granting [style.boldRed(Power to withstand attacks and deliver stronger ones)].
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Fully loading the overdrive protocol, the user goes full power, granting [style.boldRed(Power to withstand attacks and deliver stronger ones)].
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getLevel() < 15)
+                Your protocol fails due to the lack of prerequisites. Must be over level 15.
+            #ELSE
+			[npc.Name] [npc.verb(load)] the protocol and [npc.verb(activate)] it , turning [npc.name] a fully powered android!
+				[##npc.addStatusEffect(SE_GURETO_OVERDRIVE, 4)]
+			#ENDIF
+		]]></execute>
+		<critDescription/>
+		<critEffectDescription/>
+	</performMove>
+	
+</combatMove>

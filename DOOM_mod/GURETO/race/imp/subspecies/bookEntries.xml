@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="imp_BASIC"><![CDATA[
+	<p>
+		A creature from hell that can cast fire balls to attack.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="imp_ADVANCED"><![CDATA[
+	<p>
+		A referred as scavengers, the imps are the most common creature from hell, but shouldn't be underestimated for they can dish out mean damage with their fireballs.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

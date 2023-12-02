@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="possessed_BASIC"><![CDATA[
+	<p>
+		A human that got their soul corrupted by demons.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="possessed_ADVANCED"><![CDATA[
+	<p>
+		After the demonic forces outbreak, the humans near the facility got possessed by the corruptive forces of the demons.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

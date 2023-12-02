@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Holy Wrath]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(charge)] divine KI and [npc.verb(create)] a tiny sphere of KI with two fingers that suddenly becomes huge, sending it at [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 475 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		POISON
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	1450
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		3
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>kamehameha.svg</imageName>
+
+	<colourPrimary>BASE_COPPER</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_zfist)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_zfist)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the ability to manipulate KI.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 475)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] divine KI and [npc.verb(create)] a tiny sphere of KI with two fingers that suddenly becomes huge, sending it at [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 475 arcane essence.
+        #IF(npc.getEssenceCount() < 475)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] divine KI and [npc.verb(create)] a tiny sphere of KI with two fingers that suddenly becomes huge, sending it at [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 475 arcane essence.
+        #IF(npc.getEssenceCount() < 475)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 475)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			[npc.Name] [npc.verb(lift)] [npc.namePos] fingers, and [npc.verb(charge)] up a sphere of KI that lights up the area with a powerful light. Upon sending it at [npc.namePos] enemy, the tiny sphere suddenly becomes the size of a miniature star. When clashing against the ground, the Holy Wrath explodes and blinds everyone for a brief moment in a kilometer radius. The shock of detonation could be felt throughout the world.
+                [##npc.incrementEssenceCount(-475,false)]
+                #ENDIF
+            formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

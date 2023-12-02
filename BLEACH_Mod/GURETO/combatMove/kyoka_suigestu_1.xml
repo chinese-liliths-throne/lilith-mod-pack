@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Kyoka Suigetsu : Illusion]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(take)] hold of your Kyoka Suigetsu and activate its ability. Consumes 150 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		FIRE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_WHITE</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_kyoka_suigetsu)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_kyoka_suigetsu)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters wielding Kyoka Suigetsu.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 150)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(activate)] Kyoka Suigetsu's shikai ability. Consumes 150 arcane essence.
+        #IF(npc.getEssenceCount() < 150)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(activate)] Kyoka Suigetsu's shikai ability. Consumes 150 arcane essence.
+        #IF(npc.getEssenceCount() < 150)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 150)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			[npc.Name] [npc.verb(activate)] Kyoka Suigetsu's shikai ability and [npc.verb(create)] an illusion of yourself. Leading the enemy to attack something that isn't real.
+                [##npc.incrementEssenceCount(-150,false)]
+				[##var outputText = ""]
+				[##var attacker = npc]
+				[##function damageEnemy(target) {
+				if (outputText != "") {outputText = outputText + "<br>";}
+				if(!target.isPlayerKnowsName()) {outputText = outputText + "The ";}
+				outputText = outputText + target.getName() + " is hypnotized by Kyoka Suigetsu's shikai ability!";
+				target.addStatusEffect(SE_GURETO_kyoka_suigetsu_2, 999);
+				}]
+				[##combat.getEnemies(npc).forEach(damageEnemy)]
+				[#outputText]
+				[##npc.addStatusEffect(SE_GURETO_kyoka_suigetsu_1, 999)]
+                #ENDIF
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

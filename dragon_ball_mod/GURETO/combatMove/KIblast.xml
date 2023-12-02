@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[KI blast]]></name>
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(charge)] KI and [npc.verb(release)] it at [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 35 arcane essence.
+	]]></description>
+	
+	<damageType><![CDATA[
+		FIRE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	100
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>kamehameha.svg</imageName>
+	
+
+	<colourPrimary>BASE_YELLOW</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getArmType()==ARM_TYPE_GURETO_saiyan_arm]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the ability to manipulate KI.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 35)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] KI and [npc.verb(release)] it at [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 35 arcane essence.
+        #IF(npc.getEssenceCount() < 35)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] KI and [npc.verb(release)] it at [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 35 arcane essence.
+        #IF(npc.getEssenceCount() < 35)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 35)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			With [npc.her] palms facing [npc2.name], [npc.name] [npc.verb(let)] out a poweful wave of KI in [npc2.namePos] direction! The intensity of the attack causes big damage!
+                [##npc.incrementEssenceCount(-35,false)]
+                #ENDIF
+            formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Self-destruct protocol]]></name>
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(charge)] up KI into [npc.namePos] core and [npc.verb(detonate)] it, dealing formattedDamageInflicted damage. Consumes 0 arcane essence, but sets health to 0.
+	]]></description>
+	
+	<damageType><![CDATA[
+		FIRE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	600
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		10
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+
+	<colourPrimary>BASE_COPPER</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_android]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the ability to manipulate KI.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getHealth() <= 125)
+            40
+        #ELSE
+            0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] up KI into [npc.namePos] core and [npc.verb(detonate)] it, dealing formattedDamageInflicted damage. Consumes 0 arcane essence, but sets health to 0.
+        #IF(npc.getEssenceCount() < 0)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] up KI into [npc.namePos] core and [npc.verb(detonate)] it, dealing formattedDamageInflicted damage. Consumes 0 arcane essence, but sets health to 0.
+        #IF(npc.getEssenceCount() < 0)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 0)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			With [npc.her] super-charged core, [npc.name] [npc.verb(release)] all of that energy and [npc.verb(explode)]! The detonation and blast is so powerful that it is comparable to a nuke going off!
+				[##npc.setHealth(0)]
+                #ENDIF
+            formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

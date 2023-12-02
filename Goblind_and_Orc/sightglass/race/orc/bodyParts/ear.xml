@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ear>
+	<race>sightglass_orc</race>
+	<transformationName><![CDATA[orc]]></transformationName>
+	<coveringType>sightglass_orc_skin</coveringType>
+	<tags/>
+	<name><![CDATA[ear]]></name>
+	<namePlural><![CDATA[ears]]></namePlural>
+	<descriptorsMasculine>
+		<descriptor>pointed</descriptor>
+		<descriptor>orc-like</descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor>feminine</descriptor>
+		<descriptor>pointed</descriptor>
+		<descriptor>orc-like</descriptor>
+	</descriptorsFeminine>
+	<transformationDescription><![CDATA[
+		They quickly begin to grow and change on [npc.her].
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+		 A layer of [npc.earFullDescriptionColour] quickly grows to cover them,
+		#ELSE
+		 Just like the rest of [npc.her] body, they're made out of [npc.earFullDescription],
+		#ENDIF
+		 and as the transformation finishes, [npc.she] [npc.verb(touch)] [npc.her] new orc-like ears to feel their shape.
+		<br/>[npc.Name] now [npc.has] [style.boldGreen(bat-like orc-like ears)], which are [npc.materialCompositionDescriptor] [npc.earFullDescription].
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.She] [npc.has] a pair ,#IF(npc.isPiercedEar()) pierced,#ENDIF orc-like ears, and are [npc.materialCompositionDescriptor] [npc.earFullDescription(true)].
+	]]></bodyDescription>
+</ear>

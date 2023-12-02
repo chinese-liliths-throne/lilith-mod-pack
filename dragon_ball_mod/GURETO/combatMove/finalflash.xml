@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Final Flash!!!]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(charge)] a greater amount of KI and [npc.verb(release)] it at [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 225 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		FIRE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	430
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		3
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>finalflash.svg</imageName>
+
+	<colourPrimary>BASE_YELLOW</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_vfist)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_vfist)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the ability to manipulate KI.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 225)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] an impressive amount of KI and [npc.verb(release)] it at [npc.her] foe while shouting "Final Flash !!!" , dealing formattedDamageInflicted damage. Consumes 225 arcane essence.
+        #IF(npc.getEssenceCount() < 225)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] an impressive amount of KI and [npc.verb(release)] it at [npc.her] foe while shouting "Final Flash !!!" , dealing formattedDamageInflicted damage. Consumes 225 arcane essence.
+        #IF(npc.getEssenceCount() < 225)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 225)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			With [npc.her] palms facing [npc2.name], [npc.name] [npc.verb(let)] out a very poweful wave of KI in [npc2.namePos] direction after shouting "Final Flash !!!". The intensity of the attack causes great damage!
+                [##npc.incrementEssenceCount(-225,false)]
+                #ENDIF
+            formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

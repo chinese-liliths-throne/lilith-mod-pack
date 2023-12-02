@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+		<value>10000</value> 
+		<melee>true</melee>
+		<twoHanded>true</twoHanded>
+		<oneShotWeapon>false</oneShotWeapon>
+		<oneShotWeaponChanceToRecoverAfterTurn>0</oneShotWeaponChanceToRecoverAfterTurn>
+		<oneShotWeaponChanceToRecoverAfterCombat>0</oneShotWeaponChanceToRecoverAfterCombat>
+		<determiner><![CDATA[a pair of]]></determiner>
+		<name appendDamageName="true"><![CDATA[sacrificial knives]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[sacrificial knives]]></namePlural> 
+		<description><![CDATA[In the hands of its lord, this fierce weapon has handled many "debts." No one has eyes in the back of their heads, and this weapon and its related techniques are designed around that weakness.]]></description> 
+		<attackDescriptor>slash</attackDescriptor>
+		<attackDescriptionPrefix>slash</attackDescriptionPrefix>
+		<attackTooltipDescription><![CDATA[Strike out with your Sacrificial Knife at [npc2.name].]]></attackTooltipDescription>
+		<rarity>EPIC</rarity>
+		<weaponSet/> 
+		<equipText><![CDATA[[npc.Name] [npc.verb(grip)] the sacrificial blades, readying them for use in combat.]]></equipText>
+		<unequipText><![CDATA[[npc.Name] [npc.verb(release)] the sacrificial knives, before putting them away.]]></unequipText>
+		<imageName>sacrificial_knife.svg</imageName> 
+		<imageEquippedName>sacrificial_knife.svg</imageEquippedName>
+		<physicalResistance>0</physicalResistance> 
+		<damage>50</damage>
+		<arcaneCost>0</arcaneCost> 
+		<damageVariance>MEDIUM</damageVariance> 
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		<spells/>
+		<combatMoves/>
+		<effects> 
+				<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_CHANCE" timer="0"/>
+				<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_CHANCE" timer="0"/>
+		</effects>
+		<extraEffects/>
+		<onHitEffect/>
+		<onCriticalHitEffect/>
+		<primaryColours recolouringAllowed="true" values="JUST_STEEL"/>
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours values="JUST_RED"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL"/>
+		<customColours>
+			<customColour copyColourIndex="0" c0="#6C5D53" c1="#917C6F" c2="#AC9D93" c3="#C8BEB7" c4="#E3DEDB">
+				<defaultColours>
+					<colour>CLOTHING_STEEL</colour>
+				</defaultColours> 
+				<extraColours values="ALL_METAL"/>
+			</customColour>
+			<customColour copyColourIndex="1" recolouringAllowed="true" c0="#6C5353" c1="#916F6F" c2="#AC9393" c3="#C8B7B7" c4="#E3DBDB">
+				<defaultColours>
+					<colour>CLOTHING_BLACK</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+		</customColours>
+		<itemTags> 
+			<tag>WEAPON_BLADE</tag>
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+	</coreAttributes>
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Rushing forward out with [npc.her] sacrificial knives, [npc.name] [npc.verb(manage)] to stab [npc2.name] in the chest; the ethereal arcane blades passing through [npc2.her] torso to drain [npc2.her] energy!
+		]]></hitText>
+		<hitText><![CDATA[
+		Striking out at [npc2.name] with [npc.her] sacrificial knives, [npc.name] [npc.verb(manage)] to slash through [npc2.her] [npc2.arm] with the ethereal blades and drain [npc2.her] energy!
+		]]></hitText>
+		<hitText><![CDATA[
+		With a quick step forwards, [npc.name] [npc.verb(lunge)] out at [npc2.name] with [npc.her] sacrificial knives, sinking the ethereal blades into [npc2.her] shoulder and causing [npc2.herHim] to lose some energy!
+		]]></hitText>
+		<criticalHitText><![CDATA[
+		Expertly sidestepping around [npc2.namePos] attempt to block [npc.her] attack, [npc.name] [npc.verb(deal)] devastating strikes with [npc.her] sacrificial knives!
+		]]></criticalHitText>
+	</hitDescriptions>
+	<missDescriptions>
+		<missText><![CDATA[
+		Rushing forward with [npc.her] sacrificial knives, [npc.name] [npc.verb(attempt)] to stab [npc2.name] in the chest, but [npc.verb(end)] up missing [npc2.herHim]!
+		]]></missText>
+		<missText><![CDATA[
+		Striking out at [npc2.name] with [npc.her] sacrificial knives, [npc.name] [npc.verb(let)] out a frustrated cry as [npc.she] [npc.verb(miss)] [npc.her] target!
+		]]></missText>
+		<missText><![CDATA[
+		With a quick step forwards, [npc.name] [npc.verb(lunge)] out at [npc2.name] with [npc.her] sacrificial knives, but [npc.she] [npc.verb(miss)] [npc.her] target!
+		]]></missText>
+	</missDescriptions>
+	<oneShotEndTurnRecoveryDescriptions>
+		<recoveryText><![CDATA[
+			The sacrificial knives fly back towards [npc.name], allowing [npc.herHim] to grab them and reuse them!
+		]]></recoveryText>
+	</oneShotEndTurnRecoveryDescriptions>
+</weapon>

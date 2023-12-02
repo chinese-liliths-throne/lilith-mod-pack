@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+		<value>40000</value> 
+		<melee>true</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[demonstone sword]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[demonstone swords]]></namePlural> 
+		<description><![CDATA[A sword hilt which contains a powerful demonstone, the power of which can be used to imbue the hilt with elemental damage, forming an arcane blade.]]></description> 
+		
+		<attackDescriptor>crystal slash</attackDescriptor>
+		<attackTooltipDescription>Slash [npc2.name] with your demonstone sword.</attackTooltipDescription>
+		
+		<rarity>EPIC</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(focus)] on the energy in the demonstone. As [npc.she] [npc.does] so, it dissolves and flows into [npc.her] aura, granting [npc.herHim] the ability to perform arcane-imbued unarmed attacks.]]></equipText>
+		<unequipText><![CDATA[[npc.Name] [npc.verb(focus)] on extracting the absorbed arcane energy inside of [npc.her] aura. As [npc.she] [npc.does] so, it reforms back into a clear demonstone.]]></unequipText>
+		
+		<imageName>magic_weapon_unequipped.svg</imageName> 
+		
+		<imageEquippedName>magic_weapon.svg</imageEquippedName>
+		
+		<damage>20</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells changeOnReforge="true">
+			<spell damageType="FIRE">FIREBALL</spell>
+			<spell damageType="ICE">ICE_SHARD</spell>
+			<spell damageType="LUST">ARCANE_AROUSAL</spell>
+			<spell damageType="PHYSICAL">SLAM</spell>
+			<spell damageType="POISON">POISON_VAPOURS</spell>
+		</spells>
+		
+		<effects> 
+            <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+            <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+            <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_WEAPON" timer="0"/>
+            <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_WEAPON" timer="0"/>
+		</effects>
+		
+		<primaryColours values="JUST_BRONZE"/> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours/> 
+		<secondaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>WEAPON_BLADE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name] [npc.verb(slash)] [npc.her] demonstone sword at [npc2.name], grinning as the ethereal arcane blade travels through [npc2.her] body!
+		]]></hitText>
+		<hitText><![CDATA[
+		Slashing out at [npc2.name] with [npc.her] demonstone sword, [npc.name] [npc.verb(grin)] as [npc.she] [npc.verb(see)] the ethereal blade travel straight through [npc2.her] body!
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name] [npc.verb(slash)] at [npc2.name] with [npc.her] demonstone sword, causing [npc2.herHim] to stagger back as the ethereal blade passes right through [npc2.her] chest!
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name] [npc.verb(slash)] [npc.her] demonstone sword at [npc2.name], but [npc.verb(end)] up missing [npc2.herHim]!
+		]]></missText>
+		<missText><![CDATA[
+		Slashing out at [npc2.name] with [npc.her] demonstone sword, [npc.name] [npc.verb(let)] out a frustrated cry as [npc.she] [npc.verb(miss)] [npc.her] target!
+		]]></missText>
+		<missText><![CDATA[
+		With a quick step forwards, [npc.name] [npc.verb(slash)] at [npc2.name] with [npc.her] demonstone sword, but [npc.she] [npc.verb(miss)] [npc.her] target!
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

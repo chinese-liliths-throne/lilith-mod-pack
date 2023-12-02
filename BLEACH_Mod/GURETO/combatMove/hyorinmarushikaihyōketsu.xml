@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[BANKAI : Shikai Hyōketsu]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(gather)] power before releasing it and flash freezing all in front of you , dealing 1000 ice damage. Consumes 800 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		ICE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		4
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_BLUE</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_hyorinmaru)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_hyorinmaru)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters wielding hyorinmaru.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 800)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(concentrate)] and [npc.verb(flash-freeze)] every foe, dealing 1000 ice damage. Consumes 800 arcane essence.
+        #IF(npc.getEssenceCount() < 800)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(concentrate)] and [npc.verb(flash-freeze)] every foe, dealing 1000 ice damage. Consumes 800 arcane essence.
+        #IF(npc.getEssenceCount() < 800)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><execute><![CDATA[
+            #IF(npc.getEssenceCount() > 800)
+			[##npc.incrementEssenceCount(-800,false)]
+			Gathering energy for around 4 seconds, [npc.Name] [npc.verb(accumulate)] reiatsu, releasing it all in an instant, [npc.Name] [npc.verb(flash-freeze)] every foe.<br>
+				[##var outputText = ""]
+				[##var attacker = npc]
+				[##function damageEnemy(target) {
+				if (outputText != "") {outputText = outputText + "<br>";}
+				if(!target.isPlayerKnowsName()) {outputText = outputText + "The ";}
+				if(npc.getHealthPercentage() < 0.25) {
+					outputText = outputText + target.getName() + " received [style.colorCrit(critical)] [style.colorIce(" + DAMAGE_TYPE_ICE.damageTarget(attacker, target, Math.max(attacker.getAttributeValue(ATTRIBUTE_DAMAGE_ICE),1)*20+2000).getValue() + " ice)] damage."; 
+				} else {
+					outputText = outputText + target.getName() + " received [style.colorIce(" + DAMAGE_TYPE_ICE.damageTarget(attacker, target, attacker.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*10+1000).getValue() + " ice)] damage.";
+				}}]
+				[##combat.getEnemies(npc).forEach(damageEnemy)]
+				[#outputText]
+		#ELSE		
+			[style.colorBad(You didn't have enough arcane essences.)]
+			<br>Gathering energy for around 4 seconds, [npc.Name] [npc.verb(accumulate)] reiatsu, releasing it [npc.Name] [npc.verb(realize)] that [npc.sheIs] too tired to execute that move.
+		#ENDIF
+]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

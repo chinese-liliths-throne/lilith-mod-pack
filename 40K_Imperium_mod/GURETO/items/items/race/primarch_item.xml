@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[Nothing can indicate from where it is.]]></authorTag>
+		
+		<value>60000000</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[Gene-seed]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Gene-seed]]></namePlural>
+		<description><![CDATA[A piece of bioengineering mass, needs to be implanted in order to work.]]></description> 
+		
+		<useDescriptor>activate</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName>primarch_item.svg</imageName>
+		
+		<colourPrimary>BASE_COPPER</colourPrimary>
+		<colourSecondary>BASE_RED</colourSecondary>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[primarch]]></potionDescriptor>
+		<associatedRace>GURETO_primarch</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+		</effectTooltipLines>
+
+		<applyEffects><![CDATA[
+		[#npc.setBody(npc.getGender(), SUBSPECIES_GURETO_primarch_subspecies_primarch, RACE_STAGE_GREATER, false)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(know)] someone that could implant something like that into [npc.Name]. After implanting it, on [npc.namePos] way back, [npc.Name] [npc.verb(change)] into a Primarch.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(know)] someone that could implant something like that into [npc.herHim]. After implanting it into [npc2.Name], on [npc2.namePos] way back, [npc2.Name] [npc2.verb(change)] into a Primarch.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<statusEffect>
+	<!-- GENERAL INFORMATION: If you are unsure of anything, please use the LT Discord to ask for help! -->
+	
+	<!-- An integer used for determining the order of rendering status effect icons. A higher value means that it's higher up in the rendering priority (and so will be rendered before others).
+	Typical values go from 0 to 150.
+	A good default value is to set it as 50. As this status effect is a set bonus, it has a higher rendering priority than usual (of 70).
+	For some examples of the rendering priority:
+	- A character's racial perk effect has a priority of 1500, as I want it to always be rendered first no matter what.
+	- Weather effects have a priority of 150 (as I want them to always be displayed as high as possible).
+	- Sexual orientation has a priority of 90 (as I want it to be displayed near the start).
+	- Most other standard status effects (such as pregnancy, well-rested, alcohol level, etc.) have a priority of 80.
+	- Set bonuses have a priority of 70. -->
+	<renderingPriority>70</renderingPriority>
+	
+	<renderInEffectsPanel>true</renderInEffectsPanel>
+	
+	<category>DEFAULT</category>
+	
+	<!-- 'BENEFICIAL' if this is a good status effect for a character to have, 'NEUTRAL' if it's neither, or 'DETRIMENTAL' if it's a bad one. -->
+	<beneficial>BENEFICIAL</beneficial>
+	
+	<combatEffect>true</combatEffect>
+	
+	<!-- 'true' if you want this status effect to be rendered during sex. -->
+	<sexEffect>true</sexEffect>
+	
+	<tags/>
+	
+	<!-- The name of this set bonus. The character under the effect is passed in as the 'npc' parsing argument, so if you want to, you can include parsing elements such as [npc.name]. -->
+	<name><![CDATA[Genkidama Charge I]]></name>
+	
+	<!-- The description of this status effect. The character under the effect is passed in as the 'npc' parsing argument, so if you want to, you can include parsing elements such as [npc.name]. -->
+	<description><![CDATA[
+		[npc.NamePos] Genkidama is getting stronger.
+	]]></description>
+	
+	<!-- The name of the icon which should be used to represent this status effect. The icon must be an svg file, and must be placed in the same folder as this XML file. -->
+	<imageName>GENKI.svg</imageName>
+	
+	<colourPrimary>BASE_BLUE</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<!-- The attributes which should be affected by having this status effect. The value="15" part defines how much the attribute should be numerically affected (and can be negative), while the 'DAMAGE_LUST' part defines which attribute is being affected.
+	You can define any number of attribute modifiers, but it's usually best to keep it limited to just a few.
+	Values for attributes should be drawn from here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/character/attributes/Attribute.java-->
+	<attributeModifiers>
+		<modifier value="15">RESISTANCE_PHYSICAL</modifier>
+		<modifier value="15">RESISTANCE_POISON</modifier>
+		<modifier value="15">RESISTANCE_FIRE</modifier>
+		<modifier value="15">RESISTANCE_ICE</modifier>
+		<modifier value="15">RESISTANCE_LUST</modifier>
+	</attributeModifiers>
+	
+
+	<combatMoves/>
+	
+
+	<spells/>
+	
+
+	<extraEffects/>
+
+	<applicationCondition><![CDATA[
+		false
+	]]></applicationCondition>
+
+	<applyEffect/>
+	
+	<!-- In a similar manner to the 'applyEffect' element above, the game processes logic when a status effect is removed. (This logic is performed while the character is still under the effects of this status effect.) -->
+	<applyRemovalEffect/>
+	
+	<!-- In a similar manner to the 'applyEffect' element above, the game processes logic after a status effect has been removed. (This logic is performed immediately after the effect is removed, so the character is no longer under the effects of this status effect.) -->
+	<applyPostRemovalEffect/>
+	
+</statusEffect>

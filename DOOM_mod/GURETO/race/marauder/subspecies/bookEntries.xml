@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="marauder_BASIC"><![CDATA[
+	<p>
+		A fallen comrade of the Doom Slayer.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="marauder_ADVANCED"><![CDATA[
+	<p>
+		After being resurrected and corrupted by the demonic forces, they were sent to hunt down the Doom Slayer, their former ally.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

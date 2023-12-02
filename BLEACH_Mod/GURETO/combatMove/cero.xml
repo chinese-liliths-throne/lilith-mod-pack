@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Cero]]></name>
+	
+
+	<description><![CDATA[
+		You charge a reiatsu sphere and shoot it at your enemy, dealing formattedDamageInflicted damage. Consumes 100 arcane essences.
+	]]></description>
+	
+	<damageType><![CDATA[
+		#IF(npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE) && npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_POISON))
+			FIRE
+		#ELSEIF(npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE) && npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_POISON))
+			ICE
+		#ELSE
+			POISON
+		#ENDIF
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		250
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		1
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_RED</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">ARCANE_WEAKNESS</effect>
+	</statusEffects>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_arrancar || npc.getRace()==RACE_GURETO_Bresurreccion || npc.getRace()==RACE_GURETO_vastolorde || npc.getRace()==RACE_GURETO_hollow]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to arrancar, vastolorde or hollow characters.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 100)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		[#npc.getHealthPercentage() < 0.35]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Your health is less than [style.boldRed(35%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.verb(Send)] a cero at [npc2.Name]. Consumes 100 arcane essences.
+        #IF(npc.getEssenceCount() < 100)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.verb(Send)] a cero at [npc.namePos] enemy. Consumes 100 arcane essences.
+        #IF(npc.getEssenceCount() < 100)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		
+		<execute><execute><![CDATA[
+            #IF(npc.getEssenceCount() < 100)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			[npc.Name] [npc.verb(generate)] a ball of concentrated reiatsu. Once complete, [npc.Name] [npc.verb(release)] it, and it darts toward [npc2.Name]! Upon hitting, The cero detonates in a grand explosion of reiatsu as the sky turns red for a brief moment!
+                [##npc.incrementEssenceCount(-100,false)]
+                #ENDIF
+            formattedHealthDamage
+]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 35% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

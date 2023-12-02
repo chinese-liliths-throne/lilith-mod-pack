@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[BFG 9000 OVERCHARGE]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(charge)] your BFG 9000 at its limits. Consumes 1600 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+	POISON
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		3
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_GREEN</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_DOOM_BFG9K)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_DOOM_BFG9K)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the BFG 9000.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 1600)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] [npc.namePos] BFG 9000 to its maximum limit before releasing the trigger, sending the condensed plasma shot to end the fight. Consumes 1600 arcane essence.
+        #IF(npc.getEssenceCount() < 1600)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] [npc.namePos] BFG 9000 to its maximum limit before releasing the trigger, sending the condensed plasma shot to end the fight. Consumes 1600 arcane essence.
+        #IF(npc.getEssenceCount() < 1600)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 1600)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+                [##npc.incrementEssenceCount(-1600,false)]
+				[#combat.getEnemies(npc).get(0).setHealth(0)]				
+				[#combat.getEnemies(npc).get(1).setHealth(0)]
+				[#combat.getEnemies(npc).get(2).setHealth(0)]
+				[#combat.getEnemies(npc).get(3).setHealth(0)]
+				[#combat.getEnemies(npc).get(4).setHealth(0)]
+				[#combat.getEnemies(npc).get(5).setHealth(0)]
+				[#combat.getEnemies(npc).get(6).setHealth(0)]
+				[#combat.getEnemies(npc).get(7).setHealth(0)]
+				[#combat.getEnemies(npc).get(8).setHealth(0)]
+				[#combat.getEnemies(npc).get(9).setHealth(0)]
+				[#combat.getEnemies(npc).get(10).setHealth(0)]
+				[#combat.getEnemies(npc).get(11).setHealth(0)]
+				[#combat.getEnemies(npc).get(12).setHealth(0)]
+				[#combat.getEnemies(npc).get(13).setHealth(0)]
+				[#combat.getEnemies(npc).get(14).setHealth(0)]
+				[#combat.getEnemies(npc).get(15).setHealth(0)]
+				[#combat.getEnemies(npc).get(16).setHealth(0)]
+				[#combat.getEnemies(npc).get(17).setHealth(0)]
+				[#combat.getEnemies(npc).get(18).setHealth(0)]
+				[#combat.getEnemies(npc).get(19).setHealth(0)]
+                #ENDIF
+				Pulling the trigger and not letting go, [npc.Name] [npc.verb(hear)] the BFG condensing the argent energy with a meancing hissing sound. Upon hearing the BFG's inner workings stopping to condense the argent energy, [npc.Name] release the trigger. The plasma bolt exits the cannon with killing intent. Upon impact, the plasma releases its energy and lets a blinding green flash engulfs [npc.namePos] foes.<br>
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

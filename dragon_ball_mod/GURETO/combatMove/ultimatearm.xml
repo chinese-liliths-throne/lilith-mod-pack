@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK_DEFEND</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Hyper Form Protocol]]></name>
+	<description><![CDATA[
+		With your new found power, you gain powers pushing the very limits of what's possible to its maximum, granting [style.boldRed(untouchable speed and power to defeat Gods and Angels)].
+	]]></description>
+	
+	<damageType><![CDATA[
+		HEALTH
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		250
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		16
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>SSJ.svg</imageName>
+	
+
+	<colourPrimary>BASE_GREEN</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_ultimate)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_ultimate)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the KI manipulation. Requires to be at least level 50.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getLevel() < 50)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Possessing an Ultimate android arm, the user achieve a legendary form even amongst the Gods and Angels, granting [style.boldRed(untouchable speed and power to defeat Gods and Angels)].
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Possessing an Ultimate android arm, the user achieve a legendary form even amongst the Gods and Angels, granting [style.boldRed(untouchable speed and power to defeat Gods and Angels)].
+	]]></movePredictionDescriptionNoTarget>
+	
+	<!-- The code that's executed when this move is performed.
+	The parsing target of 'npc' corresponds to the character who is using the move.
+	The parsing target of 'npc2' corresponds to the character who is being targeted by this move.
+	Special parsing arguments which can be used here are as follows:
+	'damageInflicted' will parse to the attacker's projected damage of this attack (using the defined 'baseDamage' field defined above). If isCritical is true, the damageInflicted value will represent this (via increased damage).
+	'formattedDamageInflicted' will parse to the same damage as the command above, but will be formatted nicely.(Attribute.ENERGY_SHIELDING, 100)
+	'formattedHealthDamage' will parse to a brief, formatted description of how much damage the target took. -->
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getLevel() < 50)
+                Your transformation fails due to your lack of resistance to such form. Must be level 50.
+            #ELSE
+			[npc.Name] [npc.verb(activate)] [npc.namePos] full capabilities and [npc.verb(let)] [npc.namePos] power flow freely, activating the Hyper Form Protocol!
+				[##npc.addStatusEffect(SE_GURETO_ULTIMATEARM, 16)]
+			#ENDIF
+		]]></execute>
+		<critDescription/>
+		<critEffectDescription/>
+	</performMove>
+	
+</combatMove>

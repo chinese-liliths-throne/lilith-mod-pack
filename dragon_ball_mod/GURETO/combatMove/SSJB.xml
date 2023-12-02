@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK_DEFEND</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Super Saiyan God super saiyan]]></name>
+	<description><![CDATA[
+		With the accumulation of divine Ki to the back and saiyan training, a person can turn into a super saiyan God super saiyan, granting [style.boldRed(Power to withstand attacks beyond immagination and deliver attacks way beyong imagination.)].
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		8
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>SSJ.svg</imageName>
+	
+
+	<colourPrimary>BASE_BLUE</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_saiyan]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the KI manipulation. Requires to be at least level 30.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getLevel() < 30)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Charging KI to the back, the user turns into a form beyond legends and imagination, granting [style.boldRed(Power to withstand attacks beyond immagination and deliver stronger ones by way further than one might imagine)].
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Charging KI to the back, the user turns into a form beyond legends and imagination, granting [style.boldRed(Power to withstand attacks beyond immagination and deliver stronger ones by way further than one might imagine)].
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getLevel() < 30)
+                Your transformation fails due to your lack of training and mastery. Must be over level 30.
+            #ELSE
+			[npc.Name] [npc.verb(charge)] divine ki to [npc.namePos] back and [npc.verb(release)] it suddenly, turning [npc.name] into a super saiyan God super saiyan!
+				[##npc.addStatusEffect(SE_GURETO_SSJB, 8)]
+			#ENDIF
+		]]></execute>
+		<critDescription/>
+		<critEffectDescription/>
+	</performMove>
+	
+</combatMove>

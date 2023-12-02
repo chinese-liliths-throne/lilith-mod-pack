@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ear>
+
+	<race>GURETO_titan</race>
+	
+	<!-- The name that will be used when referring to transformations related to this type (such as when changing body parts in the self-TF menu). -->
+	<transformationName><![CDATA[titan]]></transformationName>
+	
+	<coveringType>GURETO_titan_scales</coveringType>
+	
+
+	<tags>
+		<tag>EAR_HANDLES_IN_SEX</tag>
+	</tags>
+	
+	<!-- The singular and plural names of this ear type.-->
+	<name><![CDATA[ear]]></name>
+	<namePlural><![CDATA[ears]]></namePlural>
+	
+	<!-- The descriptors which should be drawn upon when describing a masculine character's ear of this type.
+	Can be left blank. -->
+	<descriptorsMasculine>
+		<descriptor>hidden</descriptor>
+	</descriptorsMasculine>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsFeminine>
+		<descriptor>hidden</descriptor>
+	</descriptorsFeminine>
+	
+	<transformationDescription><![CDATA[
+		They quickly begin to grow smaller and become hidden.
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+		 A layer of [npc.earFullDescriptionColour] quickly grows to cover them,
+		#ELSE
+		 Just like the rest of [npc.her] body, they're made out of [npc.earFullDescription],
+		#ENDIF
+		<br/>[npc.Name] now [npc.has] [style.boldRed(titan ears)], which are [npc.materialCompositionDescriptor] [npc.earFullDescription].
+	]]></transformationDescription>
+	
+	<!-- How this ear is described in a character's description page. -->
+	<bodyDescription><![CDATA[
+		[npc.She] [npc.has] a pair of hidden,#IF(npc.isPiercedEar()) pierced,#ENDIF titan ears, which are [npc.materialCompositionDescriptor] [npc.earFullDescription(true)].
+	]]></bodyDescription>
+	
+</ear>

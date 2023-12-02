@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="baron_BASIC"><![CDATA[
+	<p>
+		A demon that doesn't use any kind of mechanical augment.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="baron_ADVANCED"><![CDATA[
+	<p>
+		Barons of hell are the highest ranking demons amongst the knights of hell. So expect powers and fighting strength accordingly.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

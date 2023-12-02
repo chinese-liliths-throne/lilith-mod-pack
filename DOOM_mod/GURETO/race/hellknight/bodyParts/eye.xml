@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eye>
+
+	<race>GURETO_hellknight</race>
+	
+	<!-- The name that will be used when referring to transformations related to this type (such as when changing body parts in the self-TF menu). -->
+	<transformationName><![CDATA[hellknight]]></transformationName>
+	
+	<coveringType>GURETO_hellknight_eye</coveringType>
+	
+	<!-- The default number of pairs that this eye type should have (should most likely be 1). -->
+	<defaultPairCount>1</defaultPairCount>
+	
+	<defaultIrisShape>ROUND</defaultIrisShape>
+	
+	<defaultPupilShape>ROUND</defaultPupilShape>
+	
+	<!-- The singular and plural names of this eye. -->
+	<name><![CDATA[eye]]></name>
+	<namePlural><![CDATA[eyes]]></namePlural>
+	
+	<!-- The descriptors which should be drawn upon when describing a masculine character's eye of this type. -->
+	<descriptorsMasculine>
+		<descriptor><![CDATA[glowing]]></descriptor>
+	</descriptorsMasculine>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsFeminine>
+		<descriptor><![CDATA[glowing]]></descriptor>
+	</descriptorsFeminine>
+	
+	<transformationDescription><![CDATA[
+		By the time [npc.she] hesitantly [npc.verb(open)] them again, they've changed into hellknight eyes, with large irises and pupils.
+		<br/>[npc.Name] now [npc.has] [style.boldRed(hellknight eyes)] with [style.boldGenericTF([npc.irisShape])], [npc.irisFullDescription(true)] and [style.boldGenericTF([npc.pupilShape])], [npc.pupilFullDescription(true)].
+	]]></transformationDescription>
+	
+	<!-- How this eye is described in a character's description page. -->
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull] [npc.eyePairs] hellknight eyes, the irises and pupils of which are larger than a regular human's. They have [npc.irisShape], [npc.irisColour(true)] irises, [npc.pupilShape], [npc.pupilColour(true)] pupils, and [npc.scleraColour(true)] sclerae.
+	]]></bodyDescription>
+	
+</eye>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<subspecies>
+	<race>sightglass_goblinoid</race>
+	<colour>BASE_ORANGE</colour>
+	<secondaryColour/>
+	<tertiaryColour/>
+	<mainSubspecies>false</mainSubspecies>
+	<baseSlaveValue>10000</baseSlaveValue>
+	<attributeItemId>sightglass_race_goblin_gulp</attributeItemId>
+	<transformativeItemId>sightglass_race_goblin_black_stew</transformativeItemId>
+	<subspeciesOverridePriority>0</subspeciesOverridePriority>
+	<shortStature>false</shortStature>
+	<bipedalSubspecies>true</bipedalSubspecies>
+	<aquatic>false</aquatic>
+	<applySubspeciesChanges><![CDATA[
+		[#targetedBody.getFace().setType(null, FACE_TYPE_sightglass_goblinoid_face_hobgoblin)]
+		#IF(RND.nextInt(100)<25)
+			[#targetedBody.getCoverings().get(BODY_COVERING_TYPE_sightglass_goblinoid_skin).setPrimaryColour(COLOUR_COVERING_ORANGE)]
+		#ELSEIF(RND.nextInt(100)<25)
+			[#targetedBody.getCoverings().get(BODY_COVERING_TYPE_sightglass_goblinoid_skin).setPrimaryColour(COLOUR_COVERING_RED)]
+		#ELSEIF(RND.nextInt(100)<25)
+			[#targetedBody.getCoverings().get(BODY_COVERING_TYPE_sightglass_goblinoid_skin).setPrimaryColour(COLOUR_COVERING_DARK_GREY)]
+		#ELSE
+			[#targetedBody.getCoverings().get(BODY_COVERING_TYPE_sightglass_goblinoid_skin).setPrimaryColour(COLOUR_COVERING_RED_DARK)]
+		#ENDIF
+		[#targetedBody.getCoverings().get(BODY_COVERING_TYPE_PENIS).setPrimaryColour(targetedBody.getCoverings().get(BODY_COVERING_TYPE_sightglass_goblinoid_skin).getPrimaryColour())]
+		#IF(targetedBody.getPenis().getType() != PENIS_TYPE_NONE)]
+			[#targetedBody.getPenis().setType(null, PENIS_TYPE_sightglass_goblinoid_penis)]
+		#ENDIF
+		#IF(targetedBody.getVagina().getType()!=VAGINA_TYPE_NONE)
+			[#targetedBody.getVagina().setType(null, VAGINA_TYPE_sightglass_goblinoid_vagina)]
+		#ENDIF
+	]]></applySubspeciesChanges>
+	<subspeciesWeighting><![CDATA[
+		#IF(targetedRace==RACE_sightglass_goblinoid)
+			#IF(targetedBody.getFace().getType() == FACE_TYPE_sightglass_goblinoid_face_hobgoblin)
+				150
+			#ELSE
+				0
+			#ENDIF
+		#ELSE
+			0
+		#ENDIF
+	]]></subspeciesWeighting>
+	<iconName displaySize="85">hobgoblinicon</iconName>
+	<backgroundName>raceBackground</backgroundName>
+	<bookIconName>goblinicon</bookIconName>
+	<bookName>Goblin Guide</bookName>
+	<basicDescriptionId>GOBLIN_BASIC</basicDescriptionId>
+	<advancedDescriptionId>GOBLIN_ADVANCED</advancedDescriptionId>
+	<defaultPreference>TWO_AVERAGE</defaultPreference>
+	<nameAnthro>
+		<namesDefault>
+			<name><![CDATA[hobgoblin]]></name>
+			<namePlural><![CDATA[hobgoblin]]></namePlural>
+			<singularMaleName><![CDATA[hobgoblin-boy]]></singularMaleName>
+			<singularFemaleName><![CDATA[hobgoblin-girl]]></singularFemaleName>
+			<pluralMaleName><![CDATA[hobgoblin-boys]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[hobgoblin-girls]]></pluralFemaleName>
+		</namesDefault>
+		<names legConfiguration="QUADRUPEDAL">
+			<name><![CDATA[hobgoblintaur]]></name>
+			<namePlural><![CDATA[hobgoblintaurs]]></namePlural>
+			<singularMaleName><![CDATA[hobgoblintaur]]></singularMaleName>
+			<singularFemaleName><![CDATA[hobgoblintauress]]></singularFemaleName>
+			<pluralMaleName><![CDATA[hobgoblintaurs]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[hobgoblintauresses]]></pluralFemaleName>
+		</names>
+	</nameAnthro>
+	<description><![CDATA[A less-diminuative goblinoid creature.]]></description>
+	<statusEffectDescription><![CDATA[
+		[npc.NamePos] body is compact, lean and wirey. [npc.She] [npc.has] an need to tinker with curiosities and poke around with anything novel.
+	]]></statusEffectDescription>
+	<statusEffectAttributeModifiers>
+		<attribute value="20">MAJOR_PHYSIQUE</attribute>
+		<attribute value="5">MAJOR_ARCANE</attribute>
+		<attribute value="20">DAMAGE_RANGED_WEAPON</attribute>
+		<attribute value="20">DAMAGE_MELEE_WEAPON</attribute>
+		<attribute value="15">CRITICAL_DAMAGE</attribute>
+		<attribute value="15">FERTILITY</attribute>
+		<attribute value="15">VIRILITY</attribute>
+	</statusEffectAttributeModifiers>
+	<extraEffects/>
+	<perkWeightings>
+		<category masculineWeighting="10" feminineWeighting="10">PHYSICAL</category>
+		<category masculineWeighting="0" feminineWeighting="0">LUST</category>
+		<category masculineWeighting="3" feminineWeighting="3">ARCANE</category>
+	</perkWeightings>
+	<regionLocations>
+		<region rarity="TWO_RARE">DOMINION</region>
+		<region rarity="TWO_RARE">SUBMISSION</region>
+		<region rarity="ONE_VERY_RARE">FIELD_CITY</region>
+		<region rarity="ONE_VERY_RARE">DESERT_CITY</region>
+		<region rarity="ONE_VERY_RARE">JUNGLE_CITY</region>
+		<region rarity="ONE_VERY_RARE">FIELDS</region>
+		<region rarity="ONE_VERY_RARE">WOODLAND</region>
+		<region rarity="ONE_VERY_RARE">JUNGLE</region>
+		<region rarity="ONE_VERY_RARE">MOUNTAINS</region>
+	</regionLocations>
+	<worldLocations>
+		<world rarity="TWO_RARE">NIGHTLIFE_CLUB</world>
+	</worldLocations>
+	<placeLocations/>
+	<flags/>
+</subspecies>

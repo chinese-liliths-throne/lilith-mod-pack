@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>400000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[]]></determiner>
+        <name><![CDATA[hyorinmaru]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[hyorinmaru]]></namePlural>
+        <description><![CDATA[A zanpakuto that controls ice and can even generate it.]]></description>
+        <attackDescriptor>Slash</attackDescriptor>
+        <attackTooltipDescription>Slash [npc2.name] with hyorinmaru.</attackTooltipDescription>
+        <rarity>LEGENDARY</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of hyorinmaru.]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(let)] go of hyorinmaru.]]></unequipText>
+        <imageName>hyorinmaru.svg</imageName>
+        <imageEquippedName/>
+        <damage>100</damage>
+        <arcaneCost>0</arcaneCost>
+        <damageVariance>MEDIUM</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+        </availableDamageTypes>
+        <spells>
+            <spell>TELEPORT</spell>
+        </spells>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+        <primaryColours values="ALL"/>
+        <primaryColoursDye values="ALL"/>
+        <secondaryColours values="ALL"/>
+        <secondaryColoursDye values="ALL"/>
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[Thrusting hyorinmaru, [npc.name] [npc.verb(manage)] to jab [npc2.name] in the chest!]]></hitText>
+        <hitText><![CDATA[Slashing at [npc2.Name], [npc2.she] [npc.verb(take)] the hit.]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[Thrusting hyorinmaru, [npc.name] [npc.verb(attempt)] to jab [npc2.name] in the chest, but [npc.verb(end)] up missing [npc2.herHim]!]]></missText>
+        <missText><![CDATA[Slashing at [npc2.Name], [npc2.she] [npc.verb(manage)] to avoid the hit.]]></missText>
+    </missDescriptions>
+</weapon>

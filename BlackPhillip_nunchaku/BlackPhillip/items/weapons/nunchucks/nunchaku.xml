@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+		<authorTag><![CDATA[Along the side of one of the handles, there is a small etching that reads "Black Phillip"]]></authorTag>
+		
+		<value>1500</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[an]]></determiner>
+		
+		<name><![CDATA[Nunchaku]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[Nunchaku]]></namePlural> 
+		
+		<description><![CDATA[A widely used weapon in martial arts. It is intended to be used as a training weapon, since practicing with it enables the development of quick hand movements and improves posture.]]></description> 
+		
+		<attackDescriptor>Bludgeon</attackDescriptor>
+		
+		<attackTooltipDescription>Hit [npc2.name] with your nunchaku.</attackTooltipDescription>
+		
+		<rarity>COMMON</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(swing)] the nunchaku out, letting the other end loose.]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(fold)] the nunchaku together and [npc.verb(put)] it away.]]></unequipText>
+		
+		<imageName>nunchaku.svg</imageName> 
+		
+		<imageEquippedName>nunchaku.svg</imageEquippedName>
+		
+		<damage>20</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>MEDIUM</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/>
+		
+		<extraEffects>
+			<effect><![CDATA[[style.boldPhysical("Dazed")] on critical hit.]]></effect>
+		</extraEffects>
+		
+		<onHitEffect/>
+		
+		<onCriticalHitEffect><![CDATA[
+		#IF !npc2.hasStatusEffect(SE_DAZED)
+		#THEN [##npc2.addStatusEffect(SE_DAZED, 6)] [npc2.Name] [npc2.is] [style.boldPhysical(seeing stars)] from such a succession of blows! 
+		#ENDIF
+		]]></onCriticalHitEffect>
+		
+		<primaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+			<colour>CLOTHING_TAN</colour>
+			<colour>CLOTHING_BROWN_VERY_DARK</colour>
+			<colour>CLOTHING_KHAKI</colour>
+		</primaryColours>		
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="ALL_METAL"/> 
+		<secondaryColoursDye values="ALL_METAL"/>
+		
+		<itemTags>
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Swinging out with [npc.her] nunchaku, [npc.name] [npc.verb(manage)] to hit [npc2.name] flush in the face. There is a loud cracking sound as the shaft connects with the aura above [npc2.her] head to drain [npc2.her] energy!
+		]]></hitText>
+		<hitText><![CDATA[
+		With a quick step forwards, [npc.name] [npc.verb(swing)] out at [npc2.name] with [npc.her] nunchaku, bashing into the aura around [npc2.her] shoulder with the shaft and causing [npc2.herHim] to lose some energy!
+		]]></hitText>
+		<hitText><![CDATA[
+		Swinging out with [npc.her] nunchaku, [npc.name] [npc.verb(manage)] to hit [npc2.name] across the head! There is a loud cracking sound as the shaft connects with the aura above [npc2.her] head to drain [npc2.her] energy!
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		Swinging wide with [npc.her] nunchaku, [npc.name] [npc.verb(attempt)] to hit [npc2.name] in the chest, but [npc.verb(end)] up missing [npc2.herHim]!
+		]]></missText>
+		<missText><![CDATA[
+		With a quick step forwards, [npc.name] [npc.verb(swing)] at [npc2.name] with [npc.her] nunchaku, but [npc.she] [npc.verb(miss)] [npc.her] target!
+		]]></missText>
+		<missText><![CDATA[
+		Swinging out with [npc.her] nunchaku, [npc.name] [npc.verb(attempt)] to hit [npc2.name] across the head, but [npc.verb(end)] up missing [npc2.herHim]!
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

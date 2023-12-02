@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK_DEFEND</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Full Power Form]]></name>
+	<description><![CDATA[
+		With the accumulation of Ki to the back and hard training, a person can achieve their full power, granting [style.boldRed(Power to withstand attacks of unseen potency and deliver attacks even stronger.)].
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		8
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>FP.svg</imageName>
+	
+
+	<colourPrimary>BASE_GREY</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getTorsoType()==TORSO_TYPE_GURETO_arcosian_torso_arcosian]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the KI manipulation. Requires to be at least level 15.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getLevel() < 15)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Charging KI to the back, the user turns into a form even further beyond the one of legends, granting [style.boldRed(Power to withstand attacks of unseen potency and deliver attacks even stronger.)].
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Charging KI to the back, the user turns into a form even further beyond the one of legends, granting [style.boldRed(Power to withstand attacks of unseen potency and deliver attacks even stronger.)].
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getLevel() < 15)
+                Your transformation fails due to your lack of training and mastery. Must be over level 15.
+            #ELSE
+			[npc.Name] [npc.verb(charge)] ki to [npc.namePos] back and [npc.verb(release)] it suddenly, turning [npc.name] into [npc.her] Full Power form!
+				[##npc.addStatusEffect(SE_GURETO_FP, 8)]
+			#ENDIF
+		]]></execute>
+		<critDescription/>
+		<critEffectDescription/>
+	</performMove>
+	
+</combatMove>

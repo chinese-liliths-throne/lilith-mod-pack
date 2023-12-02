@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[consecutive normal punches]]></name>
+	
+	<description><![CDATA[ 
+		Deliver a consecutive series of punches.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[		
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+	1
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>ATTACK.svg</imageName>
+	
+	<colourPrimary>BASE_GREY</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_saitama]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to heroes for fun.
+	]]></availabilityDescription>
+	
+<weighting><![CDATA[
+            2
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+	-->
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(deliver)] several strikes at [npc.namePos] foes.
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(deliver)] several strikes at [npc.namePos] foes.
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><execute><![CDATA[
+		#IF(npc.getMana()>= 0)
+			[##npc.incrementMana(0)]
+			[npc.Name] [npc.verb(swing)] [npc.namePos] fists around!<br>
+				[##var outputText = ""]
+				[##var attacker = npc]
+				[##function damageEnemy(target) {
+				if (outputText != "") {outputText = outputText + "<br>";}
+				if(!target.isPlayerKnowsName()) {outputText = outputText + "The ";}
+				if(npc.getHealthPercentage() < 0.25) {
+					outputText = outputText + target.getName() + " received [style.colorCrit(critical)] [style.colorPhysical(" + DAMAGE_TYPE_PHYSICAL.damageTarget(attacker, target, Math.max(attacker.getAttributeValue(ATTRIBUTE_DAMAGE_UNARMED))*60+6000).getValue() + " physical)] damage."; 
+				} else {
+					outputText = outputText + target.getName() + " received [style.colorPhysical(" + DAMAGE_TYPE_PHYSICAL.damageTarget(attacker, target, attacker.getAttributeValue(ATTRIBUTE_DAMAGE_UNARMED)*30+3000).getValue() + " physical)] damage.";
+				}}]
+				[##combat.getEnemies(npc).forEach(damageEnemy)]
+				[#outputText]
+		#ELSE		
+			[style.colorBad(what did you do? this shouldn't even be possible.)] 
+			<br>[npc.Name] [npc.verb(swing)] [npc.namePos] fists around!
+		#ENDIF
+]]></execute></execute>
+		<critDescription><![CDATA[
+			The fight got very intense, and [npc2.Name] got hit VERY hard!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.Name] is clenching [npc2.namePos] chest in pain!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

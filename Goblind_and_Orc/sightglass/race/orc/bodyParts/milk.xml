@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fluid>
+	<race>sightglass_orc</race>
+	<transformationName><![CDATA[orc]]></transformationName>
+	<baseFluidType>MILK</baseFluidType>
+	<flavour>MILK</flavour>
+	<namesMasculine/>
+	<namesFeminine/>
+	<descriptorsMasculine>
+		<name><![CDATA[orc]]></name>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<name><![CDATA[orc]]></name>
+	</descriptorsFeminine>
+	<defaultFluidModifiers/>
+</fluid>

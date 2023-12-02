@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="hellknight_BASIC"><![CDATA[
+	<p>
+		A brutal kind of demon, even toward the demons.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="hellknight_ADVANCED"><![CDATA[
+	<p>
+		Hellknights have a high status ranking amonsgt the demon realm and serve their superiors with hesitation.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[A message under the plate reads 'Delivered by the Saiyan food distribution sector'.]]></authorTag>
+		
+		<value>7500</value> 
+		<determiner><![CDATA[a plate of]]></determiner>
+		<name><![CDATA[pile of meat]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Pile of meat]]></namePlural>
+		<description><![CDATA[A plate filled with a pile of cooked meat. In the center of the plate, a drawing depicts a saiyan woman holding her young in her arm, and a plate of meat like this one in the other arm.]]></description> 
+		
+		<useDescriptor>eat</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>EPIC</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="90" target1='stroke="#000"' replacement1='stroke="#ff5555"' target2='#ff8080' replacement2='#ff5555'>res/mods/GURETO/race/saiyan/subspecies/saiyanicon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="85">saiyanmeat.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>BASE_TAN</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[saiyan]]></potionDescriptor>
+		<associatedRace>GURETO_saiyan</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Restores)] 50% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(5)] to 'potion effects']]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/2)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name] [npc.verb(start)] to feel stronger, almost primal...
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 5)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the plate, you sit cross-legged, you smell the tasty meat invade your nostrils and start to gulp down the delicious meat. You start to feel like you NEED more, as you eat more and more with increasing speed, you end the whole plate in a couple of minutes. Finishing the plate, you've never felt as full as you are now.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the plate and [npc.Name] place it in front of [npc2.Name]. [npc2.She] [npc.verb(smell)] the tasty meat invading [npc2.Her] nostrils and start to gulp down the delicious meat. [npc2.Name] [npc.verb(start)] to feel like [npc2.she] NEEDS more, as [npc.name] eat more and more with increasing speed, [npc2.name] [npc.verb(end)] the whole plate in a couple of minutes. Finishing the plate, [npc2.she] [npc.verb(have)] never felt as full as now.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

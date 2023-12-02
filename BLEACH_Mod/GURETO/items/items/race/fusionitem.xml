@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>5000000</value> 
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[HOGYOKU]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[HOGYOKU]]></namePlural>
+		<description><![CDATA[The accumulation of a considerable amount of souls, allows the user to grant wish if strong enough.]]></description>
+		
+		<useDescriptor>absorb</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName>fusionitem.svg</imageName>
+		
+		<colourPrimary>BASE_BLUE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[FUSION]]></potionDescriptor>
+		<associatedRace>GURETO_fusion</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+		</effectTooltipLines>
+
+		<applyEffects><![CDATA[
+			#IF(npc.getSubspecies()==SUBSPECIES_GURETO_captain_subspecies_captain)
+				[##game.getCharacterUtils().reassignBody(npc, npc.getBody(), npc.getGender(), SUBSPECIES_GURETO_fusion_subspecies_fusion, RACE_STAGE_GREATER, true)]
+				[style.italics(After the absorbing the hogyaku, [npc.name] [npc.verb(start)] taking a new form.)]
+			#ELSEIF(npc.getSubspecies()==SUBSPECIES_GURETO_arrancar_subspecies_arrancar)
+				[##game.getCharacterUtils().reassignBody(npc, npc.getBody(), npc.getGender(), SUBSPECIES_GURETO_Bresurreccion_subspecies_Bresurreccion, RACE_STAGE_GREATER, true)]
+				[style.italics(After the absorbing the hogyaku, [npc.name] [npc.verb(start)] taking a new form.)]
+			#ELSE
+			You cannot force the hogyoku to obey you, you're not strong enough. You need to be a captain or an arrancar to force the hogyoku to obey.
+			#ENDIF
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		After fusing with the hogyoku, [npc.name] [npc.verb(start)] to take on a new form.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		After fusing with the hogyoku, [npc2.name] [npc2.verb(start)] to take on a new form.
+		]]></otherUse>
+	</useDescriptions>
+	
+</item>

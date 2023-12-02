@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK_DEFEND</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Super Saiyan IV]]></name>
+	<description><![CDATA[
+		With the accumulation of a great amount of Ki to the back and a strong connection to the great ape, a person can turn into a super saiyan IV, granting [style.boldRed(Power to withstand even stronger attacks and deliver even stronger blows)].
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		10
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>SSJ.svg</imageName>
+	
+
+	<colourPrimary>BASE_RED_DARK</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getTailType()==TAIL_TYPE_GURETO_saiyan_tail]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the KI manipulation. Requires to be at least level 20.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getLevel() < 20)
+            0
+        #ELSE
+            2.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Charging KI to the back, the user turns into a form worthy of a true legend, granting [style.boldRed(Power to withstand even stronger attacks and deliver even stronger blows)].
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Charging KI to the back, the user turns into a form worthy of a true legend, granting [style.boldRed(Power to withstand even stronger attacks and deliver even stronger blows)].
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getLevel() < 20)
+                Your transformation fails due to your lack of training and mastery. Must be over level 20.
+            #ELSE
+			[npc.Name] [npc.verb(charge)] ki to [npc.namePos] back and [npc.verb(release)] it suddenly, turning [npc.name] into a super saiyan 4!
+				[##npc.addStatusEffect(SE_GURETO_SSJ4, 10)]
+			#ENDIF
+		]]></execute>
+		<critDescription/>
+		<critEffectDescription/>
+	</performMove>
+	
+</combatMove>
+
+
+
+
+
+			
+			
+			

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Senbonzakura : Hakuteiken]]></name>
+	
+	<description><![CDATA[ 
+		Creates a singular blade with all the petals of cherry blossom, making one uniquely powerful blade. Consumes 600 arcane essences.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[		
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		3
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_PINK</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_senbonzakura)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_senbonzakura)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters wielding Senbonzakura.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 600)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.35)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(35%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(form)] a singular and uniquely powerful, white blade. Consumes 600 arcane essence.
+        #IF(npc.getEssenceCount() < 600)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(form)] a singular and uniquely powerful, white blade. Consumes 600 arcane essence.
+        #IF(npc.getEssenceCount() < 600)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><execute><![CDATA[
+            #IF(npc.getEssenceCount() < 600)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			[npc.Name] [npc.verb(gather)] all the petals of cherry blossom into the white emperor sword! [npc.SheIsFull] ready to finish this!
+                [##npc.incrementEssenceCount(-600,false)]
+				[##npc.addStatusEffect(SE_GURETO_HAKUTEIKEN, 999)]
+                #ENDIF
+]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="tyrant_BASIC"><![CDATA[
+	<p>
+		A towering demon lord equipped with a rocket launcher.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="tyrant_ADVANCED"><![CDATA[
+	<p>
+		After fully swapping their skeleton for a mechanical one, the tyrants can then lead hordes of demons to invade a world.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

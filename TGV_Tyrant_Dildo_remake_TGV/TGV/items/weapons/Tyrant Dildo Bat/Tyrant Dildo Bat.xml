@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>8590</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>true</twoHanded>
+		
+		<determiner><![CDATA[a]]></determiner>
+		
+		<name><![CDATA[#IF (game.isSillyModeEnabled())
+			#THEN something huge and utterly fucking disgusting
+			#ELSE Tyrant Dildo Bat
+			#ENDIF]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[#IF (game.isSillyModeEnabled())
+			#THEN somethings that are huge and utterly fucking disgusting
+			#ELSE Tyrant Dildo Bats
+			#ENDIF]]></namePlural>
+		
+		<description><![CDATA[A swingable, girthy stallion penis attached to a hilt. Kinky, if not unwieldy.]]></description> 
+		
+		<attackDescriptor>smack</attackDescriptor>
+		
+		<attackTooltipDescription>Swing your Dildo at [npc2.name].</attackTooltipDescription>
+		
+		<rarity>RARE</rarity> 
+		
+		<weaponSet/>
+		
+		<equipText><![CDATA[#IF (game.isSillyModeEnabled())
+			#THEN [npc.Name] [npc.verb(take)] hold of the huge utterly fucking disgusting thing as [npc.she] [npc.verb(prepare)] [npc.herself] to use it in lewd combat.]
+			#ELSE [npc.Name] [npc.verb(take)] hold of the Tyrant Dildo Bat as [npc.she] [npc.verb(prepare)] [npc.herself] to use it in lewd combat.]
+			#ENDIF]]></equipText>
+		
+		<unequipText><![CDATA[<![CDATA[#IF (game.isSillyModeEnabled())
+		#THEN [npc.Name] [npc.verb(store)] the huge utterly fucking disgusting thing.]
+		#ELSE [npc.Name] [npc.verb(store)] the Tyrant Dildo Bat.]
+		#ENDIF]]></unequipText>
+		
+		<imageName>Tyrant Dildo.svg</imageName> 
+		
+		<imageEquippedName>Tyrant Dildo.svg</imageEquippedName>
+		
+		<damage>50</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>HIGH</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>1</enchantmentLimit>
+		
+		<effects/>
+		
+		<primaryColours>
+			<colour>SKIN_RED</colour>
+		</primaryColours>
+		<primaryColoursDye values="NONE"/>
+		<secondaryColours>
+			<colour>BASE_WHITE</colour>
+		</secondaryColours>		
+		<secondaryColoursDye values="NONE"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		#IF (game.isSillyModeEnabled())
+		[##var randDamage = RND.nextInt(6)+20]
+		[##npc2.incrementLust(randDamage, true)]
+		[npc.Name] [npc.verb(swing)] [npc.her] huge utterly fucking disgusting thing at [npc2.name], watching as the huge utterly fucking disgusting thing makes contact with [npc2.her] face and deals [#randDamage] lust damage!
+		#ELSE
+		[##var randDamage = RND.nextInt(6)+20]
+		[##npc2.incrementLust(randDamage, true)]
+		[npc.Name] [npc.verb(swing)] [npc.her] tyrant dildo bat at [npc2.name], watching as the dildo bat makes contact with [npc2.her] face and deals [#randDamage] lust damage!
+		#ENDIF]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[#IF (game.isSillyModeEnabled())
+		[npc.Name] [npc.verb(swing)] [npc.her] huge utterly fucking disgusting thing at [npc2.name], but the bat only swings just inches from [npc2.her] face.
+		#ELSE [npc.Name] [npc.verb(swing)] [npc.her] tyrant dildo bat at [npc2.name], but the bat only swings just inches from [npc2.her] face.
+		#ENDIF]]></missText>
+	</missDescriptions>
+	
+</weapon>

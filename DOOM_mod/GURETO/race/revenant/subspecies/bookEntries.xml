@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="revenant_BASIC"><![CDATA[
+	<p>
+		A resurrected human, now equipped with a jetpack and rocket launchers.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="revenant_ADVANCED"><![CDATA[
+	<p>
+		Being resurrected beings, revenants can't take heavy hits, but their rocket launchers can help them clear out enemies easily.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

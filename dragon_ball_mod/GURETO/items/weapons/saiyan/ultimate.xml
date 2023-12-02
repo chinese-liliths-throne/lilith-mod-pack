@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>1000000000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[the]]></determiner>
+		
+		<name><![CDATA[Ultimate Android Arm]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[Ultimate Android Arms]]></namePlural> 
+		
+		<description><![CDATA[Gain the strength and powers of the very best of what technology could ever give. You are now able to deal a colossal amount of damage and manipulate KI.]]></description> 
+		
+		<attackDescriptor>Strike</attackDescriptor>
+		
+		<attackTooltipDescription>Attack [npc2.name] with your allmighty power.</attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(put)] on the android arm and [npc.verb(feel)] an unknown power surging!]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(drop)] [npc.her] android arm and [npc.verb(notice)] the difference in power.]]></unequipText>
+		
+		<imageName>ultimate.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<physicalResistance>50</physicalResistance>
+		
+		<damage>110</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>MEDIUM</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>100</enchantmentLimit>
+		
+		<effects/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BRASS</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours/> 
+		<secondaryColoursDye/>
+		
+		<itemTags> 
+			<tag>WEAPON_UNARMED</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Swinging [npc.her] fist, [npc.name] [npc.verb(manage)] to land a solid punch on [npc2.namePos] [npc2.arm].
+		]]></hitText>
+		<hitText><![CDATA[
+		Striking out at [npc2.name] with [npc.her] foot, [npc.name] [npc.verb(manage)] to land a solid hit on [npc2.her] [npc2.arm]!
+		]]></hitText>
+		<hitText><![CDATA[
+		With a quick step forwards, [npc.name] [npc.verb(jab)] out at [npc2.name] with [npc.her] fist, whacking [npc.her] knuckles against [npc2.her] shoulder!
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		Swinging [npc.her] fist, [npc.name] [npc.verb(attempt)] to punch [npc2.name] on the [npc2.arm], but [npc.verb(end)] up missing [npc2.herHim]!
+		]]></missText>
+		<missText><![CDATA[
+		Striking out at [npc2.name] with [npc.her] pure strength, [npc.name] [npc.verb(let)] out a frustrated cry as [npc.she] [npc.verb(miss)] [npc.her] target!
+		]]></missText>
+		<missText><![CDATA[
+		With a quick step forwards, [npc.name] [npc.verb(jab)] out at [npc2.name] with [npc.her] fist, but [npc.she] [npc.verb(miss)] [npc.her] target!
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

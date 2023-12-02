@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK_DEFEND</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[VOLLSTÄNDIG]]></name>
+	<description><![CDATA[
+		You activate your VOLLSTANDIG. Requires to be level 40 or over.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		999
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>POSITIVE.svg</imageName>
+	
+
+	<colourPrimary>BASE_GREEN</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#(npc.getClothingInSlot(IS_NECK) != null && npc.getClothingInSlot(IS_NECK).getClothingType().equals(CLOTHING_GURETO_clothes_medallion)) ||
+        (npc.getClothingInSlot(IS_WRIST) != null && npc.getClothingInSlot(IS_WRIST).getClothingType().equals(CLOTHING_GURETO_clothes_medallion))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters holding a medallion.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getLevel() < 40)
+            0
+        #ELSE
+            2.5
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.name] [npc.verb(activate)] [npc.namePos] VOLLSTANDIG.
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.name] [npc.verb(activate)] [npc.namePos] VOLLSTANDIG.
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getLevel() < 40)
+                Your activation fails due to your lack of training and mastery. Must be over level 40.
+            #ELSE
+			[npc.Name] [npc.verb(activate)] [npc.namePos] VOLLSTANDIG! [npc.Name] [npc.verb(feel)] [npc.namePos] confidence renewed and stronger than before!
+				[##npc.addStatusEffect(SE_GURETO_vollstandig, 999)]
+			#ENDIF
+		]]></execute>
+		<critDescription/>
+		<critEffectDescription/>
+	</performMove>
+	
+</combatMove>

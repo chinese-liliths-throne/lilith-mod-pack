@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>1600000</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[the]]></determiner>
+		
+		<name><![CDATA[BFG 9000]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[BFG 9000]]></namePlural> 
+		
+		<description><![CDATA[A gigantic experimental weapon that uses ionized argent energy to blast your opponents to kindgom come.]]></description> 
+		
+		<attackDescriptor>Fire</attackDescriptor>
+		
+		<attackTooltipDescription>Shoot at [npc2.name] with the BFG 9000.</attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the almighty BFG 9000!]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the BFG 9000.]]></unequipText>
+		
+		<imageName>BFG9K.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<physicalResistance>0</physicalResistance>
+		
+		<damage>13500</damage> 
+		<aoe chance="100">12000</aoe>
+		<aoe chance="100">10500</aoe>
+		<aoe chance="95">9500</aoe>
+		<aoe chance="90">8000</aoe>
+		<aoe chance="85">6500</aoe>
+		<aoe chance="80">5000</aoe>
+		
+		<arcaneCost>600</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>100</enchantmentLimit>
+		
+		<effects/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours/> 
+		<secondaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] a blast of argent energy at [npc2.name].
+		]]></hitText>
+		<hitText><![CDATA[
+		Opening fire, [npc2.name] is on the path of the BFG shot!
+		]]></hitText>
+		<hitText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the BFG shot impacts with [npc2.name]!
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] a blast of argent energy at [npc2.name], but [npc2.name] saw it coming and managed to avoid the blast.
+		]]></missText>
+		<missText><![CDATA[
+		Opening fire, [npc2.name] is on the path of the BFG shot! [npc2.name] managed to stay out of [npc.namePos] line of sight.
+		]]></missText>
+		<missText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the plasma shot go past [npc2.name]!
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

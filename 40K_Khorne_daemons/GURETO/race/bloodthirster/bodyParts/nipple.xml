@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<nipple>
+
+	<race>GURETO_bloodthirster</race>
+	
+	<coveringType>GURETO_bloodthirster_nipples</coveringType>
+	
+	<descriptorsMasculine/>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsFeminine/>
+
+	<defaultOrificeModifiers/>
+
+	
+</nipple>

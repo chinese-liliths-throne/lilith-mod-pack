@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[EXCALIBUR]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(hold)] the blade with both hands and [npc.verb(raise)] it above [npc.namePos] head, before slamming it down in front of [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 3000 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		#IF(npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE))
+			FIRE
+		#ELSEIF(npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE))
+			ICE
+		#ELSE
+			POISON
+		#ENDIF
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	[#npc.getUnarmedDamage() * 999]
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		3
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_PURPLE</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_ExcaliburMorgan_ExcaliburM)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_ExcaliburMorgan_ExcaliburM)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the legendary Excalibur.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 3000)
+            0
+		#ELSEIF(npc.getHealth() <= (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)
+			20
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(hold)] the blade with both hands and [npc.verb(raise)] it above [npc.namePos] head, before slamming it down in front of [npc.her] foe and expelling and beam of victory at [npc2.Name], dealing formattedDamageInflicted damage. Consuming 3000 arcane essences.
+        #IF(npc.getEssenceCount() < 3000)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(hold)] the blade with both hands and [npc.verb(raise)] it above [npc.namePos] head, before slamming it down in front of [npc.her] foe and expelling a beam of victory at [npc.namePos] foe, dealing formattedDamageInflicted damage. Consuming 3000 arcane essences.
+        #IF(npc.getEssenceCount() < 3000)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 3000)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			Slowly putting [npc.namePos] second hand on the handle of the blade, [npc.Name] [npc.verb(raise)] it above [npc.namePos] head and [npc.verb(yell)] "EXCALIBUR !!!". Pointing the blade at [npc2.Name], the blade emits a powerful beam of victory, dealing formattedDamageInflicted damage!
+                [##npc.incrementEssenceCount(-3000,false)]
+                #ENDIF
+            formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ass>
+
+	<race>GURETO_hellknight</race>
+	
+	<!-- The name that will be used when referring to transformations related to this type (such as when changing body parts in the self-TF menu). -->
+	<transformationName><![CDATA[hellknight]]></transformationName>
+	
+	<!-- The id of the material covering this ass.
+	Hard-coded values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/character/body/coverings/BodyCoveringType.java -->
+	<coveringType>GURETO_hellknight_scales</coveringType>
+	
+	<!-- The id of the anus that's associated with this ass type. -->
+	<anusType>GURETO_hellknight_anus</anusType>
+	
+	<!-- The singular names of this ass.
+	One of the defined names will be chosen at random every time the name is displayed to the player.-->
+	<names/>
+
+	
+	<!-- The plural names of this ass.
+	One of the defined names will be chosen at random every time the name is displayed to the player.-->
+	<namesPlural/>
+
+	<descriptorsMasculine/>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsFeminine/>
+	<!-- Hyena asses do not need any racial descriptors, but if you wanted to add some, use this format:
+	<descriptorsMasculine>
+		<descriptor><![CDATA[hellknight]]></descriptor>
+	</descriptorsMasculine>
+	-->
+	
+	<transformationDescription><![CDATA[
+		[npc.She] now [npc.has] a [style.boldRed(hellknight)], [npc.assholeFullDescription].
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull] a hellknight-like, [npc.anusFullDescription(true)]
+	]]></bodyDescription>
+	
+</ass>

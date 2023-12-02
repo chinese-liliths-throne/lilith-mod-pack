@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="dreadknight_BASIC"><![CDATA[
+	<p>
+		Augmented hellknights with mechanical arms.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="dreadknight_ADVANCED"><![CDATA[
+	<p>
+		Hellknights are much more terrifying than their previous version being already plenty terrifying. These mechanical augments places them as nothing more but constantly raging war machines with bladed mechanical arms.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

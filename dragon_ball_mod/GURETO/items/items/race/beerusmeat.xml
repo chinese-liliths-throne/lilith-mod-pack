@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[At the bottom of the box, the details of the ingredients and nutritional values is written.]]></authorTag>
+		
+		<value>500</value> 
+		<determiner><![CDATA[a box of]]></determiner>
+		<name><![CDATA[instant ramen]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[instant ramen]]></namePlural>
+		<description><![CDATA[A box of ramen that cooks instantly upon removing the lid. At the center of the lid, a drawing depicts the ramens in a fancy looking bowl with steam going up.]]></description> 
+		
+		<useDescriptor>eat</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>EPIC</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="90" target1='stroke="#000"' replacement1='stroke="#ff5555"' target2='#ff8080' replacement2='#ff5555'>res/mods/GURETO/race/beerus/subspecies/beerusicon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="85">beerusmeat.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>BASE_PURPLE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[beerus]]></potionDescriptor>
+		<associatedRace>GURETO_beerus</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the box of instant ramen and open it, you smell the powerful spices of the ramen as it instantly cooks in mere seconds before your eyes. you eat some of the ramen before being completely overtaken with a craving to eat more. When you regain control, you realise that you ate all the ramen.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the box of instant ramen and open it in front of [npc2.name], [npc2.name] [npc.verb(smell)] the powerful spices of the ramen as it instantly cooks in mere seconds before [npc2.her] eyes. [npc2.Name] eat some of the ramen before being completely overtaken with a craving to eat more. When [npc2.Name] regain control, [npc2.name] realise that you ate all the ramen.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<breast>
+
+	<race>GURETO_tyrant</race>
+	
+	<!-- The name that will be used when referring to transformations related to this type (such as when changing body parts in the self-TF menu). -->
+	<transformationName><![CDATA[tyrant]]></transformationName>
+	
+	<!-- The id of the material covering this ass.
+	Hard-coded values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/character/body/coverings/BodyCoveringType.java -->
+	<coveringType>GURETO_tyrant_scales</coveringType>
+	
+	<!-- The id of the nipple that's associated with this breast type. -->
+	<nippleType>GURETO_tyrant_nipple</nippleType>
+	
+	<!-- The id of the fluid that's associated with this breast type. -->
+	<fluidType>GURETO_tyrant_milk</fluidType>
+	
+
+	<names/>
+	
+	<!-- The plural names of this breast type. -->
+	<namesPlural/>
+	
+
+	<descriptors/>
+	
+	
+	<!-- IS a flat chest:
+	These 3 values are used when this breast type is on a character who has a flat chest. i.e. When they just have pecs. -->
+	
+	<!-- The singular names of this breast type. -->
+	<namesFlat/>
+	
+	<!-- The plural names of this breast type. -->
+	<namesPluralFlat/>
+	
+
+	<descriptorsFlat/>
+	
+
+	<transformationDescription><![CDATA[
+		[npc.She] now [npc.has] [style.boldRed(tyrant-like)], [npc.nipplesFullDescription], and when lactating, [npc.she] will produce [style.boldWhite(tyrant milk)].
+	]]></transformationDescription>
+	
+	<!-- How this breast type is described in a character's description page. -->
+	<bodyDescription><![CDATA[
+		On each of [npc.her] [npc.breastSize] [npc.breasts], [npc.she] [npc.has] [npc.nipplesPerBreast] tyrant, [npc.nipplesFullDescription].
+	]]></bodyDescription>
+	
+	
+	<!-- Crotch-located breasts:
+	These 2 transformation descriptions are used when this breast type is being used for crotch-boobs. i.e. Breasts located on the character's lower stomach. -->
+	
+	<crotchBoobsTransformationDescription><![CDATA[
+		[npc.She] now [npc.has] [style.boldRed(tyrant-like)], [npc.crotchNipplesFullDescription], and when lactating, [npc.she] will produce [style.boldWhite(tyrant milk)].
+	]]></crotchBoobsTransformationDescription>
+	
+	<crotchBoobsBodyDescription><![CDATA[
+		On each of [npc.her] [npc.crotchBoobSize] [npc.crotchBoobs], [npc.she] [npc.has] [npc.crotchNipplesPerBreast] tyrant, [npc.crotchNipplesFullDescription].
+	]]></crotchBoobsBodyDescription>
+	
+</breast>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Missile barrage]]></name>
+	
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(launch)] missiles to explode on your foes, dealing 150 fire damage, to all enemy present.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[		
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		4
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_RED</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_cyberdemon]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to cyberdemon characters.
+	]]></availabilityDescription>
+	
+<weighting><![CDATA[
+            20
+]]></weighting>
+	
+	-->
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+	-->
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(launch)] numerous missiles to explode down on [npc.namePos] foes, dealing 150 fire damage, to all enemies.
+		#IF(npc.getHealthPercentage() < 0.25)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(launch)] numerous missiles to example down on [npc.namePos] foes, dealing 150 fire damage, to all enemies.
+		#IF(npc.getHealthPercentage() < 0.25)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><execute><![CDATA[
+		#IF(npc.getMana()>= 0)
+			[##npc.incrementMana(0)]
+			Launching missiles, [npc.name] [npc.verb(bombards)] the battlefield with missiles!<br>
+				[##var outputText = ""]
+				[##var attacker = npc]
+				[##function damageEnemy(target) {
+				if (outputText != "") {outputText = outputText + "<br>";}
+				if(!target.isPlayerKnowsName()) {outputText = outputText + "The ";}
+				if(npc.getHealthPercentage() < 0.25) {
+					outputText = outputText + target.getName() + " received [style.colorCrit(critical)] [style.colorFire(" + DAMAGE_TYPE_FIRE.damageTarget(attacker, target, Math.max(attacker.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE),1)*3+300).getVale() + " fire)] damage."; 
+				} else {
+					outputText = outputText + target.getName() + " received [style.colorFire(" + DAMAGE_TYPE_FIRE.damageTarget(attacker, target, attacker.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*1.5+150).getValue() + " fire)] damage.";
+				}}]
+				[##combat.getEnemies(npc).forEach(damageEnemy)]
+				[#outputText]
+		#ELSE		
+			[style.colorBad(what did you do? this shouldn't even be possible.)] 
+			<br>Launching missiles, [npc.name] [npc.verb(bombards)] the battlefield with missiles!
+		#ENDIF
+]]></execute></execute>
+		<critDescription><![CDATA[
+			The fight got very intense, and [npc2.Name] got hit VERY hard!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.Name] is clenching [npc2.namePos] chest in pain!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

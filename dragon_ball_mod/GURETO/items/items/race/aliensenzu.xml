@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[Nothing indicates its origin.]]></authorTag>
+		
+		<value>100000</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[Senzu]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Senzus]]></namePlural>
+		<description><![CDATA[A bean with the power to heal any and all wounds.]]></description> 
+		
+		<useDescriptor>eat</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="90" target1='stroke="#000"' replacement1='stroke="#ff5555"' target2='#ff8080' replacement2='#ff5555'>res/mods/GURETO/race/alien/subspecies/alienicon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="85">aliensenzu.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>BASE_GREY_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[alien]]></potionDescriptor>
+		<associatedRace>GURETO_alien</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Restores)] 100% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the senzu and [npc.verb(swallow)] it. In a matter of instants , all of [npc.namePos] wounds are healed.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the senzu and [npc.Name] hold it in front of [npc2.Name]. [npc2.She] [npc.verb(hesitate)] before allowing [npc.name] to put it in [npc2.her] mouth and swallowing it down. [npc2.Name] is surprised to feel as if nothing ever happened and to be fully healed.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

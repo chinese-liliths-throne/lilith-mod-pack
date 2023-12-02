@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>250000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[a]]></determiner>
+        <name><![CDATA[Quincy cross]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Quincy cross]]></namePlural>
+        <description><![CDATA[A glove wielded by Quincies.]]></description>
+        <attackDescriptor>shoot</attackDescriptor>
+        <attackTooltipDescription>Shoot [npc2.name] with the Quincy cross.</attackTooltipDescription>
+        <rarity>EPIC</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(wear)] the Quincy cross.]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(remove)] the Quincy cross.]]></unequipText>
+        <imageName>quincycross.svg</imageName>
+        <imageEquippedName/>
+        <damage>70</damage>
+        <arcaneCost>10</arcaneCost>
+        <damageVariance>LOW</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+            <damageType>FIRE</damageType>
+            <damageType>POISON</damageType>
+            <damageType>ICE</damageType>
+        </availableDamageTypes>
+        <spells/>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+		<primaryColours recolouringAllowed="true" values="JUST_STEEL"/>
+		<primaryColoursDye values="ALL_METAL"/>
+        <secondaryColours recolouringAllowed="true" values="JUST_STEEL"/>
+        <secondaryColoursDye values="ALL_METAL"/>
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[summoning an heilig bogen with the quincy cross, [npc.Name] [npc.verb(fire)] an heilig pfeil and it hits [npc2.Name]!]]></hitText>
+        <hitText><![CDATA[Shooting at [npc2.Name], [npc2.she] [npc.verb(take)] the hit directly.]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <hitText><![CDATA[summoning an heilig bogen with the quincy cross, [npc.Name] [npc.verb(fire)] an heilig pfeil and it grazes past [npc2.Name]!]]></hitText>
+        <missText><![CDATA[Shooting at [npc2.Name], [npc2.she] [npc.verb(manage)] to avoid the hit.]]></missText>
+    </missDescriptions>
+</weapon>

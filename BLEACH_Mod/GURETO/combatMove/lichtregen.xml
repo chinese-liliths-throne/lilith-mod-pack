@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Licht Regen]]></name>
+	
+
+	<description><![CDATA[ 
+		Transforming your heilig bogen into a Ginrei Kojaku, you unleash a literal rain of heilig pfeil upon your enemy, dealing formattedDamageInflicted damage. Consumes 200 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		ICE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	350
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_BLUE</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_quincy_quincycross)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_quincy_quincycross)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters wielding a quincy cross.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 200)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(draw)] on [npc.namePos] heilig bogen and [npc.verb(release)] it all at [npc2.name], sending a wave of heilig pfeil, dealing formattedDamageInflicted damage. Consumes 200 arcane essence.
+        #IF(npc.getEssenceCount() < 200)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(draw)] on [npc.namePos] heilig bogen and [npc.verb(release)] it all at [npc.namePos] enemy, sending a wave of heilig pfeil, dealing formattedDamageInflicted damage. Consumes 200 arcane essence.
+        #IF(npc.getEssenceCount() < 200)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 200)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			Drawing on [npc.namePos] heilig bogen, [npc.Name] [npc.verb(lock)] eyes with [npc2.Name]. Letting go of the heilig bogen, a flow of heilig pfeil pierce through the air and collide with [npc2.Name]! the constant explosions create a cloud of dust, where [npc2.Name] stood.
+                [##npc.incrementEssenceCount(-200,false)]
+                #ENDIF
+            formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

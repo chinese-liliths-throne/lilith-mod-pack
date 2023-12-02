@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<leg>
+
+	<race>GURETO_baron</race>
+	
+	<!-- The name that will be used when referring to transformations related to this type (such as when changing body parts in the self-TF menu). -->
+	<transformationName><![CDATA[baron]]></transformationName>
+	
+	<coveringType>GURETO_baron_scales</coveringType>
+	
+	<defaultFootStructure>DIGITIGRADE</defaultFootStructure>
+	
+	<footType>REPTILIAN</footType>
+	
+	<!-- Whether this leg type has a spinneret (will only be true for spider leg types which are limited to the 'ARACHNID' leg configuration). -->
+	<spinneret>false</spinneret>
+	
+
+	<tentacleType>NONE</tentacleType>
+	
+	<!-- The number of tentacles that this leg type has, with an upper limit of 100. -->
+	<tentacleCount>0</tentacleCount>
+	
+	<allowedLegConfigurations>
+		<configuration>BIPEDAL</configuration>
+	</allowedLegConfigurations>
+	
+	<name><![CDATA[leg]]></name>
+	<namePlural><![CDATA[legs]]></namePlural> 
+	
+	<!-- The descriptors which should be drawn upon when describing a masculine character's leg of this type.
+	Can be left blank. -->
+	<descriptorsMasculine>
+		<descriptor>baron</descriptor>
+		<descriptor>powerful</descriptor>
+	</descriptorsMasculine>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsFeminine>
+		<descriptor>baron</descriptor>
+		<descriptor>powerful</descriptor>
+	</descriptorsFeminine>
+	
+	<footDescriptorsMasculine>
+		<descriptor>baron</descriptor>
+	</footDescriptorsMasculine>
+	<footDescriptorsFeminine>
+		<descriptor>baron</descriptor>
+	</footDescriptorsFeminine>
+	
+	<toeDescriptorsMasculine>
+		<descriptor>baron</descriptor>
+	</toeDescriptorsMasculine>
+	<toeDescriptorsFeminine>
+		<descriptor>baron</descriptor>
+	</toeDescriptorsFeminine>
+
+	<transformationDescription><![CDATA[
+		A layer of baron scales quickly grows over [npc.her] legs as they shift into a new form. As [npc.her] new skin spreads down to the ends of [npc.her] knees, [npc.her] feet turn large, leaving [npc.herHim] with baron-like feet.
+		<br/>[npc.Name] now [npc.has] anthropomorphic, [style.boldRed(baron legs and feet)], which are [npc.materialDescriptor] [npc.legFullDescription].
+	]]></transformationDescription>
+	
+	<!-- How these legs are described in a character's description page. -->
+	<bodyDescription><![CDATA[
+		[npc.Her] legs are [npc.materialCompositionDescriptor] [npc.legFullDescription(true)], and [npc.her] feet have formed into anthropomorphic baron feet.
+	]]></bodyDescription>
+	
+</leg>

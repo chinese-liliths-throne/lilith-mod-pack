@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Resurreccion]]></name>
+	
+
+	<description><![CDATA[
+		You charge your reiatsu and take on a new, stronger form. Consumes 300 arcane essences.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		1
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>POSITIVE.svg</imageName>
+	
+	<colourPrimary>BASE_BLACK</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">ARCANE_WEAKNESS</effect>
+	</statusEffects>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_arrancar]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to arrancar characters.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 300)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		[#npc.getHealthPercentage() < 0.35]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Your health is less than [style.boldRed(35%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Reaitsu starts to turn and engulfs [npc.Name]. Consumes 300 arcane essences.
+        #IF(npc.getEssenceCount() < 300)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.verb(Send)] a cero at [npc.namePos] enemy. Consumes 300 arcane essences.
+        #IF(npc.getEssenceCount() < 300)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		
+		<execute><execute><![CDATA[
+            #IF(npc.getEssenceCount() < 300)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			Charging Reaitsu, it completely covers [npc.Name], after the reiatsu disappears, [npc.sheHas] turned into [npc.namePos] resurreccion form!
+                [##npc.incrementEssenceCount(-300,false)]
+				[##npc.addStatusEffect(SE_GURETO_resurreccion, 999)]
+                #ENDIF
+            formattedHealthDamage
+]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 35% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

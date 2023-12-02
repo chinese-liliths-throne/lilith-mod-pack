@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Shinkū no Kōri no Yaiba]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(take)] hold of the blade and concentrate reaitsu, suddenly sending ice following the blade, dealing formattedDamageInflicted damage. Consumes 200 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		ICE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+		300
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		2
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_BLUE</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_hyorinmaru)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_hyorinmaru)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters wielding hyorinmaru.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 200)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		[#npc.getHealthPercentage() < 0.35]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Your health is less than [style.boldRed(35%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.verb(Send)] a wave of ice at [npc2.Name]. Consumes 200 arcane essences.
+        #IF(npc.getEssenceCount() < 200)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.verb(Send)] a wave of ice at [npc.namePos] enemy. Consumes 200 arcane essences.
+        #IF(npc.getEssenceCount() < 200)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		
+		<execute><execute><![CDATA[
+            #IF(npc.getEssenceCount() < 200)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			[npc.Name] [npc.verb(concentrate)] reaitsu in hyorinmaru, making glow with a pale light, before thrusting hyorinmaru foward, sending a wave of ice at [npc2.Name]!
+                [##npc.incrementEssenceCount(-200,false)]
+                #ENDIF
+            formattedHealthDamage
+]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 35% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

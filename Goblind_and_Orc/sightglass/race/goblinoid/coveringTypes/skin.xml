@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<coveringType>
+	<category>MAIN_SKIN</category>
+	<determiner><![CDATA[a layer of]]></determiner>
+	<name><![CDATA[skin]]></name>
+	<namePlural pluralByDefault="false"><![CDATA[skin]]></namePlural> 
+	<naturalCoveringModifiers>
+		<modifier>ROUGH</modifier>	
+	</naturalCoveringModifiers>
+	<extraCoveringModifiers/>
+	<naturalPatterns>
+		<pattern weighting="1">NONE</pattern>
+	</naturalPatterns>
+	<extraPatterns/>
+	<naturalColoursPrimary>
+		<colour>SKIN_GREEN</colour>
+		<colour>SKIN_GREEN_DARK</colour>
+	</naturalColoursPrimary> 
+	<extraColoursPrimary values="allSkinColours"/>
+	<naturalColoursSecondary values="allSkinColours"/>
+	<extraColoursSecondary values="allCoveringColours"/>
+</coveringType>

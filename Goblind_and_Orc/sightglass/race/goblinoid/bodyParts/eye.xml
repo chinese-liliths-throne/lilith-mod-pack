@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eye>
+	<race>sightglass_goblinoid</race>
+	<transformationName><![CDATA[goblin]]></transformationName>
+	<coveringType>sightglass_goblinoid_eye</coveringType>
+	<tags>NIGHT_VISION</tags>
+	<defaultPairCount>1</defaultPairCount>
+	<defaultIrisShape>ROUND</defaultIrisShape>
+	<defaultPupilShape>HORIZONTAL</defaultPupilShape>
+	<name><![CDATA[eye]]></name>
+	<namePlural><![CDATA[eyes]]></namePlural>
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	<transformationDescription><![CDATA[
+		By the time [npc.she] hesitantly [npc.verb(open)] them again, they've changed into goblin-like eyes, with large irises and round pupils.
+		<br/>[npc.Name] now [npc.has] [style.boldGreen(goblin-like eyes)] with [style.boldGenericTF([npc.irisShape])], [npc.irisFullDescription(true)] and [style.boldGenericTF([npc.pupilShape])], [npc.pupilFullDescription(true)].
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull] [npc.eyePairs] goblin-like eyes, the irises and pupils of which are as big as regular human's. They have [npc.irisShape], [npc.irisColour(true)] irises, [npc.pupilShape], [npc.pupilColour(true)] pupils, and [npc.scleraColour(true)] sclerae.
+	]]></bodyDescription>
+</eye>

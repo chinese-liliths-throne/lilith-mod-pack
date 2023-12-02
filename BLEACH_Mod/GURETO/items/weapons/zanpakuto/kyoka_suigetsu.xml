@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>1500000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[]]></determiner>
+        <name><![CDATA[Kyoka Suigetsu]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Kyoka Suigetsu]]></namePlural>
+        <description><![CDATA[A zanpakuto that has illusionary powers in its shikai form. The power of this blade is so great that its bankai has never been necessary and thus, never shown.]]></description>
+        <attackDescriptor>Slash</attackDescriptor>
+        <attackTooltipDescription>Slash [npc2.name] with Kyoka Suigetsu.</attackTooltipDescription>
+        <rarity>LEGENDARY</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of Kyoka Suigetsu.]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(let)] go of Kyoka Suigetsu.]]></unequipText>
+        <imageName>kyoka_suigetsu.svg</imageName>
+        <imageEquippedName/>
+        <damage>140</damage>
+        <arcaneCost>0</arcaneCost>
+        <damageVariance>LOW</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+        </availableDamageTypes>
+        <spells>
+            <spell>TELEPORT</spell>
+        </spells>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+        <primaryColours values="ALL"/>
+        <primaryColoursDye values="ALL"/>
+        <secondaryColours values="ALL"/>
+        <secondaryColoursDye values="ALL"/>
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[Thrusting Kyoka Suigetsu, [npc.name] [npc.verb(manage)] to jab [npc2.name] in the chest!]]></hitText>
+        <hitText><![CDATA[Slashing at [npc2.Name], [npc2.she] [npc.verb(take)] the hit.]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[Thrusting Kyoka Suigetsu, [npc.name] [npc.verb(attempt)] to jab [npc2.name] in the chest, but [npc.verb(end)] up missing [npc2.herHim]!]]></missText>
+        <missText><![CDATA[Slashing at [npc2.Name], [npc2.she] [npc.verb(manage)] to avoid the hit.]]></missText>
+    </missDescriptions>
+</weapon>

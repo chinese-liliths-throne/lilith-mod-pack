@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<torso>
+
+	<race>GURETO_dreadknight</race>
+	
+	<!-- The name that will be used when referring to transformations related to this type (such as when changing body parts in the self-TF menu). -->
+	<transformationName><![CDATA[dreadknight]]></transformationName>
+	
+	<coveringType>GURETO_dreadknight_scales</coveringType>
+	
+	<!-- The descriptors which should be drawn upon when describing a masculine character's torso of this type.
+	Can be left blank. -->
+	<descriptorsMasculine>
+		<descriptor><![CDATA[dreadknight]]></descriptor>
+	</descriptorsMasculine>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsMasculine>
+		<descriptor><![CDATA[dreadknight]]></descriptor>
+	</descriptorsMasculine>
+	<!-- Hyena torsos do not need any racial descriptors, but if you wanted to add some, use this format:
+	<descriptorsMasculine>
+		<descriptor><![CDATA[dreadknight]]></descriptor>
+	</descriptorsMasculine>
+	-->
+	
+	<!-- The description which is shown when a character transforms to obtain this torso type.
+	This description immediately follows a brief description of the torso type beginning to transform. -->
+	<transformationDescription><![CDATA[
+		After just a few moments, the transformation comes to an end, leaving [npc.her] with brown-ish skin.
+	]]></transformationDescription>
+	
+	<!-- How this torso is described in a character's description page. -->
+	<bodyDescription><![CDATA[
+		[npc.Her] torso has [npc.a_femininity(true)] appearance, and is [npc.materialCompositionDescriptor] [npc.skinFullDescription(true)].
+	]]></bodyDescription>
+	
+
+	<tags/>
+	
+</torso>

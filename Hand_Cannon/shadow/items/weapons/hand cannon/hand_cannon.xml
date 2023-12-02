@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+		
+		<authorTag><![CDATA[On the side of the barrel, there is a small inscription that reads "Unleashing devastation with every squeeze."]]></authorTag>
+		
+		<!-- How much this weapon is worth. -->
+		<value>50000</value> 
+		
+		<!-- Use "true" if this is a melee weapon, and "false" if it's ranged. (Without quotation marks.) -->
+		<melee>false</melee>
+		
+		<!-- Use "true" if this weapon is two-handed, and thus cannot be simultaneously wielded with an offhand weapon, and "false" if it's one-handed. (Without quotation marks.) -->
+		<twoHanded>true</twoHanded>
+		
+		<determiner><![CDATA[a]]></determiner>
+		
+		<!-- The name of this weapon. -->
+		<name appendDamageName="false"><![CDATA[Hand Cannon]]></name> <!-- You can leave out the 'appendDamageName' attribute, but if you never want this weapon to be described by its damage type, then set it as false. (i.e. If set to false, this dagger would always be called 'Demon's Dagger' instead of, for example, 'Forceful Demon's Dagger')-->
+		
+		<!-- The plural name of this weapon. If pluralByDefault's "false" is changed to "true", then the game will always the plural name when referring to this weapon. -->
+		<namePlural pluralByDefault="false"><![CDATA[Hand Cannons]]></namePlural> 
+		
+		<!-- The description/lore of this weapon. -->
+		<description><![CDATA[The Hand Cannon is double-action weapon that packs punch with its rubber bullets, its sleek design houses a high-caliber barrel capable of unleashing devastating rounds with pinpoint accuracy.]]></description> 
+		
+		<!-- How the weapon is used. This should be a single verb, and is used as the title of attacking actions in combat. -->
+		<attackDescriptor>shoot</attackDescriptor>
+		
+		<!-- The description that's displayed when hovering over the attack action in combat. Follow the same guidelines as equipText (a couple of entries further down this page).
+		As this tooltip is only ever seen from the player's perspective, you can always write in the first-person narrative. (Still use npc2 for the target, though.)-->
+		<attackTooltipDescription>Shoot [npc2.name] with your Hand Cannon.</attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<!-- What set this weapon is a part of. Values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/ClothingSet.java -->
+		<weaponSet/> 
+	
+		<equipText><![CDATA[[npc.Name] removes the sheath protecting the hand cannon and gets ready for combat.]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(holster)] [npc.her] hand cannon.]]></unequipText>
+		
+		<!-- The file name of this weapon's image when in the character's inventory. The only supported file type is .svg. I use the free program "Inkscape" to make .svg images for the game. -->
+		<imageName>Handcannon.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<!-- How much natural physical resistance this weapon provides when equipped. Should only really be above 0 for shields or other such protective weapons. -->
+		<physicalResistance>0</physicalResistance> 
+		
+		<!-- The base damage that this weapon deals. -->
+		<damage>100</damage>
+		<aoe chance="50">15</aoe>
+		
+		<!-- How many arcane essences are required, and drained, by firing this weapon. Ranged weapons should usually use the value 1, while melee weapons should usually be 0. -->
+		<arcaneCost>5</arcaneCost> 
+		
+		<!-- The variance in base damage when this weapon is actually used to attack. Values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/combat/DamageVariance.java -->
+		<damageVariance>LOW</damageVariance> 
+		
+		<!-- The available damage types that this weapon can spawn in with. Values can be found here (MISC should not be used): https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/combat/DamageType.java -->
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>ICE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<combatMoves/>
+		
+		<!-- How many effects this weapon can be enchanted with. Should usually be left at 5. -->
+		<enchantmentLimit>8</enchantmentLimit>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_CHANCE" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_CHANCE" timer="0"/>
+		</effects>
+		
+		<extraEffects>
+			<effect><![CDATA[[style.boldPhysical("Dazed")] on critical hit.]]></effect>
+		</extraEffects>
+		
+		<onHitEffect/>
+	
+		<onCriticalHitEffect><![CDATA[
+		#IF !npc2.hasStatusEffect(SE_DAZED)
+		#THEN [##npc2.addStatusEffect(SE_DAZED, 6)] [npc2.Name] [npc2.is] [style.boldPhysical(dazed)] from the impact!
+		#ENDIF
+		]]></onCriticalHitEffect>
+		
+		<primaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours> 
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		
+		<!-- Special item tags that apply to this weapon. Values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/ItemTag.java -->
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>WEAPON_FIREARM</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Aiming and firing [npc.her] hand cannon, [npc.name] [npc.verb(manage)] to hit [npc2.name] with a powerful rubber bullet!
+		]]></hitText>
+		<hitText><![CDATA[
+		Taking aim at [npc2.name] with [npc.her] hand cannon, [npc.name] [npc.verb(pull)] the trigger, unleashing a powerful blast that slams into [npc2.namePos] torso!
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name] [npc.verb(aim)] at [npc2.name] with [npc.her] hand cannon, and, pulling the trigger, [npc.she] [npc.verb(manage)] to hit [npc2.herHim] right in the chest!
+		]]></hitText>
+		<criticalHitText><![CDATA[
+		Thrusting out with [npc.her] hand cannon, [npc.name] manages to land a precise shot on [npc2.name]. The explosive impact dazes [npc2.her], leaving them momentarily disoriented amidst the chaos of battle.
+		]]></criticalHitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		Aiming and firing [npc.her] hand cannon, [npc.name] [npc.verb(miss)] [npc2.name]!
+		]]></missText>
+		<missText><![CDATA[
+		Taking aim at [npc2.name] with [npc.her] hand cannon, [npc.name] [npc.verb(pull)] the trigger, letting out a frustrated cry as [npc.she] [npc.verb(miss)] [npc.her] target!
+		]]></missText>
+		<missText><![CDATA[
+		[npc.Name] [npc.verb(aim)] at [npc2.name] with [npc.her] hand cannon and [npc.verb(pull)] the trigger, but [npc.she] [npc.verb(end)] up missing [npc.her] target!
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

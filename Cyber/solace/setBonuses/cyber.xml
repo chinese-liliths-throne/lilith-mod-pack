@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<setBonus>
+	<name><![CDATA[Cyber Lingerie]]></name>
+	
+	<statusEffect>solace_cyber_set</statusEffect>
+	
+	<numberRequiredForCompleteSet>3</numberRequiredForCompleteSet>
+	
+	<blockedSlotsCountingTowardsFullSet>
+		<slot>CHEST</slot>
+		<slot>GROIN</slot>
+		<slot>SOCK</slot>
+		<slot>HEAD</slot>
+	</blockedSlotsCountingTowardsFullSet>
+	
+</setBonus>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Extinction Attack]]></name>
+	
+	<description><![CDATA[ 
+		"How annoying." you think to yourself as you raise your hand to raze everything , dealing 400 poison damage, to all enemy present.
+	]]></description>
+	
+	<damageType><![CDATA[
+		POISON
+	]]></damageType>
+	
+	<baseDamage><![CDATA[		
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+	4
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>kamehameha.svg</imageName>
+	
+	<colourPrimary>BASE_PINK</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_majin]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to majin characters.
+	]]></availabilityDescription>
+	
+<weighting><![CDATA[
+            2
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(turn)] [npc.her] back to the enemy and [npc.verb(let)] a plethora of purple ray in every direction, dealing 400 fire damage, to all enemies.
+		#IF(npc.getHealthPercentage() < 0.5)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(turn)] [npc.her] back to the enemy and [npc.verb(let)] a plethora of purple ray in every direction, dealing 400 fire damage, to all enemies.
+		#IF(npc.getHealthPercentage() < 0.5)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><execute><![CDATA[
+		#IF(npc.getMana()>= 0)
+			[##npc.incrementMana(0)]
+			"How annoying." [npc.name] [npc.verb(say)] before raising [npc.namePos] hand and unleashing a shower of KI upon this world!<br>
+				[##var outputText = ""]
+				[##var attacker = npc]
+				[##function damageEnemy(target) {
+				if (outputText != "") {outputText = outputText + "<br>";}
+				if(!target.isPlayerKnowsName()) {outputText = outputText + "The ";}
+				if(npc.getHealthPercentage() < 0.25) {
+					outputText = outputText + target.getName() + " received [style.colorCrit(critical)] [style.colorPoison(" + DAMAGE_TYPE_POISON.damageTarget(attacker, target, Math.max(attacker.getAttributeValue(ATTRIBUTE_DAMAGE_POISON),1)*8+800).getVale() + " poison)] damage."; 
+				} else {
+					outputText = outputText + target.getName() + " received [style.colorPoison(" + DAMAGE_TYPE_POISON.damageTarget(attacker, target, attacker.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*4+400).getValue() + " poison)] damage.";
+				}}]
+				[##combat.getEnemies(npc).forEach(damageEnemy)]
+				[#outputText]
+		#ELSE		
+			[style.colorBad(what did you do? this shouldn't even be possible.)] 
+			<br>"How annoying." [npc.name] [npc.verb(say)] before raising [npc.namePos] hand and unleashing a shower of KI upon this world!
+		#ENDIF
+		]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

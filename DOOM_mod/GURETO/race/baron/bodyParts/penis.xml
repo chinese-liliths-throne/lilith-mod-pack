@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<penis>
+
+	<race>GURETO_baron</race>
+	
+	<!-- The name that will be used when referring to transformations related to this type (such as when changing body parts in the self-TF menu). -->
+	<transformationName><![CDATA[baron]]></transformationName>
+	
+	<coveringType>GURETO_baron_penis</coveringType>
+	
+	<!-- The id of the testicle that's associated with this penis type. -->
+	<testicleType>GURETO_baron_testicle</testicleType>
+	
+	<additionalTransformationEffect/>
+
+	<namesMasculine>
+		<name><![CDATA[baron-]]></name>
+	</namesMasculine>
+	<namesPluralMasculine>
+		<name><![CDATA[baron-]]></name>
+	</namesPluralMasculine>
+	
+	<!-- Same as above, but for when this penis is on a feminine character. -->
+	<namesFeminine>
+		<name><![CDATA[baron-]]></name>
+	</namesFeminine>
+	<namesPluralFeminine>
+		<name><![CDATA[baron-]]></name>
+	</namesPluralFeminine>
+	
+	<descriptors/>
+
+	<defaultPenetrationModifiers>
+		<modifier>VEINY</modifier>
+	</defaultPenetrationModifiers>
+	
+	<!-- The description which is shown when a character transforms to obtain this penis type.
+	This description immediately follows a brief description of the penis type beginning to transform. -->
+	<transformationDescription><![CDATA[
+		Letting out an involuntary moan, [npc.name] [npc.verb(feel)] [npc.her] penis shifting into a new form, and [npc.sheIs] hit by a wave of overwhelming arousal.
+		<br/>[npc.She] now [npc.has] a [style.boldRed(baron-like dick)], [npc.materialDescriptor] [npc.penisFullDescription(true)].
+		<br/>[npc.She] [npc.has] [style.boldRed([npc.ballsCount]#IF(npc.isInternalTesticles()) internal#ENDIF balls)], [npc.materialDescriptor] [npc.ballsFullDescription(true)], which produce [npc.cumColour(true)] [style.boldCum(baron cum)].
+	]]></transformationDescription>
+	
+	<!-- How this penis is described in a character's description page. -->
+	<bodyDescription><![CDATA[
+		[npc.She] [npc.has] [npc.a_cockGirth], [npc.cockLengthValue] baron cock, which is [npc.materialCompositionDescriptor] [npc.cockFullDescription(true)].
+	]]></bodyDescription>
+	
+</penis>

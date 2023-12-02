@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[The fine print reads 'S.G.C. Provisions']]></authorTag>
+=
+		<value>250</value> 
+		<determiner><![CDATA[a bowl of]]></determiner>
+		<name><![CDATA[Black Stew]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Black Stew]]></namePlural>
+		<description><![CDATA[A bowl of peculiar stew. It has a bitter, acrid smell and weird chunks floating in it. Definitely an aquired taste.]]></description> 
+		<useDescriptor>eat</useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		<rarity>RARE</rarity> 
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="80" target1='path="#0000"' replacement1='stroke="#ff5555"' target2='#ff8080' replacement2='#ff5555'>goblinicon_noline.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="80">goblin_black_stew.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		<colourPrimary>BASE_GREEN_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		<potionDescriptor><![CDATA[goblinoid]]></potionDescriptor>
+		<associatedRace>sightglass_goblinoid</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_POISON.getFormattedValue(3)] to 'potion effects']]></line>
+		</effectTooltipLines>
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/10)]
+			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_POISON, 3)]
+		]]></applyEffects>
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>FOOD</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(remove)] the lid from the bowl of... stuff, and [npc.verb(start)] eating the stuff contained within. The acrid, bitter taste, instantly fills [npc.her] mouth, but [npc.she] [npc.verb(choke)] down the stew anyways.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(remove)] the lid from the bowl of.... stuff, and [npc.verb(offer)] the stuff contained within to [npc2.name]. Tucking in, the acrid, bitter, meaty taste instantly fills [npc2.namePos] mouth, so [npc2.she] [npc2.verb(choke)] down the mouthful and [npc2.verb(toss)] the rest of the bowl away.
+		]]></otherUse>
+	</useDescriptions>
+</item>

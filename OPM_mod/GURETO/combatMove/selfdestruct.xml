@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Self-destruction]]></name>
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(charge)] up energy into [npc.namePos] core and [npc.verb(detonate)] it, dealing formattedDamageInflicted damage. Consumes 0 arcane essence, but sets health to 1.
+	]]></description>
+	
+	<damageType><![CDATA[
+		FIRE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+			[#npc.getUnarmedDamage() * 24]
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		10
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>ATTACK.svg</imageName>
+	
+
+	<colourPrimary>BASE_RED_DARK</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_cyborg]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to cyborgs.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getHealth() <= 80)
+            40
+        #ELSE
+            0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] up energy into [npc.namePos] core and [npc.verb(detonate)] it, dealing formattedDamageInflicted damage. Consumes 0 arcane essence, but sets health to 1.
+        #IF(npc.getEssenceCount() < 0)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] up energy into [npc.namePos] core and [npc.verb(detonate)] it, dealing formattedDamageInflicted damage. Consumes 0 arcane essence, but sets health to 1.
+        #IF(npc.getEssenceCount() < 0)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 0)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			[npc.name] [npc.verb(over-charge)] [npc.namePos] core and let it detonate in a spectacular explosion!
+				[##npc.setHealth(1)]
+                #ENDIF
+            formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

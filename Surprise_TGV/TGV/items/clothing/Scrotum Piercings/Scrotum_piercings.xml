@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[The tag you got with the package reads 'From TGV, with love <3']]></clothingAuthorTag>
+		<value>120</value>
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[scrotum ring piercings]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[scrotum ring piercings]]></namePlural>
+		<description><![CDATA[A pack of ring piercings, each with an unscrewable sphere on them that can be slid into place through multiple scrotum piercings.]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_PENIS</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>piercing_ring.svg</imageName>
+		<imageEquippedName>piercing_penis_equipped.svg</imageEquippedName>
+		<enchantmentLimit/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(slide)] the set of bar piercings into [npc.her] pierced [npc.cock].]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(slide)] the set of bar piercings into [npc2.namePos] [npc2.cock].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] [npc.verb(slide)] the set of bar piercings into [npc2.namePos] [npc2.cock], giving them a rough tug.]]>
+    </otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(slide)] the set of bar piercings out of [npc.her] [npc.cock].]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(slide)] the set of bar piercings out of [npc2.namePos] [npc2.cock].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] [npc.verb(tug)] [npc2.NamePos] bar piercings before sliding them out.]]>
+    </otherRough>
+  </displacementText>
+	
+</clothing>

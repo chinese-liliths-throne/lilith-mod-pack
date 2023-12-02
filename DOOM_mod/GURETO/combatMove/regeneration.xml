@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+
+	<name><![CDATA[Regeneration]]></name>
+	
+
+	<description><![CDATA[
+		Using [npc.namePos] demonic energy, [npc.Name] heal minor damage.
+	]]></description>
+	
+
+	<damageType><![CDATA[PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		1
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		0
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>regeneration.svg</imageName>
+	
+	<colourPrimary>BASE_RED</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">ARCANE_WEAKNESS</effect>
+	</statusEffects>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_titan || npc.getRace()==RACE_GURETO_cyberdemon]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to extremely powerful demons characters.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+		9999
+	]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+	Cannot crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(regenerate)] thanks to [npc.namePos] demonic energy.
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(regenerate)] thanks to [npc.namePos] demonic energy.
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+
+		<execute><execute><![CDATA[
+			[npc.Name] [npc.verb(heal)] up minor injuries!
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+]]></execute></execute>
+		<critDescription><![CDATA[
+			.
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			.
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

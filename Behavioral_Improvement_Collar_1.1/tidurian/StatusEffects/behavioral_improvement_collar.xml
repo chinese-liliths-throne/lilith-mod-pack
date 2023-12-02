@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<statusEffect>
+	<renderingPriority>70</renderingPriority>
+	<renderInEffectsPanel>true</renderInEffectsPanel>
+	<beneficial>NEUTRAL</beneficial>
+	<combatEffect>false</combatEffect>
+	<sexEffect>false</sexEffect>
+	<name><![CDATA[Behavioral Improvement Collar]]></name>
+	<description><![CDATA[Behavioral Improvement Collar]]></description>
+	<imageName zLayer="0" imageRotation="0" imageSize="80">behavioral_improvement_collar.svg</imageName>
+	<colourPrimary>BASE_BLACK</colourPrimary>
+	<colourSecondary>CLOTHING_STEEL</colourSecondary>
+	<colourTertiary/>
+	<attributeModifiers/>
+	<combatMoves/>
+	<spells/>
+	<extraEffects/>
+	<applicationCondition shortConditionalCheck="true"><![CDATA[(!npc.isPlayer()) && (npc.getInventory().hasEquippedClothingType(CT_tidurian_behavioral_improvement_collar))]]></applicationCondition>
+	<applyEffect interval="0"><![CDATA[
+		[##var stickerObedience]
+		[##var stickerAffection]
+		
+		[##function getStickerModes(x, y)
+		{
+			if(x == "obedience"){
+				if(y == "obediencemax"){stickerObedience = 100;}
+				if(y == "obedienceneutral"){stickerObedience = 0;}
+				if(y == "obediencemin"){stickerObedience = -100;}
+				if(y == "obedienceoff"){stickerObedience = -200;}
+			}
+			if(x == "affection"){
+				if(y == "affectionmax"){stickerAffection = 100;}
+				if(y == "affectionneutral"){stickerAffection = 0;}
+				if(y == "affectionmin"){stickerAffection = -100;}
+				if(y == "affectionoff"){stickerAffection = -200;}
+			}
+		}]
+		[##function ChangeMind()
+		{
+			npc.getClothingInSlot(IS_NECK).getStickers().forEach(getStickerModes);
+			if(stickerObedience > -200)
+			{
+				npc.setObedience(stickerObedience);
+			}
+			if(stickerAffection > -200)
+			{
+				npc.setAffection(pc, stickerAffection);
+			}
+		}]
+		#IF(SECONDS_PASSED > 0)
+			[#ChangeMind();]
+		#ENDIF
+	]]></applyEffect>
+	
+	<applyEffect/>
+	<applyRemovalEffect/>
+	<applyPostRemovalEffect/>
+	
+</statusEffect>

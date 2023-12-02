@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>3400000</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[a]]></determiner>
+		
+		<name><![CDATA[Plasma cannon]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[Plasma cannons]]></namePlural> 
+		
+		<description><![CDATA[A plasma cannon that shoots super-heated gas, the heavier variant of the plasma gun. Deals more damage than its smaller version.]]></description> 
+		
+		<attackDescriptor>Open fire</attackDescriptor>
+		
+		<attackTooltipDescription>Shoot at [npc2.name] with your plasma cannon.</attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the plasma cannon. For the Emperor!]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the plasma cannon.]]></unequipText>
+		
+		<imageName>plasmacannon.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<physicalResistance>0</physicalResistance>
+		
+		<damage>205</damage> 
+		
+		<arcaneCost>8</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>ICE</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>100</enchantmentLimit>
+		
+		<effects/>
+		
+		<primaryColours values="JUST_GUNMETAL"/>
+		<primaryColoursDye values="ALL_WITH_METAL"/>
+		<secondaryColours values="ALL_WITH_METAL"/> 
+		<secondaryColoursDye values="ALL_WITH_METAL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] a sphere of plasma at [npc2.name]. [npc2.name] was engulfed in a blue fiery explosion.
+		]]></hitText>
+		<hitText><![CDATA[
+		Opening fire, [npc2.name] [npc.verb(watch)] as the plasma shot grows nearer in a matter of instants! And soon, all [npc.she] [npc.verb(see)] is death.
+		]]></hitText>
+		<hitText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the plasma shot collides with [npc2.name]!
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] a sphere of plasma at [npc2.name]. [npc2.name] dodged the sphere of death.
+		]]></missText>
+		<missText><![CDATA[
+		Opening fire, [npc2.name] [npc.verb(watch)] as the plasma shot grows nearer in a matter of instants! And soon, all [npc.she] [npc.verb(see)] is... nothing. [npc.name] missed.
+		]]></missText>
+		<missText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the plasma shot collides with [npc2.name]! Or so [npc.name] thought, but the plasma shot missed its target.
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

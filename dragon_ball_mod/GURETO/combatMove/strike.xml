@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Afterimage Strike]]></name>
+	<description><![CDATA[
+		Use [npc.her] KI and [npc.her] speed to faint a punch for the enemy to counter only to receive the real hit afterward, taking the enemy by complete surprise , dealing formattedDamageInflicted damage. Requires free arm movements.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+	150
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		3
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>strike.svg</imageName>
+	
+
+	<colourPrimary>BASE_RED_LIGHT</colourPrimary>
+	<colourSecondary>BASE_RED_LIGHT</colourSecondary> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_fist)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_fist)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the ability to manipulate KI.
+	]]></availabilityDescription>
+	
+
+	<weighting><![CDATA[
+		#IF(npc.isArmMovementHindered())
+			0
+		#ELSE
+			1.0
+		#ENDIF
+	]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc2.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE) > npc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)*0.99]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Target's physique is more than the attacker's physique. When power isn't enough to defeat your opponents, use your head.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Use [npc.her] strategy to deliver a powerful blow to [npc2.name], dealing formattedDamageInflicted damage.
+		#IF(npc.isArmMovementHindered())
+			 [style.italicsTerrible(Damage is reduced to 0 as [npc.her] arms are restricted!)]
+		#ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Use [npc.her] strategy to deliver a powerful blow to [npc.her] target, dealing formattedDamageInflicted damage.
+		#IF(npc.isArmMovementHindered())
+			 [style.italicsTerrible(Damage is reduced to 0 as [npc.her] arms are restricted!)]
+		#ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+			#IF(npc.isArmMovementHindered())
+				As [npc.her] arms are restricted, [npc.name] [npc.verb(fail)] to hit [npc2.name], and [npc.verb(end)] up doing no damage at all...
+			#ELSE
+				[npc.Name] [npc.verb(lunge)] at [npc2.name] with [npc.her] fist and [npc.verb(faint)] the atttack. [npc2.Name] is surprised and is struck for real right after, leaving [npc2.namePos] aura in terrible shape!
+			#ENDIF
+			formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc.NamePos] strike was extremely effective!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.Name] [npc2.has] been crippled by the attack!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

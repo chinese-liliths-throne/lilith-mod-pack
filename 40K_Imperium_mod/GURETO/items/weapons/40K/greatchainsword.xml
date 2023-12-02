@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>14000000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[a]]></determiner>
+        <name><![CDATA[Storm's Teeth]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Storm's Teeths]]></namePlural>
+        <description><![CDATA[A chainsword of ancient times. Its power is greater than any other chainswords.]]></description>
+        <attackDescriptor>Slash</attackDescriptor>
+        <attackTooltipDescription>Slash at [npc2.name] with your Storm's Teeth.</attackTooltipDescription>
+        <rarity>LEGENDARY</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the Storm's Teeth, the Emperor's will. For the Emperor!]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the Storm's Teeth.]]></unequipText>
+        <imageName>greatchainsword.svg</imageName>
+        <imageEquippedName/>
+        <damage>400</damage>
+		<physicalResistance>150</physicalResistance>
+        <arcaneCost>0</arcaneCost>
+        <damageVariance>MEDIUM</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+            <damageType>POISON</damageType>
+            <damageType>ICE</damageType>
+            <damageType>FIRE</damageType>
+        </availableDamageTypes>
+        <spells/>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+		<primaryColours values="ALL_WITH_METALS"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="ALL_WITH_METALS"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the teeth pierce [npc2.herHim] with righteous wrath.
+		]]></hitText>
+        <hitText><![CDATA[
+		Gripping the sword tightly, [npc.name] [npc.verb(slice)] [npc2.name] with rage and purpose.
+		]]></hitText>
+        <hitText><![CDATA[
+		Looking at [npc2.name], [npc.name] [npc.verb(take)] the Storm's Teeth one hand thightly and [npc.verb(strike)] down [npc2.name]!
+		]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the teeth pierce [npc2.herHim] with righteous wrath. [npc2.Name] [npc.verb(dodge)] the blade but barely.
+		]]></missText>
+        <missText><![CDATA[
+		Gripping the sword tightly, [npc.name] [npc.verb(slice)] [npc2.name] with fierce speed. Giving [npc2.herHim] a chance to avoid the menacing Storm's Teeth.
+		]]></missText>
+        <missText><![CDATA[
+		Gazing upon [npc2.name], [npc.name] [npc.verb(take)] the sword with one hand and [npc.verb(strike)] down [npc2.name]! This pride however, was enough to give [npc2.Name] a chance to escape death.
+		]]></missText>
+    </missDescriptions>
+</weapon>

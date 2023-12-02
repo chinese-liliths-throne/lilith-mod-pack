@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[A residue of darkness.]]></authorTag>
+		
+		<value>7500</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[heartless emblem]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[heartless emblem]]></namePlural>
+		<description><![CDATA[An emblem representing the heartless.]]></description> 
+		
+		<useDescriptor>use</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>EPIC</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="85">heartlesssymbol.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>BASE_BLACK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[heartless]]></potionDescriptor>
+		<associatedRace>GURETO_heartless</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+		</effectTooltipLines>
+
+		<applyEffects><![CDATA[
+		[##game.getCharacterUtils().reassignBody(npc, npc.getBody(), npc.getGender(), SUBSPECIES_GURETO_heartless_subspecies_heartless, RACE_STAGE_GREATER, true)]
+		]]></applyEffects>
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.name] [npc.verb(press)] the emblem and suddenly you feel yourself becoming lighter... almost too light...
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.name] [npc.verb(press)] the emblem against [npc2.namePos] hands and suddenly [npc2.she] [npc.verb(feel)] [npc2.herHim]self becoming lighter... almost too light...
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

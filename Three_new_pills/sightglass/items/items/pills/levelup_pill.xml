@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>20</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[level-up pill]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[level-up pills]]></namePlural>
+		<description><![CDATA[A small, bluish-green pill, individually packaged in a foil and plastic wrapper. While most of the text printed on the foil has been scratched out, the remainder labels this as a "incremental rapid imprinting", whatever that means.]]></description> 
+		<useDescriptor>swallow</useDescriptor>
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		<rarity>EPIC</rarity> 
+		<imageName>pill.svg</imageName> 
+		<colourPrimary>BASE_AQUA</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		<associatedRace/>
+		<enchantmentItemTypeId/>
+		<enchantmentEffectId/>
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Grants enough experience to level up!)]]]></line>
+		</effectTooltipLines>
+		<applyEffects><![CDATA[
+			<p style='text-align:center'>
+				[##npc.incrementExperience(npc.getExperienceNeededForNextLevel(), false)]
+				[npc.Name] [npc.is] filled with a sudden burst of insight, and with it, a newfound confidence and strength of will. [npc.Name] [style.boldGood([npc.verb(gain)] a level!)]
+			</p>
+		]]></applyEffects>
+		<itemTags>
+			<tag>BAT_CAVERNS_SPAWN</tag>
+			<tag>NOT_FOR_SALE</tag>
+		</itemTags>
+	</coreAttributes>
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(pop)] a level-up pill out of its little foil wrapper, before quickly placing it in [npc.her] mouth and swallowing it down.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(pop)] a mutagen pill out of its little foil wrapper, before bringing it up to [npc2.namePos] [npc2.lips], forcing it into [npc2.her] mouth, and making sure that [npc2.she] [npc2.verb(swallow)] it down.
+		]]></otherUse>
+	</useDescriptions>
+</item>

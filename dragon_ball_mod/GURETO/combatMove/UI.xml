@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK_DEFEND</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Ultra Instinct]]></name>
+	<description><![CDATA[
+		With training and empty mind, one can achieve a form to rival Angels and Gods Of Destruction themselves, granting [style.boldRed(untouchable speed and power to defeat Gods and Angels)].
+	]]></description>
+	
+	<damageType><![CDATA[
+		HEALTH
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		250
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		16
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>SSJ.svg</imageName>
+	
+
+	<colourPrimary>BASE_GREY_LIGHT</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_uifist)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_uifist)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the KI manipulation. Requires to be at least level 50.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getLevel() < 50)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Emptying the mind, the user achieve a legendary form even amongst the Gods and Angels, granting [style.boldRed(untouchable speed and power to defeat Gods and Angels)].
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Emptying the mind, the user achieve a legendary form even amongst the Gods and Angels, granting [style.boldRed(untouchable speed and power to defeat Gods and Angels)].
+	]]></movePredictionDescriptionNoTarget>
+	
+	<!-- The code that's executed when this move is performed.
+	The parsing target of 'npc' corresponds to the character who is using the move.
+	The parsing target of 'npc2' corresponds to the character who is being targeted by this move.
+	Special parsing arguments which can be used here are as follows:
+	'damageInflicted' will parse to the attacker's projected damage of this attack (using the defined 'baseDamage' field defined above). If isCritical is true, the damageInflicted value will represent this (via increased damage).
+	'formattedDamageInflicted' will parse to the same damage as the command above, but will be formatted nicely.(Attribute.ENERGY_SHIELDING, 100)
+	'formattedHealthDamage' will parse to a brief, formatted description of how much damage the target took. -->
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getLevel() < 50)
+                Your transformation fails due to your lack of training and mastery. Must be level 50.
+            #ELSE
+			[npc.Name] [npc.verb(empty)] [npc.namePos] mind and [npc.verb(let)] [npc.namePos] instincts do the job, activating the Ultra Instinct!
+				[##npc.addStatusEffect(SE_GURETO_UI, 4)]
+			#ENDIF
+		]]></execute>
+		<critDescription/>
+		<critEffectDescription/>
+	</performMove>
+	
+</combatMove>

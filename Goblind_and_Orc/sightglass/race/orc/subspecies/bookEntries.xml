@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	<htmlContent tag="ORC_BASIC"><![CDATA[
+	<p>
+		Orcs often have large builds, and stand taller than many other species. Most are easily distiguishable for their green or dark-green skin and pointed ears.
+	</p>
+	]]>
+	</htmlContent>
+	<htmlContent tag="ORC_ADVANCED"><![CDATA[
+	<p>
+		Appearing to be closely related to goblinoids, and very distantly related to elves, orcs are one of the near-human species that are nevertheless treated very differently from pure humans. They have a reputation for being boastful, bawdly, aggressive and lustful, but not particularly malicious or sadistic. To many, a good competition or fight is just another way to make friends, or just another form of foreplay. Even in the present, large groups of orcs will congregate in massive brawls, usually ending in an orgy for all involved (and many bystanders pulled in with them).
+	</p>
+	<p>
+		Unlike humans, orcs are heavily affected by arcane storms. Orcs enter a potent rut or heat, and feel a strong urge to breed with complete strangers. With their great strength and fertility, orc populations tend to experience sporadic booms after storms.
+	</p>
+	]]>
+	</htmlContent>
+</bookText>

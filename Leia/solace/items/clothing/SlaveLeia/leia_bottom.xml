@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<clothing>
+	
+	
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[Printed on the inside, a small tag reads 'Made by solace'.]]></clothingAuthorTag>
+		<value>250</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[slave skirt]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[slave skirts]]></namePlural> 
+		<description><![CDATA[A metal skirt with a long, heavy loincloth which covers very little of the wearer. These are typically worn only by slaves.]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>LEG</slot> 
+		<rarity>EPIC</rarity> 
+		<clothingSet>BDSM</clothingSet>
+		<imageName>leia_bottom.svg</imageName> 
+		<imageEquippedName/> 
+		
+		<effects/>
+		
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/> 
+				<clothingAccessBlocked/> <concealedSlots/> 
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>SHIFTS_ASIDE</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots>
+					<slot>VAGINA</slot>
+					<slot>ANUS</slot>
+					<slot>PENIS</slot>
+					<slot>PIERCING_PENIS</slot>
+					<slot>PIERCING_VAGINA</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="ALL_METAL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		 <itemTags> 
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>FITS_NON_BIPED_BODY_HUMANOID</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(pull)] the skirt up to [npc.her] hips and [npc.verb(tie)] it up on either side of [npc.her] waist.]]>
+    </self>
+    <other>
+	  <![CDATA[[npc.Name] [npc.verb(pull)] the skirt up to [npc2.namePos] hips and [npc.verb(tie)] it up on either side of [npc2.her] waist.]]>
+    </other>
+    <otherRough>
+	  <![CDATA[[npc.Name] [npc.verb(pull)] the skirt up to [npc2.namePos] hips and [npc.verb(tie)] it up on either side of [npc2.namePos] waist as tightly as possible.]]>
+    </otherRough>
+  </replacementText>
+  
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(untie)] [npc.her] skirt and [npc.verb(let)] it fall from [npc.her] hips.]]>
+    </self>
+    <other>
+	  <![CDATA[[npc.Name] [npc.verb(untie)] [npc2.namePos] skirt and [npc.verb(let)] it fall from [npc2.her] hips.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] [npc.verb(rip)] off [npc2.namePos] skirt.]]>
+    </otherRough>
+  </displacementText>
+	
+  <replacementText type="SHIFTS_ASIDE">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(shift)] [npc.her] skirt back into place, covering [npc.her] groin.]]>
+    </self>
+    <other>
+	  <![CDATA[[npc.Name] [npc.verb(shift)] [npc2.namePos] skirt back into place, covering [npc2.her] groin.]]>
+    </other>
+    <otherRough>
+	  <![CDATA[[npc.Name] [npc.verb(snap)] [npc2.namePos] skirt back into place, covering [npc2.her] groin.]]>
+    </otherRough>
+  </replacementText>
+
+  <displacementText type="SHIFTS_ASIDE">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(shift)] [npc.her] skirt aside, exposing [npc.her] groin.]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(shift)] [npc2.namePos] skirt aside, exposing [npc2.her] groin.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] [npc.verb(yank)] [npc2.namePos] skirt aside, exposing [npc2.her] groin.]]>
+    </otherRough>
+  </displacementText>
+	
+</clothing>

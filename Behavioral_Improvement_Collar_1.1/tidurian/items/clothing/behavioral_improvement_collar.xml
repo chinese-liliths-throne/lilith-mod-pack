@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAtributes>
+		<clothingAuthorTag><![CDATA[Engraved in the collar is the dual logos of ks industries and Phobos labs with a little Scribble "enhanced by Tidurian"]]></clothingAuthorTag>
+		<value>4000</value> 
+		<determiner><![CDATA[an]]></determiner>
+		<name><![CDATA[behavioral improvement collar]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[behavioral improvement collar]]></namePlural> 
+		<description><![CDATA[This Nifty Collar will affect the wearers mind. the selected Stickers (using a dye kit) will affect how obedient they are and how much they hate or love the owner.</br> currently its engraved with the words:</br>]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>NECK</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet/>
+		<imageName>behavioral_improvement_collar.svg</imageName>
+		<imageEquippedName/>
+		<enchantmentLimit/>
+		<stickers>
+			<!-- Upper Text -->
+			<category id="top_txt" priority="1">
+				<categoryName><![CDATA[Top Tag Text]]></categoryName>
+				<sticker id="bound" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Bound]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>Bound </i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/top_bound.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="good" priority="2" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Good]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>Good </i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/top_good.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="bad" priority="3" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Bad]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>Bad </i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/top_bad.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="obedient" priority="4" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Obedient]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>Obedient </i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/top_obedient.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="broken" priority="5" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Broken]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>Broken </i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/top_broken.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="worthless" priority="6" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Worthless]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>Worthless </i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/top_worthless.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="cheap" priority="7" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Cheap]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>Cheap </i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/top_cheap.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="dumb" priority="8" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Dumb]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>Dumb </i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/top_dumb.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+			<!-- Lower Text -->
+			<category id="btm_txt" priority="2">
+				<categoryName><![CDATA[Bottom Tag Text]]></categoryName>
+				<sticker id="bitch" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Bitch]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Bitch</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_bitch.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="dog" priority="2" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Dog]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Dog</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_dog.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="pet" priority="3" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Pet]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Pet</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_pet.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="slut" priority="4" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Slut]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Slut</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_slut.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="stud" priority="5" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Stud]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Stud</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_stud.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="cunt" priority="6" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Cunt]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Cunt</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_cunt.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="whore" priority="7" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Whore]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Whore</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_whore.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="toy" priority="8" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Toy]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Toy</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_toy.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="horsie" priority="9" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Horsie]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="2"><![CDATA[<i>Horsie</i>]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">behavioral_improvement_collar_stickers/bottom_horsie.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+			<!-- Obedience -->
+			<category id="Obedience" priority="3">
+				<categoryName><![CDATA[Obedience Setting]]></categoryName>
+				<sticker id="ObedienceMax" priority="1" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Maximum]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="3"><![CDATA[</br>the backside has the engraving:</br> <i>Obedient: 100,</i>]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText><![CDATA[Sets Obedience to 100]]></availabilityText>
+				</sticker>
+				<sticker id="ObedienceNeutral" priority="2" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Neutral]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="3"><![CDATA[</br>the backside has the engraving:</br> <i>Obedient: 0,</i>]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText><![CDATA[Sets Obedience to 0]]></availabilityText>
+				</sticker>
+				<sticker id="ObedienceMin" priority="3" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Minimal]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="3"><![CDATA[</br>the backside has the engraving:</br> <i>Obedient: -100,</i>]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText><![CDATA[Sets Obedience to -100]]></availabilityText>
+				</sticker>
+				<sticker id="ObedienceOff" priority="4" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Off]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="3"><![CDATA[</br>the backside has the engraving:</br> <i>Obedient: ~,</i>]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText><![CDATA[Wont Affect Obedience]]></availabilityText>
+				</sticker>
+			</category>
+			<!-- Affection -->
+			<category id="Affection" priority="4">
+				<categoryName><![CDATA[Affection Setting]]></categoryName>
+				<sticker id="AffectionMax" priority="1" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Maximum]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="4"><![CDATA[<i> Affection: 100</i>]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText><![CDATA[Sets Affection to 100]]></availabilityText>
+				</sticker>
+				<sticker id="AffectionNeutral" priority="2" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Neutral]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="4"><![CDATA[<i> Affection: 0</i>]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText><![CDATA[Sets Affection to 0]]></availabilityText>
+				</sticker>
+				<sticker id="AffectionMin" priority="3" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Minimal]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="4"><![CDATA[<i> Affection: -100</i>]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText><![CDATA[Sets Affection to -100]]></availabilityText>
+				</sticker>
+				<sticker id="AffectionOff" priority="4" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[Off]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="4"><![CDATA[<i> Affection: ~</i>]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText><![CDATA[Wont Affect Affection]]></availabilityText>
+				</sticker>
+			</category>
+		</stickers>
+		<effects> 
+			<effect limit="0" mod1="CLOTHING_SPECIAL" mod2="CLOTHING_ENSLAVEMENT" potency="MINOR_BOOST" timer="1725" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_SPECIAL" mod2="CLOTHING_SEALING" potency="MINOR_BOOST" timer="1021398" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_SPECIAL" mod2="CLOTHING_SERVITUDE" potency="MINOR_BOOST" timer="1021398" type="CLOTHING"/>
+		</effects> 
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/>
+		<primaryColours values="JUST_BLACK"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<itemTags> 
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>PROVIDES_KEY</tag>
+		</itemTags>
+	</coreAtributes>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<playerSelf><![CDATA[
+			You take off your behavioral improvement collar.
+		]]></playerSelf>
+		<playerNPC><![CDATA[
+			You pull off [npc.name]'s behavioral improvement collar.
+		]]></playerNPC>
+		<playerNPCRough><![CDATA[
+			You pull off [npc.name]'s behavioral improvement collar.
+		]]></playerNPCRough>
+		<NPCSelf><![CDATA[
+			[npc.Name] takes [npc.her] behavioral improvement collar off.
+		]]></NPCSelf>
+		<NPCPlayer><![CDATA[
+			[npc.Name] pulls your behavioral improvement collar off.
+		]]></NPCPlayer>
+		<NPCPlayerRough><![CDATA[
+			[npc.Name] pulls your behavioral improvement collar off.
+		]]></NPCPlayerRough>
+		<NPCOtherNPC><![CDATA[
+			[npc1.Name] pulls [npc2.name]'s behavioral improvement collar off.
+		]]></NPCOtherNPC>
+		<NPCOtherNPCRough><![CDATA[
+			[npc1.Name] pulls [npc2.name]'s behavioral improvement collar off.
+		]]></NPCOtherNPCRough>
+	</displacementText>
+	<replacementText type="REMOVE_OR_EQUIP">
+		<playerSelf><![CDATA[
+			You clasp the behavioral improvement collar around your neck.
+		]]></playerSelf>
+		<playerNPC><![CDATA[
+			You clasp the behavioral improvement collar around [npc.name]'s neck.
+		]]></playerNPC>
+		<playerNPCRough><![CDATA[
+			You clasp the behavioral improvement collar around [npc.name]'s neck.
+		]]></playerNPCRough>
+		<NPCSelf><![CDATA[
+			[npc.Name] clasps the behavioral improvement collar around [npc.her] neck.
+		]]></NPCSelf>
+		<NPCPlayer><![CDATA[
+			[npc.Name] clasps the behavioral improvement collar around your neck.
+		]]></NPCPlayer>
+		<NPCPlayerRough><![CDATA[
+			[npc.Name] clasps the behavioral improvement collar around your neck.
+		]]></NPCPlayerRough>
+		<NPCOtherNPC><![CDATA[
+			[npc1.Name] clasps the behavioral improvement collar around [npc2.Name]'s neck.
+		]]></NPCOtherNPC>
+		<NPCOtherNPCRough><![CDATA[
+			[npc1.Name] clasps the behavioral improvement collar around [npc2.Name]'s neck.
+		]]></NPCOtherNPCRough>
+	</replacementText>
+</clothing>

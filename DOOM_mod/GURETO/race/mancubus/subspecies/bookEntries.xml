@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="mancubus_BASIC"><![CDATA[
+	<p>
+		A massive creature from hell.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="mancubus_ADVANCED"><![CDATA[
+	<p>
+		Mancubus are huge humanoid creatures that have modified cannons for arms. They can dish out a massive amount of damage with said cannons.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

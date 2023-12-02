@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<subspecies>
+	<race>sightglass_goblinoid</race>
+	<colour>BASE_BROWN_DARK</colour>
+	<secondaryColour/>
+	<tertiaryColour/>
+	<mainSubspecies>false</mainSubspecies>
+	<baseSlaveValue>10000</baseSlaveValue>
+	<attributeItemId>sightglass_race_goblin_gulp</attributeItemId>
+	<transformativeItemId>sightglass_race_goblin_nuts</transformativeItemId>
+	<subspeciesOverridePriority>0</subspeciesOverridePriority>
+	<shortStature>false</shortStature>
+	<bipedalSubspecies>true</bipedalSubspecies>
+	<aquatic>false</aquatic>
+	<applySubspeciesChanges><![CDATA[
+		#IF(targetedBody.getFaceType()!=FACE_TYPE_sightglass_goblinoid_face_bugbear)
+			[#targetedBody.setFaceType(null,FACE_TYPE_sightglass_goblinoid_face_bugbear)]
+		#ENDIF
+		#IF(targetedBody.getTorsoType()!=TORSO_TYPE_sightglass_goblinoid_torso_bugbear)
+			[#targetedBody.setTorsoType(null,TORSO_TYPE_sightglass_goblinoid_torso_bugbear)]
+		#ENDIF
+		#IF(targetedBody.getArmType()!=ARM_TYPE_sightglass_goblinoid_arm_bugbear)
+			[#targetedBody.setArmType(null,ARM_TYPE_sightglass_goblinoid_arm_bugbear)]
+		#ENDIF
+		#IF(targetedBody.getLegType()!=LEG_TYPE_sightglass_goblinoid_leg_bugbear)
+			[#targetedBody.setLegType(null,LEG_TYPE_sightglass_goblinoid_leg_bugbear)]
+		#ENDIF
+		#IF(targetedBody.getAss().getType()!=ASS_TYPE_sightglass_goblinoid_ass_bugbear)
+			[#targetedBody.getAss().setType(null,ASS_TYPE_sightglass_goblinoid_ass_bugbear)]
+		#ENDIF
+		#IF(targetedBody.getPenis().getType() != PENIS_TYPE_NONE)]
+			[#targetedBody.getPenis().setType(null, PENIS_TYPE_sightglass_goblinoid_penis)]
+		#ENDIF
+		#IF(targetedBody.getVagina().getType()!=VAGINA_TYPE_NONE)
+			[#targetedBody.getVagina().setType(null, VAGINA_TYPE_sightglass_goblinoid_vagina)]
+		#ENDIF
+		#IF(targetedBody.getEar().getType()!=EAR_TYPE_sightglass_goblinoid_ear_bugbear)
+			[#targetedBody.getEar().setType(null,EAR_TYPE_sightglass_goblinoid_ear_bugbear)]
+		#ENDIF
+		#IF(targetedBody.getBreast().getType()!=BREAST_TYPE_sightglass_goblinoid_breast_bugbear)
+			[#targetedBody.getBreast().setType(null,BREAST_TYPE_sightglass_goblinoid_breast_bugbear)]
+		#ENDIF
+	]]></applySubspeciesChanges>
+	<subspeciesWeighting><![CDATA[
+		#IF(targetedRace==RACE_sightglass_goblinoid)
+			#IF(targetedBody.getFace().getType()==FACE_TYPE_sightglass_goblinoid_face_bugbear || targetedBody.getArm().getType()==ARM_TYPE_sightglass_goblinoid_arm_bugbear ||targetedBody.getLeg().getType()==LEG_TYPE_sightglass_goblinoid_leg_bugbear ||targetedBody.getTorso().getType()==TORSO_TYPE_sightglass_goblinoid_torso_bugbear)
+				250
+			#ELSE
+				0
+			#ENDIF
+		#ELSE
+			0
+		#ENDIF
+	]]></subspeciesWeighting>
+	<iconName displaySize="85">bugbearicon</iconName>
+	<backgroundName>raceBackground</backgroundName>
+	<bookIconName>goblinicon</bookIconName>
+	<bookName>Goblin Guide</bookName>
+	<basicDescriptionId>GOBLIN_BASIC</basicDescriptionId>
+	<advancedDescriptionId>GOBLIN_ADVANCED</advancedDescriptionId>
+	<defaultPreference>TWO_AVERAGE</defaultPreference>
+	<nameAnthro>
+		<namesDefault>
+			<name><![CDATA[bugbear]]></name>
+			<namePlural><![CDATA[bugbear]]></namePlural>
+			<singularMaleName><![CDATA[bugbear-boy]]></singularMaleName>
+			<singularFemaleName><![CDATA[bugbear-girl]]></singularFemaleName>
+			<pluralMaleName><![CDATA[bugbear-boys]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[bugbear-girls]]></pluralFemaleName>
+		</namesDefault>
+		<names legConfiguration="QUADRUPEDAL">
+			<name><![CDATA[bugbeartaur]]></name>
+			<namePlural><![CDATA[bugbeartaurs]]></namePlural>
+			<singularMaleName><![CDATA[bugbeartaur]]></singularMaleName>
+			<singularFemaleName><![CDATA[bugbeartauress]]></singularFemaleName>
+			<pluralMaleName><![CDATA[bugbeartaurs]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[bugbeartauresses]]></pluralFemaleName>
+		</names>
+	</nameAnthro>
+	<description><![CDATA[A less-diminuative goblinoid creature.]]></description>
+	<nameHalfDemon>
+		<namesDefault>
+			<name><![CDATA[boggart]]></name>
+			<namePlural><![CDATA[boggarts]]></namePlural>
+			<singularMaleName><![CDATA[boggart]]></singularMaleName>
+			<singularFemaleName><![CDATA[boggart]]></singularFemaleName>
+			<pluralMaleName><![CDATA[boggarts]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[boggarts]]></pluralFemaleName>
+		</namesDefault>
+	</nameHalfDemon>
+	<statusEffectDescription><![CDATA[
+		[npc.NamePos] body is compact and powerful. [npc.She] [npc.has] a naturalistic curiosity and need to explore.
+	]]></statusEffectDescription>
+	<statusEffectAttributeModifiers>
+		<attribute value="25">MAJOR_PHYSIQUE</attribute>
+		<attribute value="5">MAJOR_ARCANE</attribute>
+		<attribute value="25">DAMAGE_UNARMED</attribute>
+		<attribute value="15">CRITICAL_DAMAGE</attribute>
+		<attribute value="15">FERTILITY</attribute>
+		<attribute value="15">VIRILITY</attribute>
+	</statusEffectAttributeModifiers>
+	<extraEffects/>
+	<perkWeightings>
+		<category masculineWeighting="10" feminineWeighting="10">PHYSICAL</category>
+		<category masculineWeighting="0" feminineWeighting="0">LUST</category>
+		<category masculineWeighting="3" feminineWeighting="3">ARCANE</category>
+	</perkWeightings>
+	<regionLocations>
+		<region rarity="ONE_VERY_RARE">DOMINION</region>
+		<region rarity="ONE_VERY_RARE">SUBMISSION</region>
+		<region rarity="ONE_VERY_RARE">FIELD_CITY</region>
+		<region rarity="ONE_VERY_RARE">DESERT_CITY</region>
+		<region rarity="ONE_VERY_RARE">JUNGLE_CITY</region>
+		<region rarity="TWO_RARE">FIELDS</region>
+		<region rarity="TWO_RARE">WOODLAND</region>
+		<region rarity="TWO_RARE">JUNGLE</region>
+		<region rarity="TWO_RARE">MOUNTAINS</region>
+	</regionLocations>
+	<worldLocations>
+		<world rarity="TWO_RARE">NIGHTLIFE_CLUB</world>
+	</worldLocations>
+	<placeLocations/>
+	<flags/>
+</subspecies>

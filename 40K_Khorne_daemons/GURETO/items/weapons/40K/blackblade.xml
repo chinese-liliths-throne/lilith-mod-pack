@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>14000000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[]]></determiner>
+        <name><![CDATA[Black Blade]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Black Blades]]></namePlural>
+        <description><![CDATA[A huge daemonic sword wielded only by the mightiest follower of Khorne.]]></description>
+        <attackDescriptor>Slash</attackDescriptor>
+        <attackTooltipDescription>Slash at [npc2.name] with your Black Blade.</attackTooltipDescription>
+        <rarity>LEGENDARY</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the Black Blade. Blood for the blood God!]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the Black Blade.]]></unequipText>
+        <imageName>blackblade.svg</imageName>
+        <imageEquippedName/>
+        <damage>400</damage>
+        <arcaneCost>0</arcaneCost>
+        <damageVariance>MEDIUM</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+        </availableDamageTypes>
+        <spells/>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+		<primaryColours values="BLACK_STEEL"/>
+		<primaryColoursDye values="ALL_WITH_METAL"/>
+		<secondaryColours values="ORANGE_DARK"/> 
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the blade pierces [npc2.herHim] with wrath.
+		]]></hitText>
+        <hitText><![CDATA[
+		Gripping the sword tightly, [npc.name] [npc.verb(slice)] [npc2.name] with rage and purpose.
+		]]></hitText>
+        <hitText><![CDATA[
+		Looking at [npc2.name], [npc.name] [npc.verb(take)] the Black Blade in one hand thightly and [npc.verb(strike)] down [npc2.name]!
+		]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the blade grazes [npc2.herHim] with wrath. [npc2.Name] [npc.verb(dodge)] the blade but barely.
+		]]></missText>
+        <missText><![CDATA[
+		Gripping the sword tightly, [npc.name] [npc.verb(slice)] [npc2.name] with fierce speed. Giving [npc2.herHim] a chance to avoid the menacing Black Blade.
+		]]></missText>
+        <missText><![CDATA[
+		Gazing upon [npc2.name], [npc.name] [npc.verb(take)] the Black Blade with one hand and [npc.verb(strike)] down [npc2.name]! This pride however, was enough to give [npc2.Name] a chance to escape death.
+		]]></missText>
+    </missDescriptions>
+</weapon>

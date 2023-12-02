@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>7500000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[a]]></determiner>
+		
+		<name><![CDATA[Saint powersword]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[Saint powerswords]]></namePlural> 
+		
+		<description><![CDATA[A powersword imbued with saint powers.]]></description> 
+		
+		<attackDescriptor>Slash</attackDescriptor>
+		
+		<attackTooltipDescription>Slash at [npc2.name] with your Divine sword.</attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the mighty blade. For the Emperor!]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the mighty blade.]]></unequipText>
+		
+		<imageName>saintpowersword.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<physicalResistance>0</physicalResistance>
+		
+		<damage>345</damage> 
+		
+		<arcaneCost>5</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>POISON</damageType>
+			<damageType>FIRE</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>100</enchantmentLimit>
+		
+		<effects/>
+		
+		<primaryColours values="JUST_GOLD"/>
+		<primaryColoursDye values="ALL_WITH_METAL"/>
+		<secondaryColours values="ALL_WITH_METAL"/> 
+		<secondaryColoursDye values="ALL_WITH_METAL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the flames of the blade pierces [npc2.herHim] with mighty wrath.
+		]]></hitText>
+		<hitText><![CDATA[
+		Gripping the sword tightly, [npc.name] [npc.verb(slice)] [npc2.name] with powerful waves of psychic power.
+		]]></hitText>
+		<hitText><![CDATA[
+		Gazing upon [npc2.name], [npc.name] [npc.verb(take)] the sword with both hands and [npc.verb(strike)] down [npc2.name]!
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the flames of the blade pierces [npc2.herHim] with mighty wrath. [npc2.Name] [npc.verb(dodge)] the blade but barely.
+		]]></missText>
+		<missText><![CDATA[
+		Gripping the sword tightly, [npc.name] [npc.verb(slice)] [npc2.name] with powerful waves of psychic power. Giving [npc2.herHim] a chance to avoid the destructive powers.
+		]]></missText>
+		<missText><![CDATA[
+		Gazing upon [npc2.name], [npc.name] [npc.verb(take)] the sword with both hands and [npc.verb(strike)] down [npc2.name]! The opponent was expecting this move and dodged it.
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

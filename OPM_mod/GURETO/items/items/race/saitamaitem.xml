@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[These are just basic workout moves that you learned.]]></authorTag>
+		
+		<value>500</value> 
+		<determiner><![CDATA[a set of]]></determiner>
+		<name><![CDATA[physical training]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Physical trainings]]></namePlural>
+		<description><![CDATA[Sets of training including push-ups, sit-ups, squats and running.]]></description> 
+		
+		<useDescriptor>Train</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>COMMON</rarity> 
+		
+		
+		<imageName>saitamaitem.svg</imageName>
+		
+		<colourPrimary>BASE_TAN</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[saitama]]></potionDescriptor>
+		<associatedRace>GURETO_saitama</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Gain strength)] but [style.boldBad(leaves muscle pain)].]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name] [npc.verb(feel)] good about having worked out, but it's painful...
+			</p>
+		#IF (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) >= 1000)
+				[##game.getCharacterUtils().reassignBody(npc, npc.getBody(), npc.getGender(), SUBSPECIES_GURETO_saitama_subspecies_saitama, RACE_STAGE_GREATER, true)]
+				[style.italics(After athat much training, [npc.name] [npc.verb(feel)] so much more powerful.)]
+			#ELSE
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, -5)]
+			[##game.endTurn(7200)]
+            [##npc.incrementAttribute(ATTRIBUTE_HEALTH_MAXIMUM, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_CRITICAL_DAMAGE, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_FIRE, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_ICE, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_LUST, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_MELEE_WEAPON, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_PHYSICAL, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_POISON, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_RANGED_WEAPON, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_SPELLS, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_DAMAGE_UNARMED, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_ENERGY_SHIELDING, 2)]
+            [##npc.incrementAttribute(ATTRIBUTE_MANA_MAXIMUM, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_RESISTANCE_ICE, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_RESISTANCE_FIRE, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_RESISTANCE_LUST, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_RESISTANCE_PHYSICAL, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_RESISTANCE_POISON, 1)]
+            [##npc.incrementAttribute(ATTRIBUTE_MAJOR_ARCANE, 1)]
+			#ENDIF
+			
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(do)] 100 push-ups, 100 sit-ups, 100 squats and [npc.verb(run)] 10 miles. By the end [npc.name] [npc.verb(feel)] tired but good for having worked out.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc2.Name] [npc2.verb(do)] 100 push-ups, 100 sit-ups, 100 squats and [npc2.verb(run)] 10 miles. By the end [npc2.name] [npc2.verb(feel)] tired but good for having worked out.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

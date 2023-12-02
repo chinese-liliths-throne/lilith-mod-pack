@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<coveringType>
+	<!-- GENERAL INFORMATION: If you are unsure of anything, please use the LT Discord to ask for help! -->
+	
+	<!-- See fur.xml for a fully-commented coveringType example. -->
+	
+	<category>HORN</category>
+	
+	<determiner><![CDATA[a layer of]]></determiner>
+	<name><![CDATA[demonic keratin]]></name>
+	<namePlural pluralByDefault="true"><![CDATA[demonic keratin]]></namePlural> 
+	
+	<naturalCoveringModifiers>
+	<modifier>ROUGH</modifier>
+	</naturalCoveringModifiers>
+	
+	<extraCoveringModifiers/>
+	
+	<naturalPatterns>
+		<pattern weighting="1">NONE</pattern>
+	</naturalPatterns>
+	
+	<extraPattern/>
+	
+	<naturalColoursPrimary> 
+		<colour>CLOTHING_GREY</colour>
+		<colour>CLOTHING_WHITE</colour>
+	</naturalColoursPrimary>
+	<extraColoursPrimary values="allCoveringColours"/>
+	
+	<naturalColoursSecondary>
+		<colour>CLOTHING_GREY</colour>
+		<colour>CLOTHING_WHITE</colour>
+	</naturalColoursSecondary>
+	<extraColoursSecondary values="allCoveringColours"/>
+	
+</coveringType>

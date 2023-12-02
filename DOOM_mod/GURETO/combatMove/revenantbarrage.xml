@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Support arsenal : mines]]></name>
+	
+	<description><![CDATA[ 
+		You fire a barrage of rockets at your foes, dealing 100 fire damage. Consumes 100 arcane essences.
+	]]></description>
+	
+	<damageType><![CDATA[
+	FIRE
+	]]></damageType>
+	
+	<baseDamage><![CDATA[		
+	0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		2
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_RED_LIGHT</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_revenant]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to revenant characters.
+	]]></availabilityDescription>
+	
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 100)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(fire)] a barrage of rockets at [npc.her] foes, Consumes 100 arcane essence. Dealing 100 fire damage.
+        #IF(npc.getEssenceCount() < 100)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(fire)] a barrage of rockets at [npc.her] foes, Consumes 100 arcane essence. Dealing 100 fire damage.
+        #IF(npc.getEssenceCount() < 100)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+
+	<performMove>
+
+		<execute><execute><![CDATA[
+		#IF(npc.getEssenceCount() < 100)
+			[##npc.incrementEssenceCount(-100,false)]
+			[npc.Name] [npc.verb(shower)] [npc.namePos] foes with rockets! [npc.Name] [npc.verb(feel)] like every enemy has been hit.<br>
+				[##var outputText = ""]
+				[##var attacker = npc]
+				[##function damageEnemy(target) {
+				if (outputText != "") {outputText = outputText + "<br>";}
+				if(!target.isPlayerKnowsName()) {outputText = outputText + "The ";}
+				if(npc.getHealthPercentage() < 0.25) {
+					outputText = outputText + target.getName() + " received [style.colorCrit(critical)] [style.colorFire(" + DAMAGE_TYPE_FIRE.damageTarget(attacker, target, Math.max(attacker.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE),1)*2+200).getVale() + " fire)] damage."; 
+				} else {
+					outputText = outputText + target.getName() + " received [style.colorFire(" + DAMAGE_TYPE_FIRE.damageTarget(attacker, target, attacker.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*1+100).getValue() + " fire)] damage.";
+				}}]
+				[##combat.getEnemies(npc).forEach(damageEnemy)]
+				[#outputText]
+		#ELSE		
+			[style.colorBad(You didn't have enough arcane essences.)]
+		#ENDIF
+]]></execute></execute>
+		<critDescription><![CDATA[
+			...
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			...
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

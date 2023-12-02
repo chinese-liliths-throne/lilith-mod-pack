@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<statusEffect>
+	<renderingPriority>0</renderingPriority>
+	<renderInEffectsPanel>false</renderInEffectsPanel>
+	<catagory>DEFAULT</catagory>
+	<beneficial>NEUTRAL</beneficial>
+	<combatEffect>false</combatEffect>
+	<sexEffect>false</sexEffect>
+	<name><![CDATA[每日自动收益平衡版]]></name>
+	<description/>
+	<imageName/>
+	<colourPrimary>BASE_PINK</colourPrimary>
+	<secondaryColours/>
+	<colourTertiary/>
+	<attributeModifiers/>
+	<combatMoves/>
+	<spells/>
+	<extraEffects/>
+	<applicationCondition shortConditionalCheck="true"><![CDATA[(npc.isPlayer() && !npc.affectionMap.containsKey("tidurian_AutoInterestAndSlavery"))]]></applicationCondition>
+	<applicationLength constantRefresh="false">-1</applicationLength>
+	<applyEffect interval="0">
+		<![CDATA[
+			[##if(!npc.affectionMap.containsKey("tidurian_AutoInterestAndSlavery"))
+			{
+				npc.getAppliedStatusEffect(SE_tidurian_AutoInterestAndSlavery).setSecondsRemaining(90000-game.getDaySeconds());
+				npc.setAffection("tidurian_AutoInterestAndSlavery", 1);
+			}]
+		]]>
+	</applyEffect>
+	<applyRemovalEffect>
+		<![CDATA[
+		[##
+			function payout()
+			{
+				var output = "";
+				var Upkeep = game.getOccupancyUtil().getGeneratedUpkeep();
+				var Income = game.getOccupancyUtil().getGeneratedIncome();
+				var Interest = game.getDialogueFlags().getSavedLong("bank_interest");
+				if(Interest > 0)
+				{
+					game.getDialogueFlags().setSavedLong("bank_interest",0);
+					output += "Your Slavery Income ([style.colourmoney(¤ "+Income+")]), Upkeep ([style.colourmoney(¤ -"+Upkeep+")]) and Bank Interest ([style.colourmoney(¤ "+Interest+")])";
+					game.getOccupancyUtil().setGeneratedIncome(Income+Interest);
+				}
+				else
+				{
+					output += "Your Slavery Income ([style.colourmoney(¤ "+Income+")]) and Upkeep ([style.colourmoney(¤ -"+Upkeep+")])";
+				}
+				var Balance = game.getOccupancyUtil().getGeneratedBalance();
+				output += "</br>totaled to [style.colourmoney(¤ "+Balance+")] flames!";
+				if(Balance > 0)
+				{
+					game.getOccupancyUtil().payOutBalance();
+					output += "</br>[style.colourgood(You happily put it into your wallet!)]";
+				}
+				else
+				{
+					if(npc.getMoney()-Balance >= 0)
+					{
+						output += "</br>Since you had the needed flames you paid it to Rose to even it out.";
+						game.getOccupancyUtil().payOutBalance();
+					}
+					else
+					{
+						output += "</br>[style.colourbad(Rose left you a note to pay the living costs as early you can.)]";
+					}
+				}
+				return "<p style='text-align:center'>"+output+"</p>";
+			}
+		]
+		[#payout()]
+		]]>
+	</applyRemovalEffect>
+	<applyPostRemovalEffect>
+		<![CDATA[
+			[##if(npc.isPlayer()){npc.addStatusEffect(SE_tidurian_AutoInterestAndSlavery, (90000-game.getDaySeconds()));}]
+		]]>
+	</applyPostRemovalEffect>
+</statusEffect>

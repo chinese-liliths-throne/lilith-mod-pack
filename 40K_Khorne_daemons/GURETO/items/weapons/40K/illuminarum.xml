@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>14000000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[]]></determiner>
+        <name><![CDATA[Illuminarum]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Illuminarums]]></namePlural>
+        <description><![CDATA[A huge powermace handcrafted by a mastersmith primarch.]]></description>
+        <attackDescriptor>Smash</attackDescriptor>
+        <attackTooltipDescription>Smash at [npc2.name] with your Illuminarum.</attackTooltipDescription>
+        <rarity>LEGENDARY</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the Illuminarum.]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the Illuminarum.]]></unequipText>
+        <imageName>illuminarum.svg</imageName>
+        <imageEquippedName/>
+        <damage>400</damage>
+        <arcaneCost>0</arcaneCost>
+        <damageVariance>MEDIUM</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+            <damageType>ICE</damageType>
+        </availableDamageTypes>
+        <spells/>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+		<primaryColours values="JUST_GUNMETAL"/>
+		<primaryColoursDye values="ALL_WITH_METAL"/>
+		<secondaryColours values="JUST_GOLD"/> 
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[
+		Gripping the mace with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the mace pierces [npc2.herHim] with wrath.
+		]]></hitText>
+        <hitText><![CDATA[
+		Gripping the mace tightly, [npc.name] [npc.verb(slice)] [npc2.name] with rage and purpose.
+		]]></hitText>
+        <hitText><![CDATA[
+		Looking at [npc2.name], [npc.name] [npc.verb(take)] the Illuminarum in one hand thightly and [npc.verb(strike)] down [npc2.name]!
+		]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[
+		Gripping the mace with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the mace grazes [npc2.herHim] with wrath. [npc2.Name] [npc.verb(dodge)] the mace but barely.
+		]]></missText>
+        <missText><![CDATA[
+		Gripping the mace tightly, [npc.name] [npc.verb(slice)] [npc2.name] with fierce speed. Giving [npc2.herHim] a chance to avoid the menacing Illuminarum.
+		]]></missText>
+        <missText><![CDATA[
+		Gazing upon [npc2.name], [npc.name] [npc.verb(take)] the Illuminarum with one hand and [npc.verb(strike)] down [npc2.name]! This pride however, was enough to give [npc2.Name] a chance to escape death.
+		]]></missText>
+    </missDescriptions>
+</weapon>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>20</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[random morph pill]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[random morph pills]]></namePlural>
+		<description><![CDATA[A small, dark-red pill, individually packaged in a foil and plastic wrapper. While most of the text printed on the foil has been scratched out, the remainder labels this as a "tempered stochastic mutagen pill", whatever that means.]]></description> 
+		<useDescriptor>swallow</useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		<rarity>EPIC</rarity> 
+		<imageName>pill.svg</imageName> 
+		<colourPrimary>BASE_GREEN_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		<associatedRace/>
+		<enchantmentItemTypeId/>
+		<enchantmentEffectId/>
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldBad(Causes a strange transfiguration...)]]]></line>
+		</effectTooltipLines>
+		<applyEffects><![CDATA[
+			<p style='text-align:center'>
+				#IF(!npc.isPlayer() && npc.isUnique() && (!npc.isSlave() || npc.getOwner().isPlayer()))
+					[style.italicsDisabled(This item does not work on non-slave unique characters...)]
+				#ELSE
+					[##npc.setBody(game.getCharacterUtils().generateBody(null, npc.getGender(), SUBSPECIES_HALF_DEMON, RACE_STAGE_GREATER), false)]
+					[##npc.setBody(game.getCharacterUtils().generateBody(null, npc.getGender(), npc.getBody().getHalfDemonSubspecies(), RACE_STAGE_GREATER), false)]
+					[##npc.postTransformationCalculation(false)]
+					[npc.Name] [npc.verb(crumple)] with intense vertigo, nearly fainting as waves of strange energy pulse along [npc.her] body, rapidly reshaping [npc.her] body. As [npc.her] vision returns to normal, [npc.she] [npc.verb(look)] down to see that [npc.she] [npc.has] been transformed into a pristine [style.bold([npc.race(true)])]!
+				#ENDIF
+			</p>
+		]]></applyEffects>
+		<itemTags>
+			<tag>BAT_CAVERNS_SPAWN</tag>
+			<tag>NOT_FOR_SALE</tag>
+		</itemTags>
+	</coreAttributes>
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(pop)] a mutagen pill out of its little foil wrapper, before quickly placing it in [npc.her] mouth and swallowing it down.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(pop)] a mutagen pill out of its little foil wrapper, before bringing it up to [npc2.namePos] [npc2.lips], forcing it into [npc2.her] mouth, and making sure that [npc2.she] [npc2.verb(swallow)] it down.
+		]]></otherUse>
+	</useDescriptions>
+</item>

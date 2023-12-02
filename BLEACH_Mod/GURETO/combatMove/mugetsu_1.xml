@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Final Getsuga Tensho]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(gather)] all of your reiatsu for a final attack. Consumes 9999 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+	FIRE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		99
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_BLACK</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_zangetsu)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_zanpakuto_zangetsu)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters wielding zangetsu.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 9999)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Doesn't need to crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(gather)] all [npc.namePos] reiatsu into one final attack. Consumes 9999 arcane essence.
+        #IF(npc.getEssenceCount() < 9999)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(gather)] all [npc.namePos] reiatsu into one final attack. Consumes 9999 arcane essence.
+        #IF(npc.getEssenceCount() < 9999)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 9999)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+                [##npc.incrementEssenceCount(-9999,false)]
+				[#combat.getEnemies(npc).get(0).setHealth(0)]				
+				[#combat.getEnemies(npc).get(1).setHealth(0)]
+				[#combat.getEnemies(npc).get(2).setHealth(0)]
+				[#combat.getEnemies(npc).get(3).setHealth(0)]
+				[#combat.getEnemies(npc).get(4).setHealth(0)]
+				[#combat.getEnemies(npc).get(5).setHealth(0)]
+				[#combat.getEnemies(npc).get(6).setHealth(0)]
+				[#combat.getEnemies(npc).get(7).setHealth(0)]
+				[#combat.getEnemies(npc).get(8).setHealth(0)]
+				[#combat.getEnemies(npc).get(9).setHealth(0)]
+				[#combat.getEnemies(npc).get(10).setHealth(0)]
+				[#combat.getEnemies(npc).get(11).setHealth(0)]
+				[#combat.getEnemies(npc).get(12).setHealth(0)]
+				[#combat.getEnemies(npc).get(13).setHealth(0)]
+				[#combat.getEnemies(npc).get(14).setHealth(0)]
+				[#combat.getEnemies(npc).get(15).setHealth(0)]
+				[#combat.getEnemies(npc).get(16).setHealth(0)]
+				[#combat.getEnemies(npc).get(17).setHealth(0)]
+				[#combat.getEnemies(npc).get(18).setHealth(0)]
+				[#combat.getEnemies(npc).get(19).setHealth(0)]
+				[##npc.addStatusEffect(SE_GURETO_mugetsu, 999)]
+                #ENDIF
+				[npc.Name] [npc.verb(gather)] [npc.namePos] reiatsu into [npc.namePos] arm. lowering it, all the reiatsu slashes straight forward, obliterating any foe! [npc.Name] suddenly [npc.verb(feel)] powerless...<br>
+		]]></execute>
+		<critDescription><![CDATA[
+			.
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			.
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

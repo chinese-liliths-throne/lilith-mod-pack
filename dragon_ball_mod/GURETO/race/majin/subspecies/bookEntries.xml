@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="majin_BASIC"><![CDATA[
+	<p>
+		Majins are creatures that are feared across the universe.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="majin_ADVANCED"><![CDATA[
+	<p>
+		Majins are creatures of unknown origin and untold destructive power. Mortals cannot hope to even come close to their power...
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

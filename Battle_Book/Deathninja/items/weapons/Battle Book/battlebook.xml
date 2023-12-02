@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>12000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[a]]></determiner>
+		
+		<name><![CDATA[#IF (game.isSillyModeEnabled())
+			#THEN Book of Biggus Dickus
+			#ELSE Battle Book
+			#ENDIF]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[#IF (game.isSillyModeEnabled())
+			#THEN Books of Biggus Dickus
+			#ELSE Battle Books
+			#ENDIF]]></namePlural>
+		
+		<description><![CDATA[A book designed less for learning spells; and more about casting them! You could also use it as an improvised weapon, if you wanted to.]]></description> 
+		
+		<attackDescriptor>smack</attackDescriptor>
+		
+		<attackTooltipDescription>Swing your Battle Book at [npc2.name].</attackTooltipDescription>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<weaponSet/>
+		
+		<equipText><![CDATA[#IF (game.isSillyModeEnabled())
+			#THEN [npc.Name] [npc.verb(take)] hold of the Book of Biggus Dickus as [npc.she] [npc.verb(prepare)] [npc.herself] to use it in combat.
+			#ELSE [npc.Name] [npc.verb(take)] hold of the Battle Book as [npc.she] [npc.verb(prepare)] [npc.herself] to use it in combat.
+			#ENDIF]]></equipText>
+		
+		<unequipText><![CDATA[#IF (game.isSillyModeEnabled())
+		#THEN [npc.Name] [npc.verb(store)] the Book of Biggus Dickus.
+		#ELSE [npc.Name] [npc.verb(store)] the Battle Book.
+		#ENDIF]]></unequipText>
+		
+		<imageName>battlebook.svg</imageName> 
+		
+		<imageEquippedName>battlebook.svg</imageEquippedName>
+		
+		<damage>14</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>30</enchantmentLimit>
+		
+		<effects>
+	<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_SPELLS" potency="MAJOR_BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_SPELLS" potency="MAJOR_BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_SPELLS" potency="MAJOR_BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_SPELLS" potency="MAJOR_BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_SPELLS" potency="MAJOR_BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_MAJOR_ATTRIBUTE" mod2="INTELLIGENCE" potency="MAJOR_BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_MAJOR_ATTRIBUTE" mod2="INTELLIGENCE" potency="BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_FIRE" potency="BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_ICE" potency="BOOST" timer="2710" type="WEAPON"/>
+    <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_POISON" potency="BOOST" timer="2710" type="WEAPON"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>ATTRIBUTE_MANA</colour>
+		</primaryColours>
+		<primaryColoursDye values="NONE"/>
+		<secondaryColours>
+			<colour>BASE_GOLD</colour>
+		</secondaryColours>		
+		<secondaryColoursDye values="NONE"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		#IF (game.isSillyModeEnabled())
+		[npc.Name] [npc.verb(swing)] [npc.her] Book of Biggus Dickus at [npc2.name], watching as the Book of Biggus Dickus makes contact with [npc2.her] head!
+		#ELSE
+		[npc.Name] [npc.verb(swing)] [npc.her] Battle Book at [npc2.name], watching as the Battle Book makes contact with [npc2.her] head!
+		#ENDIF]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[#IF (game.isSillyModeEnabled())
+		[npc.Name] [npc.verb(swing)] [npc.her] Book of Biggus Dickus at [npc2.name], but the book only flies just inches from [npc2.her] face.
+		#ELSE [npc.Name] [npc.verb(swing)] [npc.her] Battle Book at [npc2.name], but the book only swings just inches from [npc2.her] face.
+		#ENDIF]]></missText>
+	</missDescriptions>
+	
+</weapon>

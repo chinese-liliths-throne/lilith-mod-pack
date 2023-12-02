@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>20</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[instant feral pill]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[instant feral pills]]></namePlural>
+		<description><![CDATA[A small, dark-red pill, individually packaged in a foil and plastic wrapper. While most of the text printed on the foil has been scratched out, the remainder labels this as a "pseudo-retroevolutionary feralization pill", whatever that means.]]></description> 
+		<useDescriptor>swallow</useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		<rarity>EPIC</rarity> 
+		<imageName>pill.svg</imageName> 
+		<colourPrimary>BASE_RED_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		<associatedRace/>
+		<enchantmentItemTypeId/>
+		<enchantmentEffectId/>
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldBad(Causes a strange regression...)]]]></line>
+		</effectTooltipLines>
+		<applyEffects><![CDATA[
+			<p style='text-align:center'>
+				#IF(!npc.isPlayer() && npc.isUnique() && (!npc.isSlave() || npc.getOwner().isPlayer()))
+					[style.italicsDisabled(This item does not work on non-slave unique characters...)]
+				#ELSE
+					#IF(npc.getSubspecies().isFeralConfigurationAvailable(npc.getBody()))
+						[##npc.getBody().setFeral(npc.getBody().getFleshSubspecies())]
+						[##npc.postTransformationCalculation(false)]
+						[npc.Name] [npc.verb(drop)] to the ground, pulse pounding as adrenaline floods [npc.her] veins. Waves of strange energy wash over [npc.himHer], and [npc.she] [npc.verb(flail)] wildly in a futile effort to shake off the crackling aura. As [npc.she] calms from [npc.her] brief instinctual frenzy, [npc.she] [npc.verb(look)] down to see that [npc.she] [npc.has] been transformed into a [style.boldRed(feral)] [style.bold([npc.feralRace(true)])]!
+					#ELSE
+						[style.italicsDisabled(Other than a brief surge of adrenaline, this pill seemed to have no effect on [npc.name]. It does not seem like a [style.bold([npc.race(true)])] can be reverted to a feral form.)]
+					#ENDIF
+				#ENDIF
+			</p>
+		]]></applyEffects>
+		<itemTags>
+			<tag>BAT_CAVERNS_SPAWN</tag>
+			<tag>NOT_FOR_SALE</tag>
+		</itemTags>
+	</coreAttributes>
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(pop)] a feral pill out of its little foil wrapper, before quickly placing it in [npc.her] mouth and swallowing it down.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(pop)] a feral pill out of its little foil wrapper, before bringing it up to [npc2.namePos] [npc2.lips], forcing it into [npc2.her] mouth, and making sure that [npc2.she] [npc2.verb(swallow)] it down.
+		]]></otherUse>
+	</useDescriptions>
+</item>

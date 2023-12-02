@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[SERIOUS PUNCH (close)]]></name>
+	
+	<description><![CDATA[ 
+		Deliver a punch with serious power behind it.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[		
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+	1
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>ATTACK.svg</imageName>
+	
+	<colourPrimary>BASE_GREY</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_saitama]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to heroes for fun.
+	]]></availabilityDescription>
+	
+<weighting><![CDATA[
+            2
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+	-->
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(deliver)] a punch of great power.
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(deliver)] a punch of great power.
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><execute><![CDATA[
+		#IF(npc.getMana()>= 0)
+			[##npc.incrementMana(0)]
+				<p>Clenching [npc.namePos] fist and taking a firm step back, [npc.name] [npc.verb(draw)] [npc.namePos] arm back to deliver a powerful punch. Making a quick step, [npc.sheIs] now in close range with [npc2.Name]. Swinging [npc.namePos] fist, it draws a lot of gust before colliding with extreme violence against [npc2.NamePos] chest! The strike creates a massive shock wave that quakes the whole world.<p>
+				[##var outputText = ""]
+				[##var attacker = npc]
+				[##function damageEnemy(target) {
+				if (outputText != "") {outputText = outputText + "<br>";}
+				if(!target.isPlayerKnowsName()) {outputText = outputText + "The ";}
+				outputText = outputText + target.getName() + " [npc2.verb(takes)] the hit head on!";
+				target.setHealth(0);
+				}]
+				[##combat.getEnemies(npc).forEach(damageEnemy)]
+				[#outputText]
+		#ELSE		
+			[style.colorBad(what did you do? this shouldn't even be possible.)] 
+		#ENDIF
+]]></execute></execute>
+		<critDescription><![CDATA[
+			The fight got very intense, and [npc2.Name] got hit VERY hard!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.Name] is clenching [npc2.namePos] chest in pain!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

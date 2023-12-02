@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<clothing>
+	<coreAttributes>
+		<value>250000</value>
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[Medallion]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Medallions]]></namePlural>
+		<description><![CDATA[A device created by quincies in order to steal BANKAIs and resurreccions.]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+    <equipSlots>
+      <slot>NECK</slot>
+      <slot>WRIST</slot>
+    </equipSlots>
+
+    <rarity>LEGENDARY</rarity>
+	<clothingSet/>
+	<imageName>medallion.svg</imageName>
+    <imageEquippedName/>
+	<enchantmentLimit>100</enchantmentLimit>
+	<effects/>
+	
+	<blockedPartsList slot="NECK">
+		<blockedParts>
+			<displacementType>REMOVE_OR_EQUIP</displacementType>
+			<clothingAccessRequired/>
+			<blockedBodyParts/>
+			<clothingAccessBlocked/>
+			<concealedSlots/>
+		</blockedParts>
+	</blockedPartsList>
+    <blockedPartsList slot="WRIST">
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired/>
+        <blockedBodyParts/>
+        <clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+		
+	<incompatibleSlots slot="NECK"/>
+    <incompatibleSlots slot="WRIST"/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+        <secondaryColours values="ALL_METAL"/>
+        <secondaryColoursDye values="ALL_WITH_METALS"/>
+        <tertiaryColours values="ALL_METAL"/>
+        <tertiaryColoursDye values="ALL_WITH_METALS"/>
+		
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+	</coreAttributes>
+
+  <replacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(fasten)] the Medallion around [npc.her] neck.]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(fasten)] the Medallion around [npc2.namePos] neck.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] firmly [npc.verb(grab)] [npc2.name], before fastening the Medallion around [npc2.her] neck.]]>
+    </otherRough>
+  </replacementText>
+  <displacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(unfasten)] [npc.her] Medallion, before taking it off from around [npc.her] neck.]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(unfasten)] [npc2.namePos] Medallion, before taking it off from around [npc2.her] neck.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] roughly [npc.verb(unfasten)] [npc2.namePos] Medallion, before yanking it off from around [npc2.her] neck.]]>
+    </otherRough>
+  </displacementText>
+	
+  <replacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(wrap)] [npc.her] Medallion around [npc.her] wrist and then [npc.verb(fasten)] it in place.]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(wrap)] the Medallion around [npc2.namePos] wrist and then [npc.verb(fasten)] it in place.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] roughly [npc.verb(wrap)] the Medallion around [npc2.namePos] wrist and then tightly [npc.verb(fasten)] it in place.]]>
+    </otherRough>
+  </replacementText>
+  <displacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(unfasten)] [npc.her] Medallion, before unwrapping it from around [npc.her] wrist.]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(unfasten)] [npc2.namePos] Medallion, before unwrapping it from around [npc2.her] wrist.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] roughly [npc.verb(unfasten)] [npc2.namePos] Medallion, before snatching it off [npc2.her] wrist.]]>
+    </otherRough>
+  </displacementText>
+</clothing>

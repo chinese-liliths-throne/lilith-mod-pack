@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag/>
+		
+		<value>75000</value> 
+		<determiner><![CDATA[an]]></determiner>
+		<name><![CDATA[energy core]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[energy cores]]></namePlural>
+		<description><![CDATA[A core with a powerful energy emitted from it.]]></description> 
+		
+		<useDescriptor>observe</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>EPIC</rarity> 
+		
+	
+		<imageName>cyborgitem.svg</imageName>
+		
+		<colourPrimary>BASE_WHITE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[cyborg]]></potionDescriptor>
+		<associatedRace>GURETO_cyborg</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines/>
+		
+		<applyEffects/>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the cyborg part and look at it longly, analysing what it could be for. [npc.Name] then [npc.verb(put)] it back.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the cyborg part and [npc.verb(show)] it at [npc2.name], wondering what it could be for. [npc.Name] then [npc.verb(put)] it back after seeing that [npc2.Name] [npc2.verb(do)] not recognize its usage.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Complete Hollowfication]]></name>
+	
+
+	<description><![CDATA[
+		You charge your reiatsu and take on a new, stronger form. Consumes 250 arcane essences.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		1
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>POSITIVE.svg</imageName>
+	
+	<colourPrimary>BASE_WHITE</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">ARCANE_WEAKNESS</effect>
+	</statusEffects>
+	
+	<availabilityCondition><![CDATA[	
+[#npc.getClothingInSlot(IS_EYES) != null && npc.getClothingInSlot(IS_EYES).getClothingType().equals(CLOTHING_GURETO_clothes_hollowmask)]
+	]]>
+	</availabilityCondition>
+	
+	<!-- A short description to let the player know what the conditions are for this move being available to them. -->
+	<availabilityDescription><![CDATA[
+		Available to characters with a hollow mask.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 250)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Doesn't crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(swipe)] down [npc.namePos] hand and a hollow appears. Consumes 250 arcane essences.
+        #IF(npc.getEssenceCount() < 250)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(swipe)] down [npc.namePos] hand and a hollow appears. Consumes 250 arcane essences.
+        #IF(npc.getEssenceCount() < 250)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		
+		<execute><execute><![CDATA[
+            #IF(npc.getEssenceCount() < 250)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			Swiping down [npc.namePos] hand, a reishi skull mask appears on [npc.namePos] face.
+                [##npc.incrementEssenceCount(-250,false)]
+				[##npc.addStatusEffect(SE_GURETO_hollowmask2, 999)]
+                #ENDIF
+            formattedHealthDamage
+]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 35% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<race>
+	<racialBody>sightglass_goblinoid</racialBody>
+	<applyRaceChanges/>
+	<name><![CDATA[goblin]]></name>
+	<namePlural><![CDATA[goblin]]></namePlural>
+	<nameFeral>
+		<name legConfiguration="BIPEDAL"><![CDATA[goblinoid]]></name>
+	</nameFeral>
+	<nameFeralPlural>
+		<name legConfiguration="BIPEDAL"><![CDATA[goblinoids]]></name>
+	</nameFeralPlural>
+	<defaultTransformName><![CDATA[goblinoid]]></defaultTransformName>
+	<colour>BASE_GREEN_DARK</colour>
+	<disposition>UNPREDICTABLE</disposition>
+	<racialClass>MAMMAL</racialClass>
+	<feralPartsAvailable>false</feralPartsAvailable>
+	<ableToSelfTransform>false</ableToSelfTransform>
+	<flyingRace>false</flyingRace>
+	<combatBehaviour>ATTACK</combatBehaviour>
+	<chanceForMaleOffspring>0.65</chanceForMaleOffspring>
+	<numberOfOffspringLow>2</numberOfOffspringLow>
+	<numberOfOffspringHigh>3</numberOfOffspringHigh>
+	<defaultFemininePreference>MAXIMUM</defaultFemininePreference>
+	<defaultMasculinePreference>MAXIMUM</defaultMasculinePreference>
+	<affectedByFurryPreference>false</affectedByFurryPreference>
+	<racialFetishModifiers>
+		<fetish love="3" like="3">FETISH_IMPREGNATION</fetish>
+		<fetish love="3" like="3">FETISH_PREGNANCY</fetish>
+	</racialFetishModifiers>
+</race>

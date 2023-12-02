@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>150</value> 
+		<determiner><![CDATA[a shot of]]></determiner>
+		<name><![CDATA[Orcish Rotgut]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Orcish Rotguts]]></namePlural>
+		<description><![CDATA[A flask of murky, dark liquor, with a viscous, almost slimy texture and very strange pungent aroma. Orcs brew this with a secret mix of "herbs", "extracts" and "vitamins", and claim it gives strength and courage. If you can swallow it down, you've already proven to yourself that you've got bravery and grit, so anything else seems easier in comparison.]]></description> 
+		<useDescriptor>drink</useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		<rarity>UNCOMMON</rarity> 
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">orc_rotgut.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		<colourPrimary>ATTRIBUTE_ARCANE</colourPrimary>
+		<colourSecondary>BASE_GREEN_DARK</colourSecondary>
+		<colourTertiary>BASE_GREEN_DARK</colourTertiary>
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_ARCANE</enchantmentEffectId>
+		<effectTooltipLines>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)] to 'potion effects']]></line>
+			<line><![CDATA[[#ATTRIBUTE_ENERGY_SHIELDING.getFormattedValue(2)] to 'potion effects']]></line>
+		</effectTooltipLines>
+		<applyEffects><![CDATA[
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				A chilling wave of grim determination washes over [npc.name]...
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_ARCANE, 2)]
+			[#npc.addPotionEffect(ATTRIBUTE_ENERGY_SHIELDING, 2)]
+		]]></applyEffects>
+		<itemTags>
+			<tag>ALCOHOLIC</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>DRINK</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(unscrew)] the uncorks the flask, before tilting [npc.her] head back and bringing it up to [npc.her] waiting [npc.lips]. Acrid fumes pour from the opening, and [npc.she] quickly [npc.verb(gulp)] down the thick liquid before [npc.her] nerve fails [npc.name].
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(unscrew)] the uncorks, before bringing it up to [npc2.namePos] waiting [npc2.lips]. Acrid fumes waft from the opening, and in [npc2.her] shock, some of it spills into [npc2.her] mouth before [npc2.name] swats the concoction away.
+		]]></otherUse>
+	</useDescriptions>
+</item>

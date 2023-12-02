@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<statusEffect>
+	<renderingPriority>70</renderingPriority>
+	<renderInEffectsPanel>true</renderInEffectsPanel>
+	<category>INVENTORY</category>
+	<beneficial>NEUTRAL</beneficial>
+	<combatEffect>false</combatEffect>
+	<sexEffect>true</sexEffect>
+	<tags/>
+	<name><![CDATA[Cyber Danger]]></name>
+	<description><![CDATA[By wearing the entire set of cyber lingerie, you find yourself more alluring to those you meet.]]></description>
+	<imageName>cyber_set.svg</imageName>
+	<colourPrimary>CLOTHING_WHITE</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	<attributeModifiers>
+		<modifier value="15.0">DAMAGE_LUST</modifier>
+	</attributeModifiers>
+	<combatMoves/>
+	<spells/>
+	<extraEffects/>
+	
+	<!-- Effect logic -->
+	
+	<applicationCondition><![CDATA[
+		[#SET_BONUS_solace_cyber.isCharacterWearingCompleteSet(npc)]
+	]]></applicationCondition>
+	<applicationLength constantRefresh="false">-1</applicationLength>
+	<applyEffect/>
+	<applyRemovalEffect/>
+	<applyPostRemovalEffect/>
+</statusEffect>

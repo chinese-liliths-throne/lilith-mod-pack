@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="alien_BASIC"><![CDATA[
+	<p>
+		Living on a planet with a terribly harsh environment, these aliens have developed a powerful regeneration ability.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="alien_ADVANCED"><![CDATA[
+	<p>
+		When trained enough, these aliens can achieve superior stages and the ability to sense the power of the surrounding people.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

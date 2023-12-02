@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<statusEffect>
+
+	<renderingPriority>70</renderingPriority>
+	
+	<renderInEffectsPanel>true</renderInEffectsPanel>
+	
+	<category>DEFAULT</category>
+	
+	<!-- 'BENEFICIAL' if this is a good status effect for a character to have, 'NEUTRAL' if it's neither, or 'DETRIMENTAL' if it's a bad one. -->
+	<beneficial>BENEFICIAL</beneficial>
+	
+	<combatEffect>true</combatEffect>
+	
+	<!-- 'true' if you want this status effect to be rendered during sex. -->
+	<sexEffect>false</sexEffect>
+	
+	<tags/>
+	
+	<!-- The name of this set bonus. The character under the effect is passed in as the 'npc' parsing argument, so if you want to, you can include parsing elements such as [npc.name]. -->
+	<name><![CDATA[B A N K A I]]></name>
+	
+	<!-- The description of this status effect. The character under the effect is passed in as the 'npc' parsing argument, so if you want to, you can include parsing elements such as [npc.name]. -->
+	<description><![CDATA[
+		[npc.Name] [npc.verb(unleashed)] [npc.namePos] bankai!
+	]]></description>
+	
+	<!-- The name of the icon which should be used to represent this status effect. The icon must be an svg file, and must be placed in the same folder as this XML file. -->
+	<imageName>POSITIVE.svg</imageName>
+	
+	<colourPrimary>BASE_GREEN</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<attributeModifiers>
+		<modifier value="75">ENERGY_SHIELDING</modifier>
+		<modifier value="75">RESISTANCE_PHYSICAL</modifier>
+		<modifier value="75">RESISTANCE_POISON</modifier>
+		<modifier value="75">RESISTANCE_FIRE</modifier>
+		<modifier value="75">RESISTANCE_ICE</modifier>
+		<modifier value="25">DAMAGE_UNARMED</modifier>
+		<modifier value="25">DAMAGE_MELEE_WEAPON</modifier>
+		<modifier value="25">DAMAGE_RANGED_WEAPON</modifier>
+		<modifier value="25">DAMAGE_PHYSICAL</modifier>
+		<modifier value="25">DAMAGE_FIRE</modifier>
+		<modifier value="25">DAMAGE_ICE</modifier>
+		<modifier value="25">DAMAGE_POISON</modifier>
+		<modifier value="2">ACTION_POINTS</modifier>
+	</attributeModifiers>
+	
+
+	<combatMoves/>
+	
+
+	<spells/>
+	
+
+	<extraEffects/>
+
+	<applicationCondition><![CDATA[
+		false
+	]]></applicationCondition>
+
+	<applyEffect/>
+	
+	<!-- In a similar manner to the 'applyEffect' element above, the game processes logic when a status effect is removed. (This logic is performed while the character is still under the effects of this status effect.) -->
+	<applyRemovalEffect/>
+	
+	<!-- In a similar manner to the 'applyEffect' element above, the game processes logic after a status effect has been removed. (This logic is performed immediately after the effect is removed, so the character is no longer under the effects of this status effect.) -->
+	<applyPostRemovalEffect/>
+	
+</statusEffect>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="archvile_BASIC"><![CDATA[
+	<p>
+		A demon with high intellect and psychich abilities strong enough to brainwash and manipulated lesser demons.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="archvile_ADVANCED"><![CDATA[
+	<p>
+		This demon prefers long range battles, which they excel at, Having powerful fire abilites.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

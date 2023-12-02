@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[mancubus demon fire]]></name>
+	
+
+	<description><![CDATA[
+		Burn your target with demonic fire, dealing formattedDamageInflicted damage.
+	]]></description>
+	
+	<damageType><![CDATA[
+			FIRE
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		200
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_RED_LIGHT</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">ARCANE_WEAKNESS</effect>
+	</statusEffects>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_mancubus]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to mancubus characters.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+			10
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		[#npc.getHealthPercentage() < 0.25]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Your health is less than [style.boldRed(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.verb(shoot)] fire at [npc2.Name], dealing formattedDamageInflicted damage.
+		#IF(npc.getHealthPercentage() < 0.25)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.verb(shoot)] fire at [npc.namePos] enemy, dealing formattedDamageInflicted damage.
+		#IF(npc.getHealthPercentage() < 0.25)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		
+		<execute><execute><![CDATA[
+			[npc.Name] [npc.verb(aim)] at [npc2.Name] and [npc.verb(expel)] demonic fire, that burns [npc2.herHim].
+		#IF(npc.getHealthPercentage() < 0.25)
+		<p>In the heat of the battle, [npc.name] [npc.verb(make)] a more powerful attack!</p>
+		#ENDIF
+	formattedHealthDamage
+]]></execute></execute>
+		<critDescription><![CDATA[
+			The fight got very intense, and [npc2.Name] got hit VERY hard!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.Name] is clenching [npc2.namePos] chest in pain!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

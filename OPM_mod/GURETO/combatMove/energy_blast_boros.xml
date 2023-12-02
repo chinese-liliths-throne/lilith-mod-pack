@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Energy Blast]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(fire)] a beam of great power dealing formattedDamageInflicted damage. Consumes 30 Mana.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		FIRE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+			[#npc.getUnarmedDamage() * 20]
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>ATTACK.svg</imageName>
+
+	<colourPrimary>BASE_BLUE</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_boros]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to boros.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getMana() < 30)
+            0
+        #ELSE
+            3.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(shot)] a beam of great power, dealing formattedDamageInflicted damage.
+        #IF(npc.getMana() < 30)
+            You don't have enough mana to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(shot)] a beam of great power, dealing formattedDamageInflicted damage.
+        #IF(npc.getMana() < 30)
+            You don't have enough mana to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getMana() < 30)
+                Your attack fails due to the lack in your mana reserves.
+            #ELSE
+			[npc.Name] [npc.verb(release)] a beam strong enough to disintegrate the toughest of materials and foes!
+                [##npc.incrementMana(-30)]
+                #ENDIF
+				formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

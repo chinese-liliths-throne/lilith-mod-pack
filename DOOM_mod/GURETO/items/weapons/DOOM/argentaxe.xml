@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>300000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[an]]></determiner>
+        <name><![CDATA[argent axe]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[argent axe]]></namePlural>
+        <description><![CDATA[An axe powered by the argent energy, used by marauders.]]></description>
+        <attackDescriptor>Slash</attackDescriptor>
+        <attackTooltipDescription>Slash [npc2.name] with the argent axe.</attackTooltipDescription>
+        <rarity>EPIC</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the argent axe.]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(let)] go of the argent axe.]]></unequipText>
+        <imageName>argentaxe.svg</imageName>
+        <imageEquippedName/>
+        <damage>90</damage>
+        <arcaneCost>5</arcaneCost>
+        <damageVariance>LOW</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+        </availableDamageTypes>
+        <spells/>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+        <primaryColours values="ALL"/>
+        <primaryColoursDye values="ALL"/>
+        <secondaryColours values="ALL"/>
+        <secondaryColoursDye values="ALL"/>
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[Thrusting the argent axe, [npc.name] [npc.verb(manage)] to jab [npc2.name] in the chest!]]></hitText>
+        <hitText><![CDATA[Slashing at [npc2.Name], [npc2.she] [npc.verb(take)] the hit.]]></hitText>
+        <hitText><![CDATA[Swinging the argent axe at [npc2.Name], the argent blade connects with [npc2.namePos] torso.]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[Thrusting the argent axe, [npc.name] [npc.verb(attempt)] to jab [npc2.name] in the chest, but [npc.verb(end)] up missing [npc2.herHim]!]]></missText>
+        <missText><![CDATA[Slashing at [npc2.Name], [npc2.she] [npc.verb(manage)] to avoid the hit.]]></missText>
+        <missText><![CDATA[Swinging the argent axe at [npc2.Name], the argent blade goes past [npc2.name].]]></missText>
+    </missDescriptions>
+</weapon>

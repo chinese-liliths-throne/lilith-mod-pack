@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>9900</value> 
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[Demonic offering : bloodletter]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Demonic offering : bloodletter]]></namePlural>
+		<description><![CDATA[Sigil of chaos that allows the weakening of the barrier between realspace and the immaterium.]]></description>
+		
+		<useDescriptor>Offer</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName>bloodletter_item.svg</imageName>
+		
+		<colourPrimary>CLOTHING_BLACK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[bloodletter]]></potionDescriptor>
+		<associatedRace>GURETO_bloodletter</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+		</effectTooltipLines>
+
+		<applyEffects><![CDATA[
+		[#npc.setBody(npc.getGender(), SUBSPECIES_GURETO_bloodletter_subspecies_bloodletter, RACE_STAGE_GREATER, false)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		After finish the offering, [npc.name] [npc.verb(start)] to change into a bloodletter.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		After finish the offering, [npc2.name] [npc.verb(start)] to change into a bloodletter.
+		]]></otherUse>
+	</useDescriptions>
+	
+</item>

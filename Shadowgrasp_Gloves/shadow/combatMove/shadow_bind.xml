@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<!-- GENERAL INFORMATION: If you are unsure of anything, please use the LT Discord to ask for help! -->
+	
+	<!-- The category which this status effect falls into. You can omit this field if you want it to be set to SPECIAL (which should be considered to be the standard category).
+	Categories, along with their meanings, can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/combat/moves/CombatMoveCategory.java -->
+	<category>SPECIAL</category>
+	
+	<!-- What kind of attack this is, which primarily determines when and how often NPCs will decide to use this attack during combat.
+	All available values of CombatMoveType can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/combat/moves/CombatMoveType.java -->
+	<type>POWER</type>
+	
+	<!-- How likely it is that the NPC who has this move available to them will select it as one of their equipped moves.
+	The default weighting is 1, and if you want it to be more likely to be chosen, then give it a higher weighting. -->
+	<equipWeighting>10</equipWeighting>
+	
+	<!-- The name of this move.
+	The character using this move is passed in as the 'npc' target for parsing, so commands such as [npc.name] will work. -->
+	<name><![CDATA[Shadow bind]]></name>
+	
+	<!-- The description of this move.
+	The character using this move is passed in as the 'npc' target for parsing, so commands such as [npc.name] will work.
+	Special parsing arguments which can be used here are as follows:
+	'damageInflicted' will parse to the attacker's projected damage of this attack (using the defined 'baseDamage' field defined below).
+	'formattedDamageInflicted' will parse to a formatted damage prediction, taking into account whether or not the target is at maximum lust (therefore taking into account conversion of lust damage to health/mana damage). -->
+	<description><![CDATA[
+		Use [npc.her] gloves power to summon shadowy chains that emerge from your target's own shadow, tightly binding and restraining them.
+	]]></description>
+	
+	<!-- The type of damage that this move inflicts. 
+	The parsing target of 'npc' corresponds to the character who is performing the move (and so conditional statements can be used to affect what damage type is inflicted).
+	All available values of DamageType can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/combat/DamageType.java -->
+	<damageType><![CDATA[
+		LUST
+	]]></damageType>
+	
+	<!-- The amount of damage this move does to the target, assuming that no modifiers are taken into account.
+	The parsing target of 'npc' corresponds to the character who is performing the move. -->
+	<baseDamage><![CDATA[
+		5
+	]]></baseDamage>
+	
+	<!-- The variance in base damage when this move is actually used to attack. Values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/combat/DamageVariance.java -->
+	<damageVariance>NONE</damageVariance>
+	
+	<!-- How much damage this move blocks.
+	The block type corresponds to the 'damageType' defined above.
+	The parsing target of 'npc' corresponds to the character who is performing the move.
+	'isCritical' will parse to the boolean return value for isCritical, and will therefore be either 'true' or 'false', depending on if the move is critically hitting or not. -->
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<!-- The number of turns it takes for this move to become available for use after using it.
+	The parsing target of 'npc' corresponds to the character who is performing the move.
+	A value of 0 (or less) means that it can be used as many times as the attacker wants.
+	The cooldown is decremented at the end of each combat round, including the current one, so a value of 1 means that this move will be available next turn (and so effectively just limits its use to once per combat turn). -->
+	<cooldown><![CDATA[
+		3
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<!-- These three values set whether or not the move can target enemies, allies, or the performer of the move themselves. -->
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<!-- The name of the icon which should be used to represent this combat move. The icon must be an svg file, and must be placed in the same folder as this XML file. -->
+	<imageName>chains.svg</imageName>
+	
+	<!-- The colours which should be associated with this status effect. Just like with clothing and weapon recolouring, this is used to recolour the image you used above.
+	A PresetColour value should be used here, drawn from: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/utils/colours/PresetColour.java -->
+	<colourPrimary>DAMAGE_TYPE_LUST</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<!-- The StatusEffects which should be applied to the target of this move.
+	The 'turnLength' attribute defines for how many combat turns the effect should last.
+	The 'onCrit' attribute determines whether this effect is only applied on a critical hit or not. -->
+	<statusEffects>
+		<effect turnLength="2" onCrit="false">shadow_bind</effect>
+	</statusEffects>
+	
+	
+	<!-- Effect logic -->
+	
+	<!-- this thing is the bane of my existence, no has made a mod that takes a weapon as a availaility condition so i have no examples to base this from -->
+<availabilityCondition><![CDATA[
+        [#npc.getMainWeapon(0) != null && npc.getMainWeapon(0).getWeaponType().equals(WEAPON_shadow_shadowy_gloves_shadowy_gloves)]
+    ]]>
+    </availabilityCondition>
+
+	<!-- A short description to let the player know what the conditions are for this move being available to them. -->
+	<availabilityDescription><![CDATA[
+		Available to characters who equip (weapon).
+	]]></availabilityDescription>
+	
+	<!-- The weighting for this action's chance of being selected by an AI combatant.
+	The standard value for weighting is 1.0.
+	The parsing target of 'npc' corresponds to the character who is using the move.
+	The parsing target of 'npc2' corresponds to the character who is being targeted by the move.
+	Note that this weighting is parsed for every combatant, enemy and ally alike, so the method npc2.isCombatAlly(npc) (or npc2.isCombatEnemy(npc)) should most likely be used to differentiate between friend and foe (if you have set this move as being able to be used on both allies and enemies).
+	For an interesting example, see the 'spinneret_webbing.xml' file. -->
+	<weighting><![CDATA[
+			1.0
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<!-- A short description to let the player know what the conditions are for this move to inflict a critical hit. -->
+	<criticalDescription><![CDATA[
+		Cannot crit.
+	]]></criticalDescription>
+	
+	<movePredictionDescriptionWithTarget><![CDATA[
+ Summoning shadowy chains from [npc2.name]'s own shadow, [npc.name] tightly binds and restrains [npc2.name], leaving them completely immobilized and helpless.
+]]></movePredictionDescriptionWithTarget>
+
+<movePredictionDescriptionNoTarget><![CDATA[
+ Summoning shadowy chains from the target's own shadow, [npc.name] tightly binds and restrains their target, leaving them completely immobilized and helpless.
+]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+	<execute><![CDATA[
+		[npc.Name] taps into [npc.her] gloves power, summoning shadowy chains that emerge from [npc2.name]'s own shadow, tightly binding and restraining [npc2.name].
+	]]></execute>
+	
+	<critDescription><![CDATA[
+			i you can see this something went wrong and this was only added because the error logs kept bitching about it not existing
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			i you can see this something went wrong and this was only added because the error logs kept bitching about it not existing
+		]]></critEffectDescription>
+	</performMove>
+</combatMove>

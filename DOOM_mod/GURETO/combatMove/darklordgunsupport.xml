@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Support arsenal : plasma guns]]></name>
+	
+
+	<description><![CDATA[
+		locking on your enemy, you open fire with your shoulder mounted plasma guns, dealing formattedDamageInflicted damage.
+	]]></description>
+	
+	<damageType><![CDATA[
+			FIRE
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		250
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		2
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_RED_LIGHT</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">ARCANE_WEAKNESS</effect>
+	</statusEffects>
+	
+	<availabilityCondition><![CDATA[
+[#npc.getClothingInSlot(IS_HAIR) != null && npc.getClothingInSlot(IS_HAIR).getClothingType().equals(CLOTHING_GURETO_DOOM_DARKLORD)]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the Dark Lord armor.
+	]]></availabilityDescription>
+	
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 70)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		[#npc.getHealthPercentage() < 0.25]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Your health is less than [style.boldRed(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(open)] fire on [npc2.Name] with [npc.namePos] shoulder mounted plasma guns, dealing formattedDamageInflicted damage.
+        #IF(npc.getEssenceCount() < 70)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(open)] fire on [npc.namePos] foe with [npc.namePos] shoulder mounted plasma guns, dealing formattedDamageInflicted damage.
+        #IF(npc.getEssenceCount() < 70)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		
+		<execute><execute><![CDATA[
+            #IF(npc.getEssenceCount() < 70)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+				[npc.Name] [ncp.verb(open)] fire on [npc2.Name] with [npc.namePos] plasma guns!
+                [##npc.incrementEssenceCount(-70,false)]
+		#ENDIF
+	formattedHealthDamage
+]]></execute></execute>
+		<critDescription><![CDATA[
+			The fight got very intense, and [npc2.Name] got hit VERY hard!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.Name] is clenching [npc2.namePos] chest in pain!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

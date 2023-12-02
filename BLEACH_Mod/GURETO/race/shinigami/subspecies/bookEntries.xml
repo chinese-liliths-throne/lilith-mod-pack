@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="shinigami_BASIC"><![CDATA[
+	<p>
+		Shinigamis are habitants of the the soul society.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="shinigami_ADVANCED"><![CDATA[
+	<p>
+		Shinigamis are soul reapers that eliminate hollows to keep balance between the souls. They use reiatsu and zanpakuto as a main to defend themselves.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

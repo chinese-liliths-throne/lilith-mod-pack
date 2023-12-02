@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Final Cero]]></name>
+	
+
+	<description><![CDATA[
+		You charge a reiatsu sphere and shoot it at your enemy. Consumes 9999 arcane essences.
+	]]></description>
+	
+	<damageType><![CDATA[
+		#IF(npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE) && npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_POISON))
+			FIRE
+		#ELSEIF(npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE) && npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE) >= npc.getAttributeValue(ATTRIBUTE_DAMAGE_POISON))
+			ICE
+		#ELSE
+			POISON
+		#ENDIF
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		1
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_RED</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">ARCANE_WEAKNESS</effect>
+	</statusEffects>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_Bresurreccion]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to arrancar characters that transcended their limits with the Hogyoku.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 9999)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Doesn't need to crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.verb(Send)] a cero at [npc.namePos] enemies. Consumes 9999 arcane essences.
+        #IF(npc.getEssenceCount() < 9999)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.verb(Send)] a cero at [npc.namePos] enemies. Consumes 9999 arcane essences.
+        #IF(npc.getEssenceCount() < 9999)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		
+		<execute><execute><![CDATA[
+            #IF(npc.getEssenceCount() < 9999)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+                [##npc.incrementEssenceCount(-9999,false)]
+				[#combat.getEnemies(npc).get(0).setHealth(0)]				
+				[#combat.getEnemies(npc).get(1).setHealth(0)]
+				[#combat.getEnemies(npc).get(2).setHealth(0)]
+				[#combat.getEnemies(npc).get(3).setHealth(0)]
+				[#combat.getEnemies(npc).get(4).setHealth(0)]
+				[#combat.getEnemies(npc).get(5).setHealth(0)]
+				[#combat.getEnemies(npc).get(6).setHealth(0)]
+				[#combat.getEnemies(npc).get(7).setHealth(0)]
+				[#combat.getEnemies(npc).get(8).setHealth(0)]
+				[#combat.getEnemies(npc).get(9).setHealth(0)]
+				[#combat.getEnemies(npc).get(10).setHealth(0)]
+				[#combat.getEnemies(npc).get(11).setHealth(0)]
+				[#combat.getEnemies(npc).get(12).setHealth(0)]
+				[#combat.getEnemies(npc).get(13).setHealth(0)]
+				[#combat.getEnemies(npc).get(14).setHealth(0)]
+				[#combat.getEnemies(npc).get(15).setHealth(0)]
+				[#combat.getEnemies(npc).get(16).setHealth(0)]
+				[#combat.getEnemies(npc).get(17).setHealth(0)]
+				[#combat.getEnemies(npc).get(18).setHealth(0)]
+				[#combat.getEnemies(npc).get(19).setHealth(0)]
+                #ENDIF
+				Slowly flying up, [npc.Name] [npc.verb(look)] down on [npc2.Name] as [npc.Name] [npc.verb(concentrate)] transcended reiatsu in the palm of [npc.namePos] hand. Once [npc.Name] [npc.verb(think)] that it is enough, [npc.Name] [npc.verb(send)] the Final Cero to show [npc2.Name] how strong [npc.she] really became. The Final Cero Explodes in a massively powerful explosion that engulfs the horizon! [npc.Name] [npc.verb(fly)] above the explosion, looking down on the utter devastation.<br>
+		]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>500</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[plug thong]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[plug thongs]]></namePlural>
+		<description><![CDATA[A thong with an integrated metal plug instead of a back, designed to be inserted into someone's anus while wearing.]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>GROIN</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>plug_thong.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>SHIFTS_ASIDE</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots values="CONCEALED_GENITALS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots>
+			<slot>ANUS</slot>
+		</incompatibleSlots>
+		
+		<primaryColours values="LINGERIE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="LINGERIE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="ALL_METAL"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>PLUGS_ANUS</tag>
+			<tag>ENABLE_SEX_EQUIP</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<sexAttributesSelf>
+		<penetration>
+			<length>10</length>
+			<girth>6</girth>
+			<modifiers/>
+		</penetration>
+		<orifice/>
+	</sexAttributesSelf>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(step)] into the thong, before pulling it up to cover [npc.her] private parts and [npc.verb(push)] the butt plug into [npc.her] [npc.asshole+]..]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] the thong up [npc2.namePos] [npc2.legs] to cover [npc2.her] private parts and [npc.verb(push)] the butt plug into [npc2.namePos] [npc2.asshole+].]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] the thong up [npc2.namePos] [npc2.legs] to cover [npc2.her] private parts and firmly [npc.verb(hold)] [npc2.name] still as [npc.she] roughly [npc.verb(force)] the butt plug into [npc2.her] [npc2.asshole+].]]>
+	  </otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] the butt plug out from [npc.her] [npc.asshole+], [npc.verb(pull)] [npc.her] thong down and [npc.verb(kick)] it off [npc.her] [npc.feet].]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] the butt plug out from [npc2.namePos] [npc2.asshole+], [npc.verb(slide)] down [npc2.namePos] thong and [npc.verb(pull)] it off [npc2.her] [npc2.feet].]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] firmly [npc.verb(grab)] [npc2.namePos] butt plug and [npc.verb(yank)] it out of [npc2.her] [npc2.asshole+], then roughly [npc.verb(pull)] down [npc2.namePos] thong and [npc.verb(yank)] it off [npc2.her] [npc2.feet].]]>
+		</otherRough>
+	</displacementText>
+	
+</clothing>

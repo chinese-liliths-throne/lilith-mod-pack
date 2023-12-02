@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>150000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[a]]></determiner>
+        <name><![CDATA[Sanrei glove]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Sanrei glove]]></namePlural>
+        <description><![CDATA[A glove wielded by Quincies.]]></description>
+        <attackDescriptor>shoot</attackDescriptor>
+        <attackTooltipDescription>Shoot [npc2.name] with the Sanrei glove.</attackTooltipDescription>
+        <rarity>COMMON</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(wear)] the Sanrei glove.]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(remove)] the Sanrei glove.]]></unequipText>
+        <imageName>sanreiglove.svg</imageName>
+        <imageEquippedName/>
+        <damage>60</damage>
+        <arcaneCost>5</arcaneCost>
+        <damageVariance>LOW</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+            <damageType>FIRE</damageType>
+            <damageType>POISON</damageType>
+            <damageType>ICE</damageType>
+        </availableDamageTypes>
+        <spells/>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+        <primaryColours values="ALL"/>
+        <primaryColoursDye values="ALL"/>
+        <secondaryColours values="ALL"/>
+        <secondaryColoursDye values="ALL"/>
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[Drawing on the rope of the bow made of reishi that [npc.Name] generated from the glove, [npc.Name] [npc.verb(let)] go of the rope and the arrow hits [npc2.Name]!]]></hitText>
+        <hitText><![CDATA[Shooting at [npc2.Name], [npc2.she] [npc.verb(take)] the hit directly.]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[Drawing on the rope of the bow made of reishi that [npc.Name] generated from the glove, [npc.Name] [npc.verb(let)] go of the rope and the arrow flies past [npc2.Name]!]]></missText>
+        <missText><![CDATA[Shooting at [npc2.Name], [npc2.she] [npc.verb(manage)] to avoid the hit.]]></missText>
+    </missDescriptions>
+</weapon>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[Front Towards Enemy]]></name>
+		
+		<description><![CDATA[This person might get off at the slightest provocation.]]></description> 
+		
+		<bodyOverviewDescription><![CDATA[a tattoo saying front towards enemy.]]></bodyOverviewDescription> 
+		
+		<imageName>towads_enemy.svg</imageName> 
+		
+		<slotAvailability> 
+			<slot>GROIN</slot>
+		</slotAvailability>
+		<primaryColours values="ALL" defaultColour="CLOTHING_WHITE"/> 
+		<secondaryColours/>
+		<tertiaryColours/>
+	</coreAttributes>
+	
+</tattoo>

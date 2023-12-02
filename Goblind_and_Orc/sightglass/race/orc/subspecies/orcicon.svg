@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <path style="font-variation-settings:normal;-inkscape-stroke:none" fill="#ff8080" stroke="#000" d="M7.158 18.248s-1.163 10.634 1.36 14.959c1.354 2.322 6.628 4.59 6.628 4.59l1.192-11.389-9.18-8.16zm49.684 0l-9.18 8.16 1.192 11.389s5.274-2.268 6.628-4.59c2.523-4.325 1.36-14.959 1.36-14.959z"/>
+    <path fill="#ff8080" stroke="#000" d="M48.274 15.149c1.13 9.744 5.686 21.145 4.797 35.182-8.432 7.095-20.958 8.25-20.958 8.25s-12.525-1.155-20.957-8.25c-.89-14.037 3.667-25.438 4.797-35.182 5.216-5.716 16.16-6.826 16.16-6.826s10.944 1.11 16.16 6.826z"/>
+    <g style="font-variation-settings:normal;-inkscape-stroke:none" fill="none" stroke="#000">
+        <path style="font-variation-settings:normal;-inkscape-stroke:none" d="M16.255 50.501c12.644-7.259 20.55-1.444 31.801 0"/>
+        <path style="font-variation-settings:normal;-inkscape-stroke:none" fill="#faf8f4" d="M18.784 41.477l1.068 7.25c.315-.13.628-.255.937-.37a23.558 23.558 0 014.186-1.123c.258-.043.514-.077.77-.11zM44.91 41.571l-8.015 6.504c.448.106.895.213 1.346.324.622.155 1.247.314 1.877.473.63.159 1.265.316 1.908.47.555.134 1.117.262 1.684.386z"/>
+    </g>
+    <path style="font-variation-settings:normal;-inkscape-stroke:none" fill="none" stroke="#000" d="M26.918 34.507l4.93 2.72 5.27-2.38"/>
+</svg>

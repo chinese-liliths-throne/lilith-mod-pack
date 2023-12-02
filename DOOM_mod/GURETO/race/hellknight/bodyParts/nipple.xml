@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<nipple>
+
+	<race>GURETO_hellknight</race>
+	
+	<coveringType>GURETO_hellknight_nipples</coveringType>
+	
+	<descriptorsMasculine/>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsFeminine/>
+
+	<defaultOrificeModifiers/>
+
+	
+</nipple>

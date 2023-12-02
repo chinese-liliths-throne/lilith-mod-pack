@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[there is a small sign on it: Manufactured by Tidurian]]></authorTag>
+		<value>666666</value>
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[Transformative Orb]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Transformative Orbs]]></namePlural>
+		<description><![CDATA[
+					After infusing it with your Arcane Essence and holding it against a Person it starts a powerful Transformative effect.</br>
+					Demonic Bodyparts seem to have a strong resistance and can not be copied. yet can be overwritten</br>There is a Switch that is currently set to:</br>
+					[#if(game.getDialogueFlags().getSavedLong("tidurian_copytoggle") == -1){"[style.colourGood(TF others into your Species)]"}else{"[style.colourBad(TF You into the Other Persons Species)]"}]
+					</br></br>
+					[style.colourBad(Costs)] [style.colourArcane(80 arcane essence)] to use]]></description> 
+		<useDescriptor>activate</useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		<rarity>LEGENDARY</rarity>
+		<imageName>transformative_orb.svg</imageName>
+		<colourPrimary>CLOTHING_RED_VERY_DARK</colourPrimary>
+		<effectTooltipLines>
+			<line><![CDATA[
+				[#if(game.getDialogueFlags().getSavedLong("tidurian_copytoggle") == -1)
+				{"[style.colourGood(TF Your partner into your Species!)]"}
+				else
+				{"[style.colourBad(TF Yourself into your partners Species)]"}]
+				<br>Flip the switch (activate (self)) to change direction!
+				<br>Doesn't changes genital size or configurations.
+			]]></line>
+		</effectTooltipLines>
+		<applyEffects><![CDATA[
+		[##
+			function startup()
+			{
+				var output = "";
+				if(npc.isPlayer())
+				{
+					output += Selfuse();
+				}
+				else
+				{
+					output += UseOther();
+				}
+				return output;
+			}
+			function CopyTargetisThem()
+			{
+				if(game.getDialogueFlags().getSavedLong("tidurian_copytoggle") == -1)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			function Selfuse()
+			{
+				var output = "";
+				output += "<p>You flip the Switch on the device Reversing the direction of the transfer.</p>";
+				if(CopyTargetisThem())
+				{
+					game.getDialogueFlags().setSavedLong("tidurian_copytoggle",0);
+					output += "<p>It will now Copy the Other persons species onto you</p>";
+				}
+				else
+				{
+					game.getDialogueFlags().setSavedLong("tidurian_copytoggle",-1);
+					output += "<p>It will now Copy Your species onto the Other Person</p>";
+				}
+				return output;
+			}
+			function UseOther()
+			{
+				var Target;
+				var Source;
+				var cantransform = false;
+				var output = "";
+				if(CopyTargetisThem())
+				{
+					Target = npc;
+					Source = game.getPlayer();
+					if(Target.isUnique())
+					{
+						if(Target.isSlave() && Target.getOwner().isPlayer())
+						{
+							cantransform = true;
+						}
+						else
+						{
+							output += "<p>They Refuse to use the item.</p>";
+						}
+					}
+					else
+					{
+						if(Target.isSlave() && !Target.getOwner().isPlayer())
+						{
+							output += "<p>This Slave is not yours to manipulate.</p>";
+						}
+						else
+						{
+							cantransform = true;
+						}
+					}
+				}
+				else
+				{
+					Target = game.getPlayer();
+					Source = npc;
+					cantransform = true;
+				}
+				var isFeralmode = false;
+				if(Target.isFeral() || Source.isFeral())
+				{
+					if(Target.isFeral() && Source.isFeral())
+					{
+						isFeralmode = true;
+					}
+					else
+					{
+						output += "<p>The Orb Shakes Angrily as you try to use it with them. your body compositions are too different for a Species TF</p>";
+						cantransform = false;
+					}
+				}
+				if(cantransform)
+				{
+					if(game.getPlayer().getEssenceCount() >= 80)
+					{
+						game.getPlayer().incrementEssenceCount(-80,false);
+						output += "<p>You Spent 80 Arcane Essence to Transform.</p>";
+						if(isFeralmode)
+						{
+							output += transformFERAL(Target,Source);
+						}
+						else
+						{
+							output += transform(Target,Source);
+						}
+					}
+					else
+					{
+						output += "<p>You dont have enough Arcane Essence to use this.</p>";
+					}
+					
+				}
+				return output;
+			}
+			function transformFERAL(Target,Source)
+			{
+				Target.setFeral(Source.getBody().getHalfDemonSubspecies()); 
+				return "they/you got TFed into their/your feral species.!";
+			}
+			function transform(Target,Source)
+			{
+				var SPECIESTYPE = Source.getBody().getHalfDemonSubspecies();
+				var SPECIESBODY = SPECIESTYPE.getRace().getRacialBody();
+				var output = "";
+
+				var bodypart = Source.getTorsoType();
+				if(bodypart != Target.getTorsoType())
+				{
+					if((bodypart != TORSO_TYPE_DEMON_COMMON) && (bodypart != TORSO_TYPE_ANGEL))
+					{
+						output += Target.setTorsoType(bodypart);
+					}
+					else
+					{
+						output += Target.setTorsoType(SPECIESBODY.getTorsoType());
+					}
+				}
+				bodypart = Source.getFaceType();
+				if(bodypart != Target.getFaceType())
+				{
+					if((bodypart != FACE_TYPE_DEMON_COMMON) && (bodypart != FACE_TYPE_ANGEL))
+					{
+						output += Target.setFaceType(bodypart);
+					}
+					else
+					{
+						output += Target.setFaceType(SPECIESBODY.getFaceType());
+					}
+				}
+				bodypart = Source.getArmType();
+				if(bodypart != Target.getArmType())
+				{
+					if((bodypart != ARM_TYPE_DEMON_COMMON) && (bodypart != ARM_TYPE_ANGEL))
+					{
+						output += Target.setArmType(bodypart);
+					}
+					else
+					{
+						output += Target.setArmType(SPECIESBODY.getArmType());
+					}
+				}
+				if(Source.getArmRows() != Target.getArmRows())
+				{
+					output += Target.setArmRows(Source.getArmRows());
+				}
+				
+				bodypart = Source.getLegType();
+				if(bodypart != Target.getLegType())
+				{
+					if((bodypart != LEG_TYPE_DEMON_COMMON) && (bodypart != LEG_TYPE_DEMON_HOOFED) && (bodypart != LEG_TYPE_DEMON_HORSE_HOOFED) && (bodypart != LEG_TYPE_DEMON_SNAKE) && (bodypart != LEG_TYPE_DEMON_SPIDER) && (bodypart != LEG_TYPE_DEMON_OCTOPUS) && (bodypart != LEG_TYPE_DEMON_FISH) && (bodypart != LEG_TYPE_DEMON_EAGLE) && (bodypart != LEG_TYPE_ANGEL))
+					{
+						output += Target.setLegType(bodypart);
+					}
+					else
+					{
+						output += Target.setLegType(SPECIESBODY.getLegType());
+					}
+				}
+				
+				bodypart = Source.getTentacleType();
+				if(bodypart != Target.getTentacleType())
+				{
+					if((bodypart != TENTACLE_TYPE_DEMON_COMMON) && (bodypart != LEG_DEMON_OCTOPUS) && (bodypart != LEG_TYPE_DEMON_HORSE_HOOFED) && (bodypart != LEG_TYPE_DEMON_SNAKE) && (bodypart != LEG_TYPE_DEMON_SPIDER) && (bodypart != LEG_TYPE_DEMON_OCTOPUS) && (bodypart != LEG_TYPE_DEMON_FISH) && (bodypart != LEG_TYPE_DEMON_EAGLE) && (bodypart != LEG_TYPE_ANGEL))
+					{
+						output += Target.setTentacleType(bodypart);
+					}
+					else
+					{
+						output += Target.setTentacleType(SPECIESBODY.getTentacleType());
+					}
+				}
+				if(Source.getTentacleCount() != Target.getTentacleCount())
+				{
+					output += Target.setTentacleCount(Source.getTentacleCount());
+				}
+				
+				
+				bodypart = Source.getLegConfiguration();
+				if(bodypart != Target.getLegConfiguration())
+				{
+					output += Target.setLegConfiguration(bodypart,true);
+				}
+				
+				
+				
+				bodypart = Source.getAntennaType();
+				if(bodypart != Target.getAntennaType())
+				{
+					output += Target.setAntennaType(bodypart);
+				}
+				if(Source.getAntennaRows() != Target.getAntennaRows())
+				{
+					output += Target.setAntennaRows(Source.getAntennaRows());
+				}
+				if(Source.getAntennaePerRow() != Target.getAntennaePerRow())
+				{
+					output += Target.setAntennaePerRow(Source.getAntennaePerRow());
+				}
+				
+				bodypart = Source.getEyeType();
+				if(bodypart != Target.getEyeType())
+				{
+					if((bodypart != EYE_TYPE_DEMON_COMMON) && (bodypart != EYE_TYPE_DEMON_OWL) && (bodypart != EYE_TYPE_ANGEL))
+					{
+						output += npc,Target.setEyeType(bodypart);
+					}
+					else
+					{
+						output += Target.setEyeType(SPECIESBODY.getEyeType());
+					}
+				}
+				if(Source.getEyePairs() != Target.getEyePairs())
+				{
+					output += Target.setEyePairs(Source.getEyePairs());
+				}
+				
+				bodypart = Source.getEarType();
+				if(bodypart != Target.getEarType())
+				{
+					if((bodypart != EAR_TYPE_DEMON_COMMON) && (bodypart != EAR_TYPE_ANGEL))
+					{
+						output += Target.setEarType(bodypart);
+					}
+					else
+					{
+						output += Target.setEarType(SPECIESBODY.getEarType());
+					}
+				}
+				bodypart = Source.getHairType();
+				if(bodypart != Target.getHairType())
+				{
+					if((bodypart != HAIR_TYPE_DEMON) && (bodypart != HAIR_TYPE_ANGEL))
+					{
+						output += Target.setHairType(bodypart);
+					}
+					else
+					{
+						output += Target.setHairType(SPECIESBODY.getHairType());
+					}
+				}
+				bodypart = Source.getTailType();
+				if(bodypart != Target.getTailType())
+				{
+					if((bodypart != TAIL_TYPE_DEMON_COMMON) && (bodypart != TAIL_TYPE_DEMON_HAIR_TIP) && (bodypart != TAIL_TYPE_DEMON_TAPERED) && (bodypart != TAIL_TYPE_DEMON_HORSE) && (bodypart != TAIL_TYPE_DEMON_OVIPOSITOR))
+					{
+						output += Target.setTailType(bodypart);
+					}
+					else
+					{
+						output += Target.setTailType(SPECIESBODY.getTailType()[0]);
+					}
+				}
+				if(Source.getTailCount() != Target.getTailCount())
+				{
+					output += Target.setTailCount(Source.getTailCount(),true);
+				}
+				bodypart = Source.getWingType();
+				if(bodypart != Target.getWingType())
+				{
+					if((bodypart != WING_TYPE_DEMON_COMMON) && (bodypart != WING_TYPE_DEMON_FEATHERED) && (bodypart != WING_TYPE_ANGEL))
+					{
+						output += Target.setWingType(bodypart);
+					}
+					else
+					{
+						try
+						{
+							output += Target.setWingType(SPECIESBODY.getWingType());
+						}
+						catch(err)
+						{
+							output += Target.setWingType(WING_TYPE_NONE);
+						}
+					}
+				}
+				bodypart = Source.getHornType();
+				if(bodypart != Target.getHornType())
+				{
+					output += Target.setHornType(bodypart);
+				}
+				
+				if(bodypart != HORN_TYPE_NONE)
+				{
+					if(Source.getHornRows() != Target.getHornRows())
+					{
+						output += Target.setHornRows(Source.getHornRows());
+					}
+					if(Source.getHornsPerRow() != Target.getHornsPerRow())
+					{
+						output += Target.setHornsPerRow(Source.getHornsPerRow());
+					}
+				}
+				bodypart = Source.getAssType();
+				if(bodypart != Target.getAssType())
+				{
+					if((bodypart != ASS_TYPE_DEMON_COMMON)&& (bodypart != ASS_TYPE_ANGEL))
+					{
+						output += Target.setAssType(bodypart);
+					}
+					else
+					{
+						output += Target.setAssType(SPECIESBODY.getAssType());
+					}
+				}
+				bodypart = Source.getBreastType();
+				if(bodypart != Target.getBreastType())
+				{
+					if((bodypart != BREAST_TYPE_DEMON_COMMON)&& (bodypart != BREAST_TYPE_ANGEL))
+					{
+						output += Target.setBreastType(bodypart);
+					}
+					else
+					{
+						output += Target.setBreastType(SPECIESBODY.getBreastType());
+					}
+				}if(Target.getBreastCrotchType() != BREAST_TYPE_NONE)
+				{
+					if(Source.getBreastRows() != Target.getBreastRows())
+					{
+						output += Target.setBreastRows(Source.getBreastRows());
+					}
+					if(Source.getNippleCountPerBreast() != Target.getNippleCountPerBreast())
+					{
+						output += Target.setNippleCountPerBreast(Source.getNippleCountPerBreast());
+					}
+				}
+				bodypart = Source.getBreastCrotchType();
+				if(bodypart != Target.getBreastCrotchType())
+				{
+					if((bodypart != BREAST_TYPE_DEMON_COMMON)&& (bodypart != BREAST_TYPE_ANGEL))
+					{
+						output += Target.setBreastCrotchType(bodypart);
+					}
+					else
+					{
+						output += Target.setBreastCrotchType(SPECIESBODY.getBreastCrotchType());
+					}
+				}
+				if(Target.getBreastCrotchType() != BREAST_TYPE_NONE)
+				{
+					if(Source.getBreastCrotchRows() != Target.getBreastCrotchRows())
+					{
+						output += Target.setBreastCrotchRows(Source.getBreastCrotchRows());
+					}
+					if(Source.getNippleCrotchCountPerBreast() != Target.getNippleCrotchCountPerBreast())
+					{
+						output += Target.setNippleCrotchCountPerBreast(Source.getNippleCrotchCountPerBreast());
+					}
+				}
+				
+				bodypart = Source.getPenisType();
+				if(bodypart != Target.getPenisType())
+				{
+					if(bodypart == PENIS_TYPE_NONE)
+					{
+						bodypart = Source.getRace().getRacialBody().getPenisType()
+					}
+					if(Target.hasPenis())
+					{
+						if((bodypart != PENIS_TYPE_DEMON_COMMON)&& (bodypart != PENIS_TYPE_ANGEL))
+						{
+							output += Target.setPenisType(bodypart);
+						}
+						else
+						{
+							output += Target.setPenisType(SPECIESBODY.getPenisType());
+						}
+						if(Source.getTesticleCount() != Target.getTesticleCount())
+						{
+							output += Target.setNippleCrotchCountPerBreast(Source.getTesticleCount());
+						}
+						if(Source.isInternalTesticles() != Target.isInternalTesticles())
+						{
+							output += Target.setInternalTesticles(Source.isInternalTesticles());
+						}
+					}
+				}
+				if(Target.hasPenis())
+				{
+					if(Source.getTesticleCount() != Target.getTesticleCount())
+					{
+						output += Target.setNippleCrotchCountPerBreast(Source.getTesticleCount());
+					}
+					if(Source.isInternalTesticles() != Target.isInternalTesticles())
+					{
+						output += Target.setInternalTesticles(Source.isInternalTesticles());
+					}
+				}
+				bodypart = Source.getVaginaType();
+				if(bodypart != Target.getVaginaType())
+				{
+					if(bodypart == VAGINA_TYPE_NONE)
+					{
+						bodypart = Source.getRace().getRacialBody().getVaginaType()
+					}
+					if(Target.hasVagina())
+					{
+						if((bodypart != VAGINA_TYPE_DEMON_COMMON)&& (bodypart != VAGINA_TYPE_ANGEL))
+						{
+							output += Target.setVaginaType(bodypart);
+						}
+						else
+						{
+							output += Target.setVaginaType(SPECIESBODY.getVaginaType());
+						}
+					}
+				}
+				
+				if(Source.getGenitalArrangement() != Target.getGenitalArrangement())
+				{
+					output += Target.setGenitalArrangement(Source.getGenitalArrangement());
+				}
+				return output;
+			}
+		]
+		[#startup();]
+		]]></applyEffects>
+		<itemTags>
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>NO_RANDOM_SPAWN</tag>
+			<tag>UNENCHANTABLE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	<useDescriptions>
+		<selfUse><![CDATA[]]></selfUse>
+		<otherUse><![CDATA[]]></otherUse>
+	</useDescriptions>
+</item>

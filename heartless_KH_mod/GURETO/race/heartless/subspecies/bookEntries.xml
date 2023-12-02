@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="heartless_BASIC"><![CDATA[
+	<p>
+		heartless are mysterious creatures.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="heartless_ADVANCED"><![CDATA[
+	<p>
+		heartless are beings that lost their heart and now seek other people's heart in order to try and steal it.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

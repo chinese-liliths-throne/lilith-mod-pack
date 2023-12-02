@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<leg>
+	<race>sightglass_goblinoid</race>
+	<transformationName><![CDATA[goblin]]></transformationName>
+	<coveringType>sightglass_goblinoid_skin</coveringType>
+	<defaultFootStructure>PLANTIGRADE</defaultFootStructure>
+	<footType>HUMANOID</footType>
+	<spinneret>false</spinneret>
+	<tentacleType>NONE</tentacleType>
+	<tentacleCount>0</tentacleCount>
+	<allowedLegConfigurations>
+		<configuration>BIPEDAL</configuration>
+	</allowedLegConfigurations>
+	<name><![CDATA[leg]]></name>
+	<namePlural><![CDATA[legs]]></namePlural> 
+	<descriptorsMasculine>
+		<descriptor>masculine</descriptor>
+		<descriptor>goblin-like</descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor>feminine</descriptor>
+		<descriptor>goblin-like</descriptor>
+	</descriptorsFeminine>
+	<footDescriptorsMasculine>
+		<descriptor>goblin-like</descriptor>
+	</footDescriptorsMasculine>
+	<footDescriptorsFeminine>
+		<descriptor>goblin-like</descriptor>
+	</footDescriptorsFeminine>
+	<toeDescriptorsMasculine>
+		<descriptor>goblin-like</descriptor>
+		<descriptor>opposable</descriptor>
+	</toeDescriptorsMasculine>
+	<toeDescriptorsFeminine>
+		<descriptor>goblin-like</descriptor>
+		<descriptor>opposable</descriptor>
+	</toeDescriptorsFeminine>
+	<transformationDescription><![CDATA[
+		A layer of goblin-like skin quickly grows over [npc.her] legs as they shift into a new form.
+		<br/>[npc.Name] now [npc.has] [style.boldGreen(goblin-like legs and feet)], which are [npc.materialDescriptor] [npc.legFullDescription].
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.Her] legs are [npc.materialCompositionDescriptor] [npc.legFullDescription(true)], and [npc.her] feet are formed into goblin-like feet.
+	]]></bodyDescription>
+</leg>

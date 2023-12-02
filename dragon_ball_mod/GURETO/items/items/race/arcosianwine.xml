@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[Its origin doesn't seem to be from around. Maybe from a far away planet]]></authorTag>
+		
+		<value>100000</value> 
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[tyrannical wine]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[tyrannical wine]]></namePlural>
+		<description><![CDATA[A cup of tyranical wine, aquired from tyrants from the stars.]]></description> 
+		
+		<useDescriptor>eat</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="90" target1='stroke="#000"' replacement1='stroke="#ff5555"' target2='#ff8080' replacement2='#ff5555'>res/mods/GURETO/race/arcosian/subspecies/arcosianicon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="85">arcosianwine.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>BASE_GREY_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[arcosian]]></potionDescriptor>
+		<associatedRace>GURETO_arcosian</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Restores)] 5% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/20)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(bring)] the cup of wine to [npc.namePos] lips and [npc.verb(swallow)] it. The taste is rich and sweet but doesn't intoxicate, perfect to gaze upon a conquered world...
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the cup of wine and [npc.Name] hold it in front of [npc2.her] lips. [npc2.She] [npc.verb(hesitate)] before swallowing the rich and sweet wine. [npc2.Name] doesn't feel intoxicated after drinking the wine.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clothing>
+	<coreAttributes>
+		<value>750000</value>
+		<determiner><![CDATA[the ritual of the]]></determiner>
+		<name><![CDATA[fusion dance]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[fusion dances]]></namePlural>
+		<description><![CDATA[A ritual that allows to fuse two beings into one, multiplying their power.]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_EAR</slot> 
+		<rarity>LEGENDARY</rarity>
+		<clothingSet>GURETO_fusion</clothingSet> 
+		<imageName>fusion.svg</imageName>
+		<imageEquippedName/>
+		<enchantmentLimit/>
+		<effects/>
+		
+		<blockedPartsList slot="PIERCING_EAR">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="PIERCING_EAR"/>
+		
+		<primaryColours values="JUST_ORANGE_BRIGHT"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="ALL_METAL"/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(perform)] the dance and [npc.verb(fuse)].]]>
+    </self>
+    <other>
+      <![CDATA[[npc2.Name] [npc.verb(perform)] the dance and [npc.verb(fuse)].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc2.Name] [npc.verb(perform)] the dance hastily and [npc.verb(fuse)].]]>
+    </otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(defuse)] and [npc.verb(retrieve)] [npc.namePos] normal form.]]>
+    </self>
+    <other>
+      <![CDATA[[npc2.Name] [npc.verb(defuse)] and [npc.verb(retrieve)] [npc2.namePos] normal form.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc2.Name] [npc.verb(defuse)] hastily and [npc.verb(retrieve)] [npc2.namePos] normal form.]]>
+    </otherRough>
+  </displacementText>
+	
+</clothing>

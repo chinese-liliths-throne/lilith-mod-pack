@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<!-- GENERAL INFORMATION: If you are unsure of anything, please use the LT Discord to ask for help! -->
+	
+	<!-- The category which this status effect falls into. You can omit this field if you want it to be set to SPECIAL (which should be considered to be the standard category).
+	Categories, along with their meanings, can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/combat/moves/CombatMoveCategory.java -->
+	<category>SPECIAL</category>
+	
+	<!-- What kind of attack this is, which primarily determines when and how often NPCs will decide to use this attack during combat.
+	All available values of CombatMoveType can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/combat/moves/CombatMoveType.java -->
+	<type>ATTACK</type>
+	
+	<!-- How likely it is that the NPC who has this move available to them will select it as one of their equipped moves.
+	The default weighting is 1, and if you want it to be more likely to be chosen, then give it a higher weighting. -->
+	<equipWeighting>10</equipWeighting>
+	
+	<!-- The name of this move.
+	The character using this move is passed in as the 'npc' target for parsing, so commands such as [npc.name] will work. -->
+	<name><![CDATA[Crucible of the True First Being]]></name>
+	
+	<description><![CDATA[
+		Holding your crucible you slash at your foe, dealing formattedDamageInflicted damage. When under 50% health, deals twice the damage.
+	]]></description>
+	
+	<!-- The type of damage that this move inflicts. 
+	The parsing target of 'npc' corresponds to the character who is performing the move (and so conditional statements can be used to affect what damage type is inflicted).
+	All available values of DamageType can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/combat/DamageType.java -->
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<!-- The amount of damage this move does to the target, assuming that no modifiers are taken into account.
+	The parsing target of 'npc' corresponds to the character who is performing the move. -->
+	<baseDamage><![CDATA[
+		#IF(npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.5))
+			[#npc.getUnarmedDamage() * 10]
+		#ELSE
+			[#npc.getUnarmedDamage() * 5]
+		#ENDIF
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<!-- These three values set whether or not the move can target enemies, allies, or the performer of the move themselves. -->
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<!-- The name of the icon which should be used to represent this combat move. The icon must be an svg file, and must be placed in the same folder as this XML file. -->
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_CRIMSON</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="5" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+	<availabilityCondition><![CDATA[
+[#npc.getClothingInSlot(IS_HAIR) != null && npc.getClothingInSlot(IS_HAIR).getClothingType().equals(CLOTHING_GURETO_DOOM_DARKLORD)]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the Dark Lord armor.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+		2.5
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<!-- A short description to let the player know what the conditions are for this move to inflict a critical hit. -->
+	<criticalDescription><![CDATA[
+		Attacker's HP is less than [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Holding the crucible, [npc.Name] [npc.verb(slash)] [npc2.Name], dealing formattedDamageInflicted damage.
+		#IF(npc.getHealthPercentage() < 0.25)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<!-- This is almost identical to the defined description above, with the difference being that there is no targeted character. As such, the description cannot use any 'npc2' parsing. -->
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Holding the crucible, [npc.Name] [npc.verb(slash)] [npc2.Name], dealing formattedDamageInflicted damage.
+		#IF(npc.getHealthPercentage() < 0.25)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><execute><![CDATA[
+			Bringing [npc.her] arm down, [npc.Name] [npc.verb(slash)] [npc2.Name] across the chest!
+		#IF(npc.getHealthPercentage() < 0.25)
+		<p>In the heat of the battle, [npc.name] [npc.verb(make)] a more powerful attack!</p>
+		#ENDIF
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/12)]
+	formattedHealthDamage
+]]></execute></execute>
+		<critDescription><![CDATA[
+			In [npc.her] desperation, [npc.namePos] makes an extremely effective strike!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.Name] [npc2.has] been crippled by the attack!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

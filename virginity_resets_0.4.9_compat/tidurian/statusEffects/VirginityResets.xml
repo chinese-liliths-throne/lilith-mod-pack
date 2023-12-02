@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<statusEffect>
+	<renderingPriority>0</renderingPriority>
+	<renderInEffectsPanel>false</renderInEffectsPanel>
+	<catagory>DEFAULT</catagory>
+	<beneficial>NEUTRAL</beneficial>
+	<combatEffect>false</combatEffect>
+	<sexEffect>false</sexEffect>
+	<name><![CDATA[VirginityResets]]></name>
+	<description/>
+	<imageName/>
+	<colourPrimary>BASE_PINK</colourPrimary>
+	<secondaryColours/>
+	<colourTertiary/>
+	<attributeModifiers/>
+	<combatMoves/>
+	<spells/>
+	<extraEffects/>
+	<applicationCondition shortConditionalCheck="true"><![CDATA[(npc.isPlayer() && !npc.affectionMap.containsKey("tidurian_VirginityResets"))]]></applicationCondition>
+	<applicationLength constantRefresh="false">-1</applicationLength>
+	<applyEffect interval="0">
+		<![CDATA[
+			[##if(!npc.affectionMap.containsKey("tidurian_VirginityResets"))
+			{
+				npc.getAppliedStatusEffect(SE_tidurian_VirginityResets).setSecondsRemaining((86400-game.getDaySeconds()));
+				npc.setAffection("tidurian_VirginityResets", 1);
+			}]
+		]]>
+	</applyEffect>
+	<applyRemovalEffect>
+	<!-- to change chances alter the CHANCEPC, CHANCESLAVE, CHANCEDEFAULT to your liking.
+		these are in percentages. so 100 = always , 0 = never.
+		make sure to keep the syntax correct it should look like this : var CHANCEPC = 25;   -->
+		<![CDATA[[#
+			var CHANCEPC = 25;
+			var CHANCESLAVE = 10;
+			var CHANCEDEFAULT = 5;
+
+			function GetSucess(char,yourslave, knowsname)
+			{
+				var CHANCEROLL = (Math.random() * 100);
+				var CHANCE = 0;
+				var SUCCESS = false;
+				if(char.isPlayer())
+				{
+					CHANCE = CHANCEPC;
+				}
+				else
+				{
+					if(yourslave)
+					{
+						CHANCE = CHANCESLAVE;
+					}
+					else if(knowsname)
+					{
+						CHANCE = CHANCEDEFAULT;
+					}
+				}
+				if(CHANCEROLL < CHANCE)
+				{
+					SUCCESS = true;
+				}
+				return SUCCESS;
+			}
+			function restore(char)
+			{
+				var output = "";
+				var KNOWNPERSON = char.isPlayerKnowsName();
+				var SLAVE = char.isSlave();
+				var YOURSLAVE = false;
+				if(SLAVE)
+				{
+					YOURSLAVE = char.getOwner().isPlayer();
+				}
+				var restored = "";
+				var output = "<span style='color:"+char.getSpeechColour()+"';>"+char.getName()+"</span>:<br/>";
+				var counter = 0;
+				if(!char.isAssVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setAssVirgin(1);
+					restored += "[style.colouranus( -Anal- )]";
+					counter++;
+				}
+				if(!char.isVaginaVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setVaginaVirgin(1);
+					restored += "[style.colourvagina( -Vaginal- )]";
+					counter++;
+				}
+				if(!char.isPenisVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setPenisVirgin(1);
+					restored += "[style.colourpenis( -Penile- )]";
+					counter++;
+				}
+				if(!char.isFaceVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setFaceVirgin(1);
+					restored += "[style.colourmouth( -Oral- )]";
+					counter++;
+				}
+				if(!char.isNippleVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setNippleVirgin(1);
+					restored += "[style.colournipples( -Nipple- )]";
+					counter++;
+				}
+				if(!char.isNippleCrotchVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setNippleCrotchVirgin(1);
+					restored += "[style.colournipplesCrotch( -Crotch-Nipple- )]";
+					counter++;
+				}
+				if(!char.isUrethraVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setUrethraVirgin(1);
+					restored += "[style.colourpenisUrethra( -Penile-Urethra- )]";
+					counter++;
+				}
+				if(!char.isVaginaUrethraVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setVaginaUrethraVirgin(1);
+					restored += "[style.coloururethraVagina( -Vaginal-Urethra- )]";
+					counter++;
+				}
+				if(!char.isSpinneretVirgin() && GetSucess(char,YOURSLAVE,KNOWNPERSON))
+				{
+					char.setSpinneretVirgin(1);
+					restored += "[style.colouranus( -Spinneret- )]";
+					counter++;
+				}
+				if(counter != 0)
+				{
+					if(char.isPlayer())
+					{
+						output += "You [style.colourGood(recovered "+counter+")] of your virginities:<br/>"+restored;
+					}
+					else
+					{
+						if(YOURSLAVE)
+						{
+							output += "They [style.colourGood(recovered "+counter+")] of their virginities:<br/>"+restored;
+						}
+						else if(KNOWNPERSON)
+						{
+							output += "They [style.colourGood(recovered "+counter+")] of their virginities";
+						}
+					}
+					output += "<br/><br/>";
+					return output;
+				}
+				else
+				{
+					return "";
+				}
+			};
+			function print()
+			{
+				var finaltext = "";
+				finaltext += restore(npc);
+				var i = 0;
+				var NPCLIST = npc.getCharactersEncounteredAsGameCharacters(false);
+				for (i=0 ; i < NPCLIST.length ; i++)
+				{
+					finaltext += restore(NPCLIST[i]);
+				}
+				if(finaltext != null && finaltext != "")
+				{
+					return "<p style='text-align:center'>"+finaltext+"</p>";
+				}
+				else
+				{
+					return "<p style='text-align:center'>No Virginities where Restored</p>";
+				}
+			};
+			print();
+		]]]>
+	</applyRemovalEffect>
+	<applyPostRemovalEffect>
+		<![CDATA[
+			[##if(npc.isPlayer()){npc.addStatusEffect(SE_tidurian_VirginityResets, (86400-game.getDaySeconds()));}]
+		]]>
+	</applyPostRemovalEffect>
+</statusEffect>

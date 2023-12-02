@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<coveringType>
+	<!-- GENERAL INFORMATION: If you are unsure of anything, please use the LT Discord to ask for help! -->
+	
+	<category>HAIR</category>
+	
+	<determiner><![CDATA[a layer of]]></determiner>
+	<name><![CDATA[demonic hair]]></name>
+	<namePlural pluralByDefault="true"><![CDATA[demonic hair]]></namePlural> 
+	
+	<naturalCoveringModifiers>
+		<modifier>SILKEN</modifier>
+		<modifier>FLUFFY</modifier>
+		<modifier>SHAGGY</modifier>
+	</naturalCoveringModifiers>
+			
+	<extraCoveringModifiers/>
+	
+	<naturalPatterns>
+		<pattern weighting="1">NONE</pattern>
+	</naturalPatterns>
+	
+	<extraPatterns/>
+
+	
+	<naturalColoursPrimary values="allCoveringColours"/>
+	<extraColoursPrimary values="allCoveringColours"/>
+	
+	<naturalColoursSecondary values="allCoveringColours"/>
+	<extraColoursSecondary values="allCoveringColours"/>
+	
+</coveringType>

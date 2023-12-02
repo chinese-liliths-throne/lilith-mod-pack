@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[A tag engraved into the armor informs you that it was made by 'GURETO'.]]></clothingAuthorTag>
+		<value>245000</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[Customized armor]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Customized armors]]></namePlural> 
+		<description><![CDATA[A suit made for battles. It is very durable.]]></description> 
+		<physicalResistance>35</physicalResistance> 
+		<femininity>ANDROGYNOUS</femininity> 
+		<slot>TORSO_UNDER</slot> 
+		<rarity>LEGENDARY</rarity> 
+		<clothingSet/> 
+		<imageName>armor.svg</imageName> 
+		<imageEquippedName/> 
+		<enchantmentLimit/>
+		<effects/>
+		
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"> 
+				</concealedSlots>
+			</blockedParts>
+			
+						<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN">
+				</concealedSlots>
+			</blockedParts>
+			
+		</blockedPartsList> 	
+			
+		<incompatibleSlots/>
+		
+		<primaryColours values="JUST_GREEN"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_PURPLE_DARK"/>
+		<tertiaryColoursDye values="ALL"/>
+		<tertiaryColoursDye/>
+		
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(remove)] the piece of cloth, before pulling [npc.her] armor off and lower the pants before removing it.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(remove)] the piece of cloth, before pulling  [npc2.namePos] armor off and lower the pants before removing it.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] [npc.verb(remove)] the piece of cloth, before roughly pulling [npc2.namePos] armor off and lower the pants before removing it.]]>
+		</otherRough>
+	</displacementText>
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(put)] on the armor, after pulling the pants on and tying the cloth.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(put)] on the armor, after pulling the pants on and tying the cloth.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(put)] on the armor, after pulling the pants on and tying the cloth.]]>
+		</otherRough>
+	</replacementText>
+	
+		<displacementText type="PULLS_DOWN">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] down the pants.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] down [npc2.namePos] pants.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] down [npc2.namePos] pants.]]>
+		</otherRough>
+	</displacementText><replacementText type="PULLS_DOWN">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] [npc.her] pants up.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] [npc2.namePos] pants up.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] [npc2.namePos] pants up.]]>
+		</otherRough>
+	</replacementText>	
+	
+</clothing>
+
+
+
+
+
+
+
+

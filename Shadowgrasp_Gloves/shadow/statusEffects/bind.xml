@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<statusEffect>
+	<renderingPriority>70</renderingPriority>
+	
+	<!-- 'true' if you want this status effect to be displayed in the affected character's status effect panel. This should pretty much always be 'true'. -->
+	<renderInEffectsPanel>true</renderInEffectsPanel>
+	
+	<!-- The category which this status effect falls into. You can omit this field if you want it to be set to DEFAULT (which is the standard category).
+	Categories, along with their meanings, can be found here: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/game/character/effects/StatusEffectCategory.java -->
+	<category>DEFAULT</category>
+	
+	<!-- 'BENEFICIAL' if this is a good status effect for a character to have, 'NEUTRAL' if it's neither, or 'DETRIMENTAL' if it's a bad one. -->
+	<beneficial>DETRIMENTAL</beneficial>
+	
+	<!-- 'true' if you want this status effect to be rendered during combat, and if the 'applyEffects' element should be applied to the affected character on every combat round during which it is active.
+	This should only be set to true if this a status effect which is applied and used *only* in combat.
+	Status effects which are marked as combat status effects are not ever applied outside of combat. -->
+	<combatEffect>true</combatEffect>
+	
+	<!-- 'true' if you want this status effect to be rendered during sex. -->
+	<sexEffect>false</sexEffect>
+	
+	<tags></tags>
+	
+	<!-- The name of this set bonus. The character under the effect is passed in as the 'npc' parsing argument, so if you want to, you can include parsing elements such as [npc.name]. -->
+	<name><![CDATA[Chained]]></name>
+	
+	<!-- The description of this status effect. The character under the effect is passed in as the 'npc' parsing argument, so if you want to, you can include parsing elements such as [npc.name]. -->
+	<description><![CDATA[
+		As shadowy chains emerge from [npc.name] own shadow, they become ensnared and trapped. [npc.name] is rendered completely immobilized.
+	]]></description>
+	
+	<!-- The name of the icon which should be used to represent this status effect. The icon must be an svg file, and must be placed in the same folder as this XML file. -->
+	<imageName>bind.svg</imageName>
+	
+	<!-- The colour which should be associated with this status effect. Just like with clothing and weapon recolouring, this is used to recolour the image you used above.
+	A PresetColour value should be used here, drawn from: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/utils/colours/PresetColour.java -->
+	<colourPrimary>CLOTHING_BLACK_STEEL</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<attributeModifiers>
+		<modifier value="-3">ACTION_POINTS</modifier>
+	</attributeModifiers>
+	
+	<combatMoves/>
+	
+	<spells/>
+
+	<extraEffects/>
+	
+	<applicationCondition><![CDATA[
+		false
+	]]></applicationCondition>
+	<applyEffect/>
+	
+	<!-- In a similar manner to the 'applyEffect' element above, the game processes logic when a status effect is removed. (This logic is performed while the character is still under the effects of this status effect.) -->
+	<applyRemovalEffect/>
+	
+	<!-- In a similar manner to the 'applyEffect' element above, the game processes logic after a status effect has been removed. (This logic is performed immediately after the effect is removed, so the character is no longer under the effects of this status effect.) -->
+	<applyPostRemovalEffect/>
+	
+</statusEffect>

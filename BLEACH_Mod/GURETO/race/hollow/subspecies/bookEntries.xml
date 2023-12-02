@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="hollow_BASIC"><![CDATA[
+	<p>
+		Hollows are souls that linger in the world instead of taking part of the reincarnation cycle.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="hollow_ADVANCED"><![CDATA[
+	<p>
+		In their most basic form, they can use cero to deal severe damage.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

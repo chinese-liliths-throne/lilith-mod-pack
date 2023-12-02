@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>50</value> 
+		<determiner><![CDATA[a bag of]]></determiner>
+		<name><![CDATA[Goblin Nuts]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Goblin Nuts]]></namePlural>
+		<description><![CDATA[A well-filled bag of mixed nuts. On the packaging, a goblin-woman farmer proudly hefts her bulging nut sack with an innocent charming smile, while the label reads [style.boldGreen(Dee's Nuts)].]]></description>
+		
+		<useDescriptor>eat</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1='stroke="#000"' replacement1='stroke="#ff5555"' target2='#ff8080' replacement2='#ff5555'>goblinicon_noline.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="75">goblin_nuts.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>BASE_GREEN_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		<potionDescriptor><![CDATA[goblinoid]]></potionDescriptor>
+		<associatedRace>sightglass_goblinoid</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_POISON.getFormattedValue(3)] to 'potion effects']]></line>
+		</effectTooltipLines>
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/10)]
+			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_POISON, 3)]
+		]]></applyEffects>
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>FOOD</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(pull)] at the sides of the bag of Goblin Nuts to open it. A rich, earthy smell accompanies the sight of the nuts inside, and [npc.she] [npc.verb(find)] [npc.herself] unable to resist the delicious-looking display. [npc.She] quickly [npc.verb(wolf)] down the bag's contents, finding that the nuts are as delicious as they look.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(pull)] at the sides of the bag of Goblin Nuts to open it, before presenting it to [npc2.name]. A rich, earthy smell accompanies the sight of the nuts inside, and [npc2.name] [npc2.verb(find)] [npc2.herself] unable to resist the delicious-looking display. [npc2.She] quickly [npc2.verb(wolf)] down the bag's contents, finding that the nuts are as delicious as they look.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="nobody_BASIC"><![CDATA[
+	<p>
+		Nobodies are mysterious creatures.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="nobody_ADVANCED"><![CDATA[
+	<p>
+		Nobodies are shells of their former selves. They're commanded by stronger and more intelligent nobodies, human in appearence.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

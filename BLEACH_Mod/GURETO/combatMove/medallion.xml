@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Medalize]]></name>
+	
+
+	<description><![CDATA[ 
+		You hold the medallion and steal your opponent's power. Consumes 250 arcane essence.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		ICE
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		999
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_PURPLE</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+		[#(npc.getClothingInSlot(IS_NECK) != null && npc.getClothingInSlot(IS_NECK).getClothingType().equals(CLOTHING_GURETO_clothes_medallion)) ||
+        (npc.getClothingInSlot(IS_WRIST) != null && npc.getClothingInSlot(IS_WRIST).getClothingType().equals(CLOTHING_GURETO_clothes_medallion))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters holding a medallion.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 250)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(hold)] the medallion and [npc.verb(steal)] [npc2.namePos] power. Consumes 250 arcane essence.
+        #IF(npc.getEssenceCount() < 250)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(hold)] the medallion and [npc.verb(steal)] [npc2.namePos] power. Consumes 250 arcane essence.
+        #IF(npc.getEssenceCount() < 250)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 250)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			[npc.Name] [npc.verb(take)] out the medallion and [npc.verb(out)] it in front of [npc2.Name]. [npc.Name] [npc.verb(recite)] "Melt. Sea to cloud, cloud to rain, rain to fog. That with shape to that which is unseen. After our jubilation, the chalice will be turned face down!!!", and as the incantation is finished, [npc.Name] [npc.verb(steal)] [npc2.namePos] power!
+                [##npc.incrementEssenceCount(-250,false)]
+				[##npc.addStatusEffect(SE_GURETO_medallionbuff, 999)]
+				[##npc2.addStatusEffect(SE_GURETO_medalliondebuff, 999)]
+                #ENDIF
+		]]></execute>
+		<critDescription><![CDATA[
+			...
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			...
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

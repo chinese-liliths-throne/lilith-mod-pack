@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>900000</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[a]]></determiner>
+		
+		<name><![CDATA[Bolter]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[Bolters]]></namePlural> 
+		
+		<description><![CDATA[A Mark Vb Godwyn Pattern Bolter, the most standard yet effective assault weapon of the space marines.]]></description> 
+		
+		<attackDescriptor>Open fire</attackDescriptor>
+		
+		<attackTooltipDescription>Shoot at [npc2.name] with your bolter.</attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the bolter. For the Emperor!]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the bolter.]]></unequipText>
+		
+		<imageName>bolter.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<physicalResistance>0</physicalResistance>
+		
+		<damage>25</damage> 
+		
+		<arcaneCost>1</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>100</enchantmentLimit>
+		
+		<effects/>
+		
+		<primaryColours values="JUST_GUNMETAL"/>
+		<primaryColoursDye values="ALL_WITH_METAL"/>
+		<secondaryColours values="ALL_WITH_METAL"/> 
+		<secondaryColoursDye values="ALL_WITH_METAL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] several bolter rounds at [npc2.name].
+		]]></hitText>
+		<hitText><![CDATA[
+		Opening fire, [npc2.name] is showered with bolter rounds, hissing as the propelled round pierces through the air!
+		]]></hitText>
+		<hitText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the bolter rounds collides with [npc2.name]!
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] several bolter rounds at [npc2.name], but end up missing.
+		]]></missText>
+		<missText><![CDATA[
+		Opening fire, [npc2.name] is showered with bolter rounds, hissing as the propelled round pierces through the air! The rounds hit what's behind [npc2.name] but none hit [npc2.herHim].
+		]]></missText>
+		<missText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the bolter rounds speed past [npc2.name]!
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

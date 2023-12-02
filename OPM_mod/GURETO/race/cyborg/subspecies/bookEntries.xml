@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="cyborg_BASIC"><![CDATA[
+	<p>
+		Cyborgs are humans that have augmented their bodies with mechanical components.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="cyborg_ADVANCED"><![CDATA[
+	<p>
+		Most of the cyborgs' atttacks are centered around physical strikes and thermal projectiles, but it still offers a lot of versatility.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

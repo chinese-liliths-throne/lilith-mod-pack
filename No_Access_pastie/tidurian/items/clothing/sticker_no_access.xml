@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<clothing>
+  <coreAttributes>
+    <value>750</value>
+    <determiner><![CDATA[an]]></determiner>
+    <name><![CDATA[No-Access pastie]]></name>
+    <namePlural pluralByDefault="false"><![CDATA[No-Access pasties]]></namePlural>
+    <description><![CDATA[An adhesive strip of flexible plastic, designed to be stuck over someone's Orifice in order to prohibit access. Making it clear as to which hole this person prefers not to have used. It fits very snug over the Orifice leaving nothing to imagination.]]></description>
+
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity>
+    <equipSlots>
+		<slot>VAGINA</slot>
+		<slot>ANUS</slot>
+		<slot>NIPPLE</slot>
+	</equipSlots>
+    <rarity>COMMON</rarity>
+
+    <imageName>sticker_no_access.svg</imageName>
+
+    <clothingSet/>
+    <imageEquippedName/>
+    <effects/>
+	<blockedPartsList slot="VAGINA">
+		<blockedParts>
+		  <displacementType>REMOVE_OR_EQUIP</displacementType>
+		  <clothingAccessRequired>
+			<clothingAccess>VAGINA</clothingAccess>
+		  </clothingAccessRequired>
+		  <blockedBodyParts/>
+		  <clothingAccessBlocked/>
+		  <concealedSlots/>
+		</blockedParts>
+	</blockedPartsList>
+
+	<blockedPartsList slot="ANUS">
+		<blockedParts>
+		  <displacementType>REMOVE_OR_EQUIP</displacementType>
+		  <clothingAccessRequired>
+			<clothingAccess>ANUS</clothingAccess>
+		  </clothingAccessRequired>
+		  <blockedBodyParts/>
+		  <clothingAccessBlocked/>
+		  <concealedSlots/>
+		</blockedParts>
+	</blockedPartsList>
+
+	<blockedPartsList slot="NIPPLE">
+		<blockedParts>
+		  <displacementType>REMOVE_OR_EQUIP</displacementType>
+		  <clothingAccessRequired>
+			<clothingAccess>CHEST</clothingAccess>
+		  </clothingAccessRequired>
+		  <blockedBodyParts/>
+		  <clothingAccessBlocked/>
+		  <concealedSlots/>
+		</blockedParts>
+	</blockedPartsList>
+
+	<incompatibleSlots slot="VAGINA"/>
+	<incompatibleSlots slot="ANUS"/>
+	<incompatibleSlots slot="NIPPLE"/>
+
+    <primaryColours>
+		<colour>CLOTHING_WHITE</colour>
+    </primaryColours>
+    <primaryColoursDye values="ALL_WITH_METALS"/>
+    <secondaryColours>
+		<colour>CLOTHING_RED_DARK</colour>
+    </secondaryColours>
+    <secondaryColoursDye values="ALL_WITH_METALS"/>
+
+    <itemTags>
+      <tag>SOLD_BY_FINCH</tag>
+      <tag>ENABLE_SEX_EQUIP</tag>
+      <tag>TRANSPARENT</tag>
+	  <tag>PROVIDES_KEY</tag>
+    </itemTags>
+	<itemTags slot="VAGINA">
+		<tag>REQUIRES_VAGINA</tag>
+		<tag>SEALS_VAGINA</tag>
+	</itemTags>
+	<itemTags slot="ANUS">
+		<tag>SEALS_ANUS</tag>
+	</itemTags>
+	<itemTags slot="NIPPLE">
+		<tag>SEALS_NIPPLES</tag>
+		<tag>REQUIRES_FUCKABLE_NIPPLES</tag>
+	</itemTags>
+  </coreAttributes>
+	<!-- Vagina -->
+  <replacementText slot="VAGINA" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(stick)] the No-Access pastie over [npc.her] [npc.pussy+].]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(stick)] the No-Access pastie over [npc2.namePos] [npc2.pussy+].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] roughly [npc.verb(stick)] the No-Access pastie over [npc2.namePos] [npc2.pussy+].]]>
+    </otherRough>
+  </replacementText>
+  <displacementText slot="VAGINA" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] carefully [npc.verb(peel)] off the No-Access pastie that was covering [npc.her] [npc.pussy+].]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] carefully [npc.verb(peel)] off the No-Access pastie that was covering [npc2.namePos] [npc2.pussy+].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] quickly [npc.verb(rip)] off the No-Access pastie that was covering [npc2.namePos] [npc2.pussy+], causing [npc2.herHim] to let out a startled yell.]]>
+    </otherRough>
+  </displacementText>
+  <!-- Anus -->
+  <replacementText slot="ANUS" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(stick)] the No-Access pastie over [npc.her] [npc.anus+].]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(stick)] the No-Access pastie over [npc2.namePos] [npc2.anus+].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] roughly [npc.verb(stick)] the No-Access pastie over [npc2.namePos] [npc2.anus+].]]>
+    </otherRough>
+  </replacementText>
+  <displacementText slot="ANUS" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] carefully [npc.verb(peel)] off the No-Access pastie that was covering [npc.her] [npc.anus+].]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] carefully [npc.verb(peel)] off the No-Access pastie that was covering [npc2.namePos] [npc2.anus+].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] quickly [npc.verb(rip)] off the No-Access pastie that was covering [npc2.namePos] [npc2.anus+], causing [npc2.herHim] to let out a startled yell.]]>
+    </otherRough>
+  </displacementText>
+	<!-- Nipples -->
+  <replacementText slot="NIPPLE" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(stick)] the No-Access pastie over [npc.her] [npc.nipples+].]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(stick)] the No-Access pastie over [npc2.namePos] [npc2.nipples+].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] roughly [npc.verb(stick)] the No-Access pastie over [npc2.namePos] [npc2.nipples+].]]>
+    </otherRough>
+  </replacementText>
+  <displacementText slot="NIPPLE" type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] carefully [npc.verb(peel)] off the No-Access pastie that was covering [npc.her] [npc.nipples+].]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] carefully [npc.verb(peel)] off the No-Access pastie that was covering [npc2.namePos] [npc2.nipples+].]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] quickly [npc.verb(rip)] off the No-Access pastie that was covering [npc2.namePos] [npc2.nipples+], causing [npc2.herHim] to let out a startled yell.]]>
+    </otherRough>
+  </displacementText>
+</clothing>

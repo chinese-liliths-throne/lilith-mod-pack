@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testicle>
+
+	<race>GURETO_pinky</race>
+	
+	<coveringType>GURETO_pinky_scales</coveringType>
+	
+	<!-- The id of the fluid that's associated with this testicle type. -->
+	<fluidType>GURETO_pinky_cum</fluidType>
+	
+	<!-- Whether this testicle type is located internally or not by default. -->
+	<internal>true</internal>
+	
+
+	<names/>
+	<namesPlural/>
+	
+	<descriptors/>
+
+	
+</testicle>

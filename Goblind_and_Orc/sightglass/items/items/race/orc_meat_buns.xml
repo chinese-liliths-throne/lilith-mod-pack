@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[The fine print reads 'S.G.C. Provisions']]></authorTag>
+		<value>250</value> 
+		<determiner><![CDATA[a loaf]]></determiner>
+		<name><![CDATA[Orcish Meat Buns]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Orcish Meat Buns]]></namePlural>
+		<description><![CDATA[A buns of sourdough bread rolled with a delicious, spicy meat and cheese filling, baked stuck together like dinner rolls. Popular among no-nonsense orcs, it is simple to prepare and very calorie dense, and very satisfying to pull apart and eat.]]></description> 
+		<useDescriptor>eat</useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		<rarity>RARE</rarity> 
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="80" target1='path="#0000"' replacement1='stroke="#ff5555"' target2='#ff8080' replacement2='#ff5555'>orcicon_noline.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="90">orc_meat_buns.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		<colourPrimary>BASE_GREEN_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		<potionDescriptor><![CDATA[orc]]></potionDescriptor>
+		<associatedRace>sightglass_orc</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(Restores)] 10% [style.boldHealth([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+		</effectTooltipLines>
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/10)]
+		]]></applyEffects>
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>FOOD</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(tear)] a meat bun away from its loaf, and [npc.verb(stuff)] it into [npc.her] mouth. [npc.She] eagerly [npc.verb(start)] wolfing them all down in moments, greedily grabbing handfuls at a time.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(tear)] a meat bun away from the loaf [npc.verb(hold)] it out to [npc2.name], allowing [npc2.herHim] to [npc2.verb(breathe)] in the savory aroma. Unable to resist the delicious-looking snack, [npc2.she] [npc2.verb(start)] wolfing it all down in moments, greedily grabbing handfuls of bread right off the loaf in your hand.
+		]]></otherUse>
+	</useDescriptions>
+</item>

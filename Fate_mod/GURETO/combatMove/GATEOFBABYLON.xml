@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[GATE OF BABYLON]]></name>
+	
+
+	<description><![CDATA[ 
+		[npc.Name] [npc.verb(gaze)] at your opponent and without even having to move a finger, you launch weapons at your foe, dealing random damage.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_GOLD</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_EA_EA)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_EA_EA)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the legendary Ea.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+            3.0
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Can't Crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Activating the Gate of Babylon, [npc.Name] [npc.verb(shower)] [npc2.Name] with numerous weapons, dealing random damage.
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Activating the Gate of Babylon, [npc.Name] [npc.verb(shower)] [npc.namePos] foe with numerous weapons, dealing random damage.
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+        <execute><execute><![CDATA[
+        #IF(RND.nextInt(4) <= 0)
+           [##DAMAGE_TYPE_PHYSICAL.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_PHYSICAL)*1.5+150))]
+           [##DAMAGE_TYPE_ICE.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*2.5+250))]
+           [##DAMAGE_TYPE_POISON.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*2+200))]
+           [##DAMAGE_TYPE_FIRE.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*1+100))]
+        [npc.Name] [npc.verb(launch)] various weapons at [npc2.Name]. The weapons fall quickly on [npc2.Name] and explode, creating a small cloud of smoke.<br>
+		Dealing [style.colorPhysical([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_PHYSICAL)*1.5+150)] physical damage)],<br>
+		[style.colorIce([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*2.5+250)] ice damage)],<br>
+		[style.colorPoison([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*2+200)] poison damage)],<br>
+		[style.colorFire([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*1+100)] fire damage)].<br>
+        </p>
+        #ELSEIF(RND.nextInt(4) <= 1) 
+           [##DAMAGE_TYPE_PHYSICAL.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_PHYSICAL)*2.5+250))]
+           [##DAMAGE_TYPE_ICE.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*2+200))]
+           [##DAMAGE_TYPE_POISON.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*1+100))]
+           [##DAMAGE_TYPE_FIRE.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*1.5+150))]
+        [npc.Name] [npc.verb(launch)] various weapons at [npc2.Name]. The weapons fall quickly on [npc2.Name] and explode, creating a small cloud of smoke.<br>
+		Dealing [style.colorPhysical([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_PHYSICAL)*2.5+250)] physical damage)],<br>
+		[style.colorIce([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*2+200)] ice damage)],<br>
+		[style.colorPoison([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*1+100)] poison damage)],<br>
+		[style.colorFire([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*1.5+150)] fire damage)].<br>
+        </p>
+        #ELSEIF(RND.nextInt(4) <= 2)
+           [##DAMAGE_TYPE_PHYSICAL.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_PHYSICAL)*2+200))]
+           [##DAMAGE_TYPE_ICE.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*1+100))]
+           [##DAMAGE_TYPE_POISON.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*1.5+150))]
+           [##DAMAGE_TYPE_FIRE.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*2.5+250))]
+        [npc.Name] [npc.verb(launch)] various weapons at [npc2.Name]. The weapons fall quickly on [npc2.Name] and explode, creating a small cloud of smoke.<br>
+		Dealing [style.colorPhysical([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_PHYSICAL)*2+200)] physical damage)],<br>
+		[style.colorIce([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*1+100)] ice damage)],<br>
+		[style.colorPoison([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*1.5+150)] poison damage)],<br>
+		[style.colorFire([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*2.5+250)] fire damage)].<br>
+        </p>
+	        #ELSEIF(RND.nextInt(4) <= 3)
+           [##DAMAGE_TYPE_PHYSICAL.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_PHYSICAL)*1+100))]
+           [##DAMAGE_TYPE_ICE.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*1.5+150))]
+           [##DAMAGE_TYPE_POISON.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*2.5+250))]
+           [##DAMAGE_TYPE_FIRE.damageTarget(npc, npc2, Math.max(npc2.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*2+200))]
+        [npc.Name] [npc.verb(launch)] various weapons at [npc2.Name]. The weapons fall quickly on [npc2.Name] and explode, creating a small cloud of smoke.<br>
+		Dealing [style.colorPhysical([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_PHYSICAL)*1+100)] physical damage)],<br>
+		[style.colorIce([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_ICE)*1.5+150)] ice damage)],<br>
+		[style.colorPoison([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_POISON)*2.5+250)] poison damage)],<br>
+		[style.colorFire([#(npc.getAttributeValue(ATTRIBUTE_DAMAGE_FIRE)*2+200)] fire damage)].<br>
+        </p>
+        #ENDIF
+]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

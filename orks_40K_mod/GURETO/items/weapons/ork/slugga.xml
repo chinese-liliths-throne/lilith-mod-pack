@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>80000</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[a]]></determiner>
+		
+		<name><![CDATA[slugga]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[sluggas]]></namePlural> 
+		
+		<description><![CDATA[A crudely made pistol.]]></description> 
+		
+		<attackDescriptor>Open fire</attackDescriptor>
+		
+		<attackTooltipDescription>Shoot at [npc2.name] with your slugga.</attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the slugga.]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the slugga.]]></unequipText>
+		
+		<imageName>slugga.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<physicalResistance>0</physicalResistance>
+		
+		<damage>20</damage> 
+		
+		<arcaneCost>1</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>100</enchantmentLimit>
+		
+		<effects/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BRASS</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours/> 
+		<secondaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] several slugga rounds at [npc2.name].
+		]]></hitText>
+		<hitText><![CDATA[
+		Opening fire, [npc2.name] is showered with slugga rounds, hissing as the propelled round pierces through the air!
+		]]></hitText>
+		<hitText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the slugga rounds collides with [npc2.name]!
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] several slugga rounds at [npc2.name], but end up missing.
+		]]></missText>
+		<missText><![CDATA[
+		Opening fire, [npc2.name] is showered with slugga rounds, hissing as the propelled round pierces through the air! The rounds hit what's behind [npc2.name] but none hit [npc2.herHim].
+		]]></missText>
+		<missText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the slugga rounds speed past [npc2.name]!
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

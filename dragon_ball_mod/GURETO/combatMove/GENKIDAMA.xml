@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[GENKIDAMA]]></name>
+	
+	<description><![CDATA[
+		Gathering KI from all around the universe, [npc.Name] [npc.verb(charge)] a colossal KI sphere.
+	]]></description>
+	
+	<damageType><![CDATA[
+		FIRE
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		1
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		3
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_BLUE_LIGHT</colourPrimary> 
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	
+	<!-- Effect logic -->
+	
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_fist)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_saiyan_fist)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the ability to manipulate KI.
+	]]></availabilityDescription>
+	
+	<!-- Once started to constrict a target, the AI will become more and more interested in finishing the process off. -->
+	<weighting><![CDATA[
+		#IF(npc2.hasStatusEffect(SE_GURETO_GENKI_3))
+			10.0
+		#ELSEIF(npc2.hasStatusEffect(SE_GURETO_GENKI_2))
+			5.0
+		#ELSEIF(npc2.hasStatusEffect(SE_GURETO_GENKI_1))
+			2.5
+		#ELSE
+			1.0
+		#ENDIF
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] KI into a gigantic KI sphere to throw it at [npc2.name].
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] KI into a gigantic KI sphere to throw it at [npc.her] target.
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><![CDATA[
+			[npc.Name] [npc.verb(charge)] KI!
+			#IF(npc.hasStatusEffect(SE_GURETO_GENKI_3))
+				[##npc2.setHealth(0)]
+				[##npc.removeStatusEffectCombat(SE_GURETO_GENKI_3)]
+				<br/>[style.italicsTerrible([npc.Name] [npc.verb(throw)] the Genkidama at [npc2.Name]. The prodigious sphere of KI crashes down on [npc2.Name], taking [npc2.her] in a blinding explosion and completely defeating [npc2.him]! The sheer amount of energy could be felt throughout the whole world!)]
+			#ELSEIF(npc.hasStatusEffect(SE_GURETO_GENKI_2))
+				[##npc.removeStatusEffectCombat(SE_GURETO_GENKI_2)]
+				[##npc.addStatusEffect(SE_GURETO_GENKI_3, 10)]
+				<br/>[style.italicsTerrible([npc.NamePos] genkidama is almost ready, and [npc2.Name] is near to being completely defeated!)]
+				<br/>[style.italicsTerrible(If [npc.name] [npc.verb(charge)] the Genkidama again, [npc2.Name] will be instantly defeated!)]
+			#ELSEIF(npc.hasStatusEffect(SE_GURETO_GENKI_1))
+				[##npc.removeStatusEffectCombat(SE_GURETO_GENKI_1)]
+				[##npc.addStatusEffect(SE_GURETO_GENKI_2, 10)]
+				<br/>[style.italicsBad([npc.NamePos] genkidama gets closer to completion, and [npc2.Name] is nearer to being completely defeated!)]
+				<br/>[style.italicsTerrible(If [npc.name] [npc.verb(charge)] the Genkidama again, the Genkidama will become extremely dangerous!)]
+			#ELSE
+				[##npc.addStatusEffect(SE_GURETO_GENKI_1, 10)]
+				<br/>[style.italicsBad([npc.NamePos] genkidama gets stronger, and [npc2.Name] is nearer to being completely defeated!)]
+				<br/>[style.italicsTerrible(If [npc.name] [npc.verb(charge)] the Genkidama again, the Genkidama will become seriously dangerous!)]
+			#ENDIF
+		]]></execute>
+		<critDescription><![CDATA[
+			N/A
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			N/A
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

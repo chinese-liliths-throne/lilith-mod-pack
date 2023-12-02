@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[Universe Blazer]]></name>
+	<description><![CDATA[ 
+		You place your hands above your head and charge an immense KI sphere surrounded by several smaller pink KI sphere, dealing formattedDamageInflicted damage. Consumes 9999 arcane essence.
+	]]></description>
+	
+	<damageType><![CDATA[
+		POISON
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	36850
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		10
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		4
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>kamehameha.svg</imageName>
+	
+
+	<colourPrimary>BASE_PINK</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_majin]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to majin characters.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 9999)
+            0
+        #ELSE
+            1.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		[#npc.getHealth() < (npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.25)]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Attacker's HP is below [style.boldCrimson(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] KI into a immense sphere and severel smaller and [npc.verb(throw)] it wildly at [npc2.Name], dealing formattedDamageInflicted damage. Consumes 9999 arcane essence.
+        #IF(npc.getEssenceCount() < 9999)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.Name] [npc.verb(charge)] KI into a immense sphere and several smaller and [npc.verb(release)] it wildly at [npc.her] foe, dealing formattedDamageInflicted damage. Consumes 9999 arcane essence.
+        #IF(npc.getEssenceCount() < 9999)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 9999)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			Creating an apocalyptically big KI sphere orbited by smaller ones, [npc.Name] [npc.verb(look)] at [npc2.Name] with the satisfaction of knowing that [npc2.she] is already history. As the sphere of doom approaches [npc2.Name], [npc.Name] [npc.verb(laugh)] madly.
+                [##npc.incrementEssenceCount(-9999,false)]
+                #ENDIF
+            formattedHealthDamage
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

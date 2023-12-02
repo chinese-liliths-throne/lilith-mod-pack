@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<race>
+	<racialBody>sightglass_orc</racialBody>
+	<applyRaceChanges/>
+	<name><![CDATA[orc]]></name>
+	<namePlural><![CDATA[orc]]></namePlural>
+	<nameFeral>
+		<name legConfiguration="BIPEDAL"><![CDATA[orc]]></name>
+	</nameFeral>
+	<nameFeralPlural>
+		<name legConfiguration="BIPEDAL"><![CDATA[orcs]]></name>
+	</nameFeralPlural>
+	<defaultTransformName><![CDATA[orc]]></defaultTransformName>
+	<colour>BASE_GREEN_DARK</colour>
+	<disposition>UNPREDICTABLE</disposition>
+	<racialClass>MAMMAL</racialClass>
+	<feralPartsAvailable>false</feralPartsAvailable>
+	<ableToSelfTransform>false</ableToSelfTransform>
+	<flyingRace>false</flyingRace>
+	<combatBehaviour>ATTACK</combatBehaviour>
+	<chanceForMaleOffspring>0.65</chanceForMaleOffspring>
+	<numberOfOffspringLow>1</numberOfOffspringLow>
+	<numberOfOffspringHigh>2</numberOfOffspringHigh>
+	<defaultFemininePreference>MAXIMUM</defaultFemininePreference>
+	<defaultMasculinePreference>MAXIMUM</defaultMasculinePreference>
+	<affectedByFurryPreference>false</affectedByFurryPreference>
+	<racialFetishModifiers>
+		<fetish love="3" like="3">FETISH_DOMINANT</fetish>
+		<fetish love="3" like="3">FETISH_SUBMISSIVE</fetish>
+	</racialFetishModifiers>
+</race>

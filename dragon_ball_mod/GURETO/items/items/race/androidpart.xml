@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[A logo on the part of the piece of metal reads 'Red Ribbon Army'.]]></authorTag>
+		
+		<value>75000</value> 
+		<determiner><![CDATA[an]]></determiner>
+		<name><![CDATA[android part]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Android parts]]></namePlural>
+		<description><![CDATA[A part of an android, surely if you calibrated it with arcane essence, you could turn yourself or someone else into an android.]]></description> 
+		
+		<useDescriptor>observe</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>EPIC</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="90" target1='stroke="#000"' replacement1='stroke="#ff5555"' target2='#ff8080' replacement2='#ff5555'>res/mods/GURETO/race/android/subspecies/androidicon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="85">androidpart.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>BASE_WHITE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[android]]></potionDescriptor>
+		<associatedRace>GURETO_android</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines/>
+		
+		<applyEffects/>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the android part and look at it longly, analysing what it could be for. [npc.Name] then [npc.verb(put)] it back.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(take)] out the android part and [npc.verb(show)] it at [npc2.name], wondering what it could be for. [npc.Name] then [npc.verb(put)] it back after seeing that [npc2.Name] [npc2.verb(do)] not recognize its usage.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

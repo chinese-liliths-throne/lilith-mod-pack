@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fluid>
+	<race>sightglass_goblinoid</race>
+	<transformationName><![CDATA[goblin]]></transformationName>
+	<baseFluidType>GIRLCUM</baseFluidType>
+	<flavour>GIRL_CUM</flavour>
+	<namesMasculine/>
+	<namesFeminine/>
+	<descriptorsMasculine>
+		<name><![CDATA[goblin]]></name>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<name><![CDATA[goblin]]></name>
+	</descriptorsFeminine>
+	<defaultFluidModifiers>
+		<modifier>SLIMY</modifier>
+		<modifier>MUSKY</modifier>
+		<modifier>BUBBLING</modifier>
+	</defaultFluidModifiers>
+</fluid>

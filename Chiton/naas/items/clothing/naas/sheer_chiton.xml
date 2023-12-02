@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clothing>
+    <coreAttributes>
+        <authorTag><![CDATA[Discreet stitching reveals this is a product of Naas Emporium]]></authorTag>
+        <value>1000</value>
+        <determiner><![CDATA[a]]></determiner>
+        <name><![CDATA[Sheer Chiton]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Harness Bras]]></namePlural>
+        <description><![CDATA[A sheer chiton, a revival of antiquity fashion.]]></description>
+        <physicalResistance>0</physicalResistance>
+        <femininity>FEMININE</femininity>
+        <equipSlots>
+            <slot>TORSO_UNDER</slot>
+        </equipSlots>
+        <rarity>RARE</rarity>
+        <clothingSet/>
+        <imageName>sheer_chiton.svg</imageName>
+        <imageEquippedName/>
+        <enchantmentLimit/>
+        <effects/>
+        <blockedPartsList>
+            <blockedParts>
+                <displacementType>REMOVE_OR_EQUIP</displacementType>
+                <clothingAccessRequired>
+                    <clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+                </clothingAccessRequired>
+                <blockedBodyParts/>
+                <clothingAccessBlocked/>
+                <concealedSlots/>
+            </blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>SHIFTS_ASIDE</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+        </blockedPartsList>
+        <incompatibleSlots/>
+        <primaryColours values="ALL"/>
+        <primaryColoursDye values="ALL_WITH_METALS"/>
+        <secondaryColours/>
+        <secondaryColoursDye/>
+        <tertiaryColours/>
+        <tertiaryColoursDye/>
+        <itemTags>
+            <tag>TRANSPARENT</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>ALL_AREAS_SPAWN</tag>
+        </itemTags>
+    </coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self>
+			<![CDATA[[npc.Name] [npc.verb(place)] the chiton over [npc.her] head, slipping it over [npc.her] breasts and letting it fall over [npc.her] hips.]]>
+		</self>
+		<other>
+			<![CDATA[[npc.Name] [npc.verb(place)] the chiton over [npc2.namePos] head, slipping it over [npc2.her] breasts and letting it fall over [npc2.her] hips.]]>
+		</other>
+		<otherRough>
+			<![CDATA[[npc.Name] [npc.verb(force)] the chiton over [npc2.namePos] head, roughly [npc.verb(yank)] it over [npc2.her] breasts and lets it fall over [npc2.her] hips.]]>
+		</otherRough>
+	</replacementText>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self>
+			<![CDATA[[npc.Name] [npc.verb(slip)] [npc.her] chiton off [npc.her] shoulder and [npc.verb(pull)] it down over [npc.her] hips before shimmying out of it.]]>
+		</self>
+		<other>
+			<![CDATA[[npc.Name] [npc.verb(slip)] [npc2.namePos] chiton off [npc2.her] shoulder and [npc.verb(pull)] it down over [npc2.her] hips before helping [npc2.her] shimmy out of it.]]>
+		</other>
+		<otherRough>
+			<![CDATA[[npc.Name] roughly [npc.verb(yank)] [npc2.namePos] chiton of [npc2.her] shoulder and [npc.verb(yank)] it down over [npc2.her] hips, letting it drop to the floor.]]>
+		</otherRough>
+	</displacementText>
+	<replacementText type="PULLS_DOWN">
+		<self>
+			<![CDATA[[npc.Name] [npc.verb(pull)] up [npc.her] chiton, covering [npc.her] breasts. Though it does nothing to conceal them.]]>
+		</self>
+		<other>
+			<![CDATA[[npc.Name] [npc.verb(pull)] up [npc2.namePos] chiton, covering [npc2.her] breasts before tightening the buckles. Though it does nothing to conceal them.]]>
+		</other>
+		<otherRough>
+			<![CDATA[[npc.Name] [npc.verb(yank)] up [npc2.namePos] chiton, roughly covering [npc2.her] breasts. Though it does nothing to conceal them.]]>
+		</otherRough>
+	</replacementText>
+	<displacementText type="PULLS_DOWN">
+		<self>
+			<![CDATA[[npc.Name] [npc.verb(pull)] [npc.her] chiton down, baring [npc.her] breasts.]]>
+		</self>
+		<other>
+			<![CDATA[[npc.Name] [npc.verb(pull)] down [npc2.namePos] chiton, baring [npc2.her] breasts.]]>
+		</other>
+		<otherRough>
+			<![CDATA[[npc.Name] roughly [npc.verb(yank)] [npc2.namePos] chiton down, baring [npc2.her] breasts.]]>
+		</otherRough>
+	</displacementText>
+	<replacementText type="SHIFTS_ASIDE">
+		<self>
+			<![CDATA[[npc.Name] [npc.verb(pull)] [npc.her] chiton back into place, covering [npc.her] ass and groin. Though it does nothing to conceal them.]]>
+		</self>
+		<other>
+			<![CDATA[[npc.Name] [npc.verb(pull)] [npc2.namePos] chiton back into place, covering [npc2.her] ass and groin. Though it does nothing to conceal them.]]>
+		</other>
+		<otherRough>
+			<![CDATA[[npc.Name] [npc.verb(yank)] [npc2.namePos] chiton back into place, roughly covering [npc2.her] ass and groin. Though it does nothing to conceal them.]]>
+		</otherRough>
+	</replacementText>
+	<displacementText type="SHIFTS_ASIDE">
+		<self>
+			<![CDATA[[npc.Name] [npc.verb(pull)] [npc.her] chiton aside, baring [npc.her] ass and groin.]]>
+		</self>
+		<other>
+			<![CDATA[[npc.Name] [npc.verb(pull)] [npc2.namePos] chiton aside, baring [npc2.her] ass and groin.]]>
+		</other>
+		<otherRough>
+			<![CDATA[[npc.Name] roughly [npc.verb(yank)] [npc2.namePos] chiton aside, baring [npc2.her] ass and groin.]]>
+		</otherRough>
+	</displacementText>
+</clothing>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="pinky_BASIC"><![CDATA[
+	<p>
+		A demon that is a tactical assault unit.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="pinky_ADVANCED"><![CDATA[
+	<p>
+		They use their strength as ram, exceptionally useful to flip heavy armored vehicules.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag/>
+		<value>45000</value> 
+		<determiner><![CDATA[an]]></determiner>
+		<name><![CDATA[Organisation XIII cloak]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Organisation XIII cloaks]]></namePlural> 
+		<description><![CDATA[A dark hooded trench coat.]]></description> 
+		<physicalResistance>15</physicalResistance> 
+		<femininity>ANDROGYNOUS</femininity> 
+		<slot>TORSO_OVER</slot> 
+		<rarity>LEGENDARY</rarity> 
+		<clothingSet/> 
+		<imageName>cloakXIII.svg</imageName> 
+		<imageEquippedName/> 
+		<enchantmentLimit/>
+		<effects/>
+		
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts> 
+					<bodyPart>FEET</bodyPart>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>HAIR</bodyPart>
+					<bodyPart>MOUTH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>HEAD</clothingAccess>
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"> 
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>UNBUTTONS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots>
+					<slot>TORSO_OVER</slot>
+					<slot>EYES</slot>
+					<slot>WINGS</slot>
+					<slot>ANKLE</slot>
+					<slot>ANUS</slot>
+					<slot>CHEST</slot>
+					<slot>FINGER</slot>
+					<slot>FOOT</slot>
+					<slot>GROIN</slot>
+					<slot>HAIR</slot>
+					<slot>HAND</slot>
+					<slot>HEAD</slot>
+					<slot>HIPS</slot>
+					<slot>HORNS</slot>
+					<slot>LEG</slot>
+					<slot>MOUTH</slot>
+					<slot>NECK</slot>
+					<slot>NIPPLE</slot>
+					<slot>PENIS</slot>
+					<slot>PIERCING_EAR</slot>
+					<slot>PIERCING_LIP</slot>
+					<slot>PIERCING_NIPPLE</slot>
+					<slot>PIERCING_NOSE</slot>
+					<slot>PIERCING_PENIS</slot>
+					<slot>PIERCING_STOMACH</slot>
+					<slot>PIERCING_TONGUE</slot>
+					<slot>PIERCING_VAGINA</slot>
+					<slot>SOCK</slot>
+					<slot>STOMACH</slot>
+					<slot>TAIL</slot>
+					<slot>TORSO_UNDER</slot>
+					<slot>VAGINA</slot>
+					<slot>WRIST</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+			
+		<incompatibleSlots/>
+		
+		<primaryColours values="JUST_GREEN"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_PURPLE_DARK"/>
+		<tertiaryColoursDye values="ALL"/>
+		<tertiaryColoursDye/>
+		
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(untie)] the cloth belt, before pulling [npc.her] top off and lower the pants before removing it.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(untie)] the cloth belt, before pulling  [npc2.namePos] top off and lower the pants before removing it.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] [npc.verb(untie)] the cloth belt, before roughly pulling [npc2.namePos] top off and lower the pants before removing it.]]>
+		</otherRough>
+	</displacementText>
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(tie)] on the cloak, after pulling the pants on.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(tie)] on the cloak, after pulling the pants on.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(tie)] on the cloak, after pulling the pants on.]]>
+		</otherRough>
+	</replacementText>
+
+	
+	<displacementText type="PULLS_DOWN">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] down the pants of [npc.her] outfit.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] down the pants of [npc2.namePos] outfit.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] down the pants of [npc2.namePos] outfit.]]>
+		</otherRough>
+	</displacementText><replacementText type="PULLS_DOWN">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] up the pants of [npc.her] outfit.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] up the pants of [npc2.namePos] outfit.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] up the pants of [npc2.namePos] outfit.]]>
+		</otherRough>
+	</replacementText>	
+	
+	<displacementText type="UNBUTTONS">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] the top of the outfit apart.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] the top of the outfit apart.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] the top of the outfit apart.]]>
+		</otherRough>
+	</displacementText><replacementText type="UNBUTTONS">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(close)] the top of the outfit.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(close)] the top of the outfit.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(close)] the top of the outfit.]]>
+		</otherRough>
+	</replacementText>
+	
+</clothing>
+
+
+
+
+
+
+
+

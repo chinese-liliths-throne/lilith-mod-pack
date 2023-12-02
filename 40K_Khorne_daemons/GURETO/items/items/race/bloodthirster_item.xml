@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>990000</value> 
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[Demonic offering : bloodthirster]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Demonic offering : bloodthirster]]></namePlural>
+		<description><![CDATA[Sigil of chaos that allows the weakening of the barrier between realspace and the immaterium.]]></description>
+		
+		<useDescriptor>Offer</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName>bloodthirster_item.svg</imageName>
+		
+		<colourPrimary>CLOTHING_BLACK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[bloodthirster]]></potionDescriptor>
+		<associatedRace>GURETO_bloodthirster</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+		</effectTooltipLines>
+
+		<applyEffects><![CDATA[
+		[#npc.setBody(npc.getGender(), SUBSPECIES_GURETO_bloodthirster_subspecies_bloodthirster, RACE_STAGE_GREATER, false)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		After finish the offering, [npc.name] [npc.verb(start)] to change into a bloodthirster.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		After finish the offering, [npc2.name] [npc.verb(start)] to change into a bloodthirster.
+		]]></otherUse>
+	</useDescriptions>
+	
+</item>

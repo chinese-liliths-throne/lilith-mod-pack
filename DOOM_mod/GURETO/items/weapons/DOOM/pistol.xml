@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+	
+		<value>18000</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[A]]></determiner>
+		
+		<name><![CDATA[Handgun]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[Handgun]]></namePlural> 
+		
+		<description><![CDATA[A big handgun made by the UAC.]]></description> 
+		
+		<attackDescriptor>Fire</attackDescriptor>
+		
+		<attackTooltipDescription>Shoot at [npc2.name] with the Handgun.</attackTooltipDescription>
+		
+		<rarity>COMMON</rarity> 
+		
+		<equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the Handgun.]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the Handgun.]]></unequipText>
+		
+		<imageName>pistol.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<physicalResistance>0</physicalResistance>
+		
+		<damage>40</damage> 
+		
+		<arcaneCost>1</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>FIRE</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>100</enchantmentLimit>
+		
+		<effects/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours/> 
+		<secondaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] a blast of energy at [npc2.name].
+		]]></hitText>
+		<hitText><![CDATA[
+		Opening fire, [npc2.name] is targeted by the shot!
+		]]></hitText>
+		<hitText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the handgun shot impacts with [npc2.name]!
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		Pulling on the trigger, [npc.name] [npc.verb(fire)] a blast of energy at [npc2.name], but [npc2.name] saw it coming and managed to avoid the blast.
+		]]></missText>
+		<missText><![CDATA[
+		Opening fire, [npc2.name] is on the path of the shot! [npc2.name] managed to stay out of [npc.namePos] line of sight.
+		]]></missText>
+		<missText><![CDATA[
+		Aiming at [npc2.name], [npc.name] [npc.verb(open)] fire and [npc.verb(let)] the shot go past [npc2.name]!
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	<type>ATTACK_DEFEND</type>
+	<equipWeighting>10</equipWeighting>
+	<name><![CDATA[FULL POWER]]></name>
+	<description><![CDATA[
+		"Now, that's getting boring..." you say, Unleashing your full power. Must be over level 25.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		10
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>SSJ.svg</imageName>
+	
+
+	<colourPrimary>BASE_PINK</colourPrimary>
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+
+	<statusEffects/>
+
+	
+
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_majin]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the KI manipulation. Requires to be at least level 25.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+        #IF(npc.getLevel() < 25)
+            0
+        #ELSE
+            8.0
+        #ENDIF
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		"Now, that's getting boring..." [npc.Name] [npc.verb(say)] , Unleashing [npc.namePos] full power. 
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		"Now, that's getting boring..." [npc.Name] [npc.verb(say)] , Unleashing [npc.namePos] full power. 
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+		<execute><![CDATA[
+            #IF(npc.getLevel() < 25)
+                Your transformation fails due to your lack of training and mastery. Must be over level 25.
+            #ELSE
+		"Now, that's getting boring..." [npc.name] [npc.verb(say)], Unleashing [npc.namePos] full power as [npc.namePos] pink aura envelopes [npc.Name], [npc.name] [npc.verb(gloat)] about [npc.namePos] true strength. "You didn't think that i was going all out before, did you?" 
+				[##npc.addStatusEffect(SE_GURETO_MAJIN_FP, 999)]
+			#ENDIF
+		]]></execute>
+		<critDescription/>
+		<critEffectDescription/>
+	</performMove>
+	
+</combatMove>

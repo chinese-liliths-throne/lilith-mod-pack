@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<leg>
+	<race>sightglass_orc</race>
+	<transformationName><![CDATA[orc]]></transformationName>
+	<coveringType>sightglass_orc_skin</coveringType>
+	<defaultFootStructure>PLANTIGRADE</defaultFootStructure>
+	<footType>HUMANOID</footType>
+	<spinneret>false</spinneret>
+	<tentacleType>NONE</tentacleType>
+	<tentacleCount>0</tentacleCount>
+	<allowedLegConfigurations>
+		<configuration>BIPEDAL</configuration>
+	</allowedLegConfigurations>
+	<name><![CDATA[leg]]></name>
+	<namePlural><![CDATA[legs]]></namePlural> 
+	<descriptorsMasculine>
+		<descriptor>masculine</descriptor>
+		<descriptor>orc-like</descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor>feminine</descriptor>
+		<descriptor>orc-like</descriptor>
+	</descriptorsFeminine>
+	<footDescriptorsMasculine>
+		<descriptor>orc-like</descriptor>
+	</footDescriptorsMasculine>
+	<footDescriptorsFeminine>
+		<descriptor>orc-like</descriptor>
+	</footDescriptorsFeminine>
+	<toeDescriptorsMasculine>
+		<descriptor>orc-like</descriptor>
+	</toeDescriptorsMasculine>
+	<toeDescriptorsFeminine>
+		<descriptor>orc-like</descriptor>
+	</toeDescriptorsFeminine>
+	<transformationDescription><![CDATA[
+		A layer of orc-like skin quickly grows over [npc.her] legs as they shift into a new form.
+		<br/>[npc.Name] now [npc.has] [style.boldGreen(orc-like legs and feet)], which are [npc.materialDescriptor] [npc.legFullDescription].
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.Her] legs are [npc.materialCompositionDescriptor] [npc.legFullDescription(true)], and [npc.her] feet are formed into orc-like feet.
+	]]></bodyDescription>
+</leg>

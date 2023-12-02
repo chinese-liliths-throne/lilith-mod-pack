@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>14000000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[]]></determiner>
+        <name><![CDATA[Mercy And Forgiveness]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Mercy And Forgivenesss]]></namePlural>
+        <description><![CDATA[A gauntlet with two power claw blades.]]></description>
+        <attackDescriptor>Slash</attackDescriptor>
+        <attackTooltipDescription>Slash at [npc2.name] with your Mercy And Forgiveness.</attackTooltipDescription>
+        <rarity>LEGENDARY</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the Mercy And Forgiveness.]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the Mercy And Forgiveness.]]></unequipText>
+        <imageName>mercyandforgiveness.svg</imageName>
+        <imageEquippedName/>
+        <damage>400</damage>
+        <arcaneCost>0</arcaneCost>
+        <damageVariance>MEDIUM</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+            <damageType>ICE</damageType>
+        </availableDamageTypes>
+        <spells/>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+		
+		<primaryColours values="JUST_BLUE_DARK"/> 
+		<primaryColoursDye values="ALL_WITH_METAL"/>
+		<secondaryColours values="JUST_GOLD"/> 
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		
+		
+		<customColours>
+			<customColour c0="#6C5353" c1="#916F6F" c2="#AC9393" c3="#C8B7B7" c4="#E3DBDB">
+				<defaultColours>
+					<colour>CLOTHING_RED_BRIGHT</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+			<customColour c0="#abc837" c1="#bcd35f" c2="#cdde87" c3="#dde9af" c4="#eef4d7">
+				<defaultColours>
+					<colour>CLOTHING_GUNMETAL</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+		</customColours>
+		
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the blade pierces [npc2.herHim] with righteous wrath.
+		]]></hitText>
+        <hitText><![CDATA[
+		Gripping the gauntlet tightly, [npc.name] [npc.verb(slice)] [npc2.name] with rage and purpose.
+		]]></hitText>
+        <hitText><![CDATA[
+		Looking at [npc2.name], [npc.name] [npc.verb(take)] the Mercy And Forgiveness in one hand thightly and [npc.verb(strike)] down [npc2.name]!
+		]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the blade grazes [npc2.herHim] with righteous wrath. [npc2.Name] [npc.verb(dodge)] the blade but barely.
+		]]></missText>
+        <missText><![CDATA[
+		Gripping the gauntlet tightly, [npc.name] [npc.verb(slice)] [npc2.name] with fierce speed. Giving [npc2.herHim] a chance to avoid the menacing Mercy And Forgiveness.
+		]]></missText>
+        <missText><![CDATA[
+		Gazing upon [npc2.name], [npc.name] [npc.verb(take)] the Mercy And Forgiveness with one hand and [npc.verb(strike)] down [npc2.name]! This pride however, was enough to give [npc2.Name] a chance to escape death.
+		]]></missText>
+    </missDescriptions>
+</weapon>

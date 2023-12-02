@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+
+	<type>ATTACK</type>
+	
+
+	<equipWeighting>2</equipWeighting>
+	
+	<name><![CDATA[Divine Wine]]></name>
+	
+
+	<description><![CDATA[ 
+		Taking a break from the fight, you pull out a golden and heavy of wine.
+	]]></description>
+	
+
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+
+	<baseDamage><![CDATA[		
+	0
+	]]></baseDamage>
+	
+
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+
+	<colourPrimary>BASE_GOLD</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">CRIPPLE</effect>
+	</statusEffects>
+	
+	
+
+	<availabilityCondition><![CDATA[
+[#npc.getEssenceCount() > 0 && ((npc.getMainWeapon(0) != null && 
+        npc.getMainWeapon(0).getWeaponType().equals(WEAPON_GURETO_EA_EA)) || 
+        (npc.getOffhandWeapon(0) != null && 
+        npc.getOffhandWeapon(0).getWeaponType().equals(WEAPON_GURETO_EA_EA)))]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to characters with the legendary Ea.
+	]]></availabilityDescription>
+	
+
+<weighting><![CDATA[
+            0.1
+]]></weighting>
+	
+
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Can't Crit.
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		Activating the Gate of Babylon, [npc.Name] [npc.verb(pull)] out a bottle of wine of the highest quality.
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		Activating the Gate of Babylon, [npc.Name] [npc.verb(pull)] out a bottle of wine of the highest quality.
+	]]></movePredictionDescriptionNoTarget>
+	
+
+	<performMove>
+
+        <execute><execute><![CDATA[
+		Taking a break from this boring and fruitless fight, [npc.Name] [npc.verb(open)] the Gate of Babylon and [npc.verb(take)] a bottle of wine out of it.
+			[#npc.addItem(game.getItemGen().generateItem(ITEM_GURETO_race_kingwine),false)]
+]]></execute></execute>
+		<critDescription><![CDATA[
+			[npc2.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] receives the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

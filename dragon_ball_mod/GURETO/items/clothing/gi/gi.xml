@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[A tag sewn into the Gi informs you that it was made by 'Kame sennin'.]]></clothingAuthorTag>
+		<value>8000</value> 
+		<determiner><![CDATA[a]]></determiner>
+		<name><![CDATA[Gi]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Gi]]></namePlural> 
+		<description><![CDATA[A suit made for training but is light enough to fight with ease.]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>ANDROGYNOUS</femininity> 
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>gi.svg</imageName> 
+		<imageEquippedName/> 
+		<enchantmentLimit/>
+		<effects/>
+		
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"> 
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>UNBUTTONS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN">
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+			
+		<incompatibleSlots/>
+		
+		<primaryColours values="JUST_ORANGE_BRIGHT"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLUE_DARK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLUE_DARK"/>
+		<tertiaryColoursDye values="ALL"/>
+		<tertiaryColoursDye/>
+		
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(untie)] the cloth belt, before pulling [npc.her] top off and lower the pants before removing it.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(untie)] the cloth belt, before pulling  [npc2.namePos] top off and lower the pants before removing it.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] [npc.verb(untie)] the cloth belt, before roughly pulling [npc2.namePos] top off and lower the pants before removing it.]]>
+		</otherRough>
+	</displacementText>
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(tie)] on the gi, after pulling the pants on.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(tie)] on the gi, after pulling the pants on.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(tie)] on the gi, after pulling the pants on.]]>
+		</otherRough>
+	</replacementText>
+
+	
+	<displacementText type="PULLS_DOWN">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] down the pants of [npc.her] gi.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] down the pants of [npc2.namePos] gi.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] down the pants of [npc2.namePos] gi.]]>
+		</otherRough>
+	</displacementText><replacementText type="PULLS_DOWN">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] up the pants of [npc.her] gi.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] up the pants of [npc2.namePos] gi.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] up the pants of [npc2.namePos] gi.]]>
+		</otherRough>
+	</replacementText>	
+	
+	<displacementText type="UNBUTTONS">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] the top of the gi apart.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(pull)] the top of the gi apart.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(pull)] the top of the gi apart.]]>
+		</otherRough>
+	</displacementText><replacementText type="UNBUTTONS">
+		<self>
+		  <![CDATA[[npc.Name] [npc.verb(close)] the top of the gi.]]>
+		</self>
+		<other>
+		  <![CDATA[[npc.Name] [npc.verb(close)] the top of the gi.]]>
+		</other>
+		<otherRough>
+		  <![CDATA[[npc.Name] roughly [npc.verb(close)] the top of the gi.]]>
+		</otherRough>
+	</replacementText>
+</clothing>
+
+
+
+
+
+
+
+

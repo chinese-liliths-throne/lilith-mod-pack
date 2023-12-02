@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<anus>
+	<race>GURETO_mancubus</race>
+
+	<coveringType>GURETO_mancubus_anus</coveringType>
+	
+	<!-- The singular names of this anus.
+	One of the defined names will be chosen at random every time the name is displayed to the player.-->
+	<names/>
+
+	<namesPlural/>
+
+	<descriptorsMasculine/>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsFeminine/>
+
+	<defaultOrificeModifiers/>
+
+	
+</anus>

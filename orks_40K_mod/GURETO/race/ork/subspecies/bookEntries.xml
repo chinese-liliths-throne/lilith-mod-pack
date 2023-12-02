@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="ork_BASIC"><![CDATA[
+	<p>
+		Orks, also known as "greenskins", are very strong but sort of stupid creatures.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="ork_ADVANCED"><![CDATA[
+	<p>
+		Orks are powerful humanoid creatures that have a strange power of belief that allows the orkish belief to create or change reality to suit their belief. This allows the Orks to create powerful weapons such as stompas, the orkish counter part of imperial titans. Orks crave only war, no matter the result, all they want is to fight. This mentallity reflects their currency being "teef", the orkish saying for actual teeth.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+    <coreAttributes>
+        <authorTag/>
+        <value>14000000</value>
+        <melee>true</melee>
+        <twoHanded>false</twoHanded>
+        <determiner><![CDATA[]]></determiner>
+        <name><![CDATA[Blade Encarmine]]></name>
+        <namePlural pluralByDefault="false"><![CDATA[Blade Encarmine]]></namePlural>
+        <description><![CDATA[An exotic looking powersword.]]></description>
+        <attackDescriptor>Slash</attackDescriptor>
+        <attackTooltipDescription>Slash at [npc2.name] with the Blade Encarmine.</attackTooltipDescription>
+        <rarity>LEGENDARY</rarity>
+        <weaponSet/>
+        <equipText><![CDATA[[npc.Name] [npc.verb(take)] hold of the Blade Encarmine, the Emperor's will. For the Emperor!]]></equipText>
+        <unequipText><![CDATA[[npc.Name] [npc.verb(drop)] the Blade Encarmine.]]></unequipText>
+        <imageName>bladeencarmine.svg</imageName>
+        <imageEquippedName/>
+        <damage>400</damage>
+        <arcaneCost>0</arcaneCost>
+        <damageVariance>MEDIUM</damageVariance>
+        <availableDamageTypes>
+            <damageType>PHYSICAL</damageType>
+            <damageType>ICE</damageType>
+            <damageType>FIRE</damageType>
+        </availableDamageTypes>
+        <spells/>
+        <enchantmentLimit>100</enchantmentLimit>
+        <effects/>
+		
+		<primaryColours values="JUST_BROWN"/> 
+		<primaryColoursDye values="ALL_WITH_METAL"/>
+		<secondaryColours values="JUST_GOLD"/> 
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		
+		
+		<customColours>
+			<customColour c0="#abc837" c1="#bcd35f" c2="#cdde87" c3="#dde9af" c4="#eef4d7">
+				<defaultColours>
+					<colour>CLOTHING_WHITE</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+		</customColours>
+		
+        <itemTags>
+            <tag>SOLD_BY_VICKY</tag>
+        </itemTags>
+    </coreAttributes>
+    <hitDescriptions>
+        <hitText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the blade pierces [npc2.herHim] with righteous wrath.
+		]]></hitText>
+        <hitText><![CDATA[
+		Gripping the sword tightly, [npc.name] [npc.verb(slice)] [npc2.name] with rage and purpose.
+		]]></hitText>
+        <hitText><![CDATA[
+		Looking at [npc2.name], [npc.name] [npc.verb(take)] the Blade Encarmine in one hand thightly and [npc.verb(strike)] down [npc2.name]!
+		]]></hitText>
+    </hitDescriptions>
+    <missDescriptions>
+        <missText><![CDATA[
+		Gripping the blade with [npc.namePos] strength, [npc.name] [npc.verb(strike)] at [npc2.name], the blade grazes [npc2.herHim] with righteous wrath. [npc2.Name] [npc.verb(dodge)] the blade but barely.
+		]]></missText>
+        <missText><![CDATA[
+		Gripping the sword tightly, [npc.name] [npc.verb(slice)] [npc2.name] with fierce speed. Giving [npc2.herHim] a chance to avoid the menacing Blade Encarmine.
+		]]></missText>
+        <missText><![CDATA[
+		Gazing upon [npc2.name], [npc.name] [npc.verb(take)] the Blade Encarmine with one hand and [npc.verb(strike)] down [npc2.name]! This pride however, was enough to give [npc2.Name] a chance to escape death.
+		]]></missText>
+    </missDescriptions>
+</weapon>

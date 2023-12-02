@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[rocket]]></name>
+	
+
+	<description><![CDATA[
+		Launch a rocket at your opponent, dealing formattedDamageInflicted damage.
+	]]></description>
+	
+	<damageType><![CDATA[
+			FIRE
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		75
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		0
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>beam.svg</imageName>
+	
+	<colourPrimary>BASE_GREY</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<statusEffects>
+		<effect turnLength="3" onCrit="true">ARCANE_WEAKNESS</effect>
+	</statusEffects>
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_revenant]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		Available to revenant characters.
+	]]></availabilityDescription>
+	
+	<weighting><![CDATA[
+			10
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		[#npc.getHealthPercentage() < 0.25]
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		Your health is less than [style.boldRed(25%)].
+	]]></criticalDescription>
+	
+
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.verb(Launch)] a rocket at [npc2.Name], dealing formattedDamageInflicted damage.
+		#IF(npc.getHealthPercentage() < 0.25)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.verb(Launch)] a rocket at [npc.namePos] opponent, dealing formattedDamageInflicted damage.
+		#IF(npc.getHealthPercentage() < 0.25)
+		[npc.Name] can't afford to lose, [npc.Name] [npc.verb(put)] more power into the attack.
+		#ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		
+		<execute><execute><![CDATA[
+			[npc.Name] [npc.verb(fire)] rockets at [npc2.Name]. The rocket impacts with [npc2.herHim] and detonates!
+		#IF(npc.getHealthPercentage() < 0.25)
+		<p>In the heat of the battle, [npc.name] [npc.verb(make)] a more powerful attack!</p>
+		#ENDIF
+	formattedHealthDamage
+]]></execute></execute>
+		<critDescription><![CDATA[
+			The fight got very intense, and [npc2.Name] got hit VERY hard!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.Name] is clenching [npc2.namePos] chest in pain!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

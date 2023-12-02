@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<clothing>
+  <coreAttributes>
+    <authorTag><![CDATA[It's marked as made by someone named 'CondarBi'...]]></authorTag>
+	<value>1500</value>
+    <determiner><![CDATA[an]]></determiner>
+    <name><![CDATA[enchanted anklet]]></name>
+    <namePlural pluralByDefault="false"><![CDATA[enchanted anklets]]></namePlural>
+    <description><![CDATA[A delicate ankle bracelet, consisting of a series of metallic orbs threaded onto a fine metal wire. A powerful transformative enchantment lurks within...]]></description>
+
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity>
+    <slot>ANKLE</slot>
+	<rarity>EPIC</rarity>
+
+    <imageName>anklet.svg</imageName>
+
+	<clothingSet/>
+  <imageEquippedName/>
+  <enchantmentLimit/>
+
+	<stickers>
+		<category id="selftf" priority="1">
+			<categoryName><![CDATA[Self-Transformations]]></categoryName>
+			<sticker id="off" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+				<stickerName><![CDATA[Off]]></stickerName>
+				<namePrefix/>
+				<namePostfix/>
+				<descriptionModification/>
+				<imageName/>
+				<itemTagsAdded/>
+				<itemTagsRemoved/>
+				<unavailabilityText/>
+				<availabilityText/>
+			</sticker>
+			<sticker id="on" priority="2" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+				<stickerName><![CDATA[On]]></stickerName>
+				<namePrefix/>
+				<namePostfix/>
+				<descriptionModification/>
+				<imageName/>
+				<itemTagsAdded/>
+				<itemTagsRemoved/>
+				<unavailabilityText/>
+				<availabilityText/>
+			</sticker>
+		</category>
+		<category id="partnertf" priority="2">
+			<categoryName><![CDATA[Partner Transformations]]></categoryName>
+			<sticker id="none" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+				<stickerName><![CDATA[Default]]></stickerName>
+				<namePrefix/>
+				<namePostfix/>
+				<descriptionModification/>
+				<imageName/>
+				<itemTagsAdded/>
+				<itemTagsRemoved/>
+				<unavailabilityText/>
+				<availabilityText/>
+			</sticker>
+			<sticker id="penis" priority="2" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+				<stickerName><![CDATA[Add Penis]]></stickerName>
+				<namePrefix/>
+				<namePostfix/>
+				<descriptionModification/>
+				<imageName/>
+				<itemTagsAdded/>
+				<itemTagsRemoved/>
+				<unavailabilityText/>
+				<availabilityText><![CDATA[
+					If your partner has neither a penis nor a clit big enough for penetration, make them grow a penis.
+				]]></availabilityText>
+			</sticker>
+			<sticker id="clit" priority="3" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+				<stickerName><![CDATA[Grow Clit]]></stickerName>
+				<namePrefix/>
+				<namePostfix/>
+				<descriptionModification/>
+				<imageName/>
+				<itemTagsAdded/>
+				<itemTagsRemoved/>
+				<unavailabilityText/>
+				<availabilityText><![CDATA[
+					If your partner has a vagina with a clit too small for penetration, and doesn't have a penis or doesn't want it used, grow their clit enough for it to be used for penetration.
+				]]></availabilityText>
+			</sticker>
+			<sticker id="both" priority="4" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+				<stickerName><![CDATA[Both]]></stickerName>
+				<namePrefix/>
+				<namePostfix/>
+				<descriptionModification/>
+				<imageName/>
+				<itemTagsAdded/>
+				<itemTagsRemoved/>
+				<unavailabilityText/>
+				<availabilityText><![CDATA[
+					If your partner lacks a penis, make them grow a penis, and if they have a vagina but lack a clit big enough for penetration, grow their clit enough for it to be used for penetration.
+				]]></availabilityText>
+			</sticker>
+		</category>
+	</stickers>
+	
+	<effects/> 
+
+    <blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+
+    <incompatibleSlots/>
+
+    <primaryColours values="ALL_METAL"/>
+    <primaryColoursDye values="ALL_METAL"/>
+	<secondaryColours/>
+	<secondaryColoursDye/>
+	<tertiaryColours/>
+	<tertiaryColoursDye/>
+
+    <itemTags> <!--https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/ItemTag.java -->
+		<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+		<tag>SUBMISSION_TUNNEL_SPAWN</tag>
+		<tag>SOLD_BY_FINCH</tag>
+		<tag>ENABLE_SEX_EQUIP</tag>
+		<tag>NO_RANDOM_SPAWN</tag>
+		<tag>TRANSPARENT</tag>
+    </itemTags>
+
+  </coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(fasten)] the anklet around [npc.her] ankle.]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(fasten)] the anklet around [npc2.namePos] ankle.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] roughly [npc.verb(fasten)] the anklet around [npc2.namePos] ankle.]]>
+    </otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self>
+      <![CDATA[[npc.Name] [npc.verb(unfasten)] [npc.her] anklet, before taking it off.]]>
+    </self>
+    <other>
+      <![CDATA[[npc.Name] [npc.verb(unfasten)] [npc2.namePos] anklet, before taking it off.]]>
+    </other>
+    <otherRough>
+      <![CDATA[[npc.Name] quickly [npc.verb(unfasten)] [npc2.namePos] anklet, before roughly snatching it off.]]>
+    </otherRough>
+  </displacementText>
+
+
+</clothing>

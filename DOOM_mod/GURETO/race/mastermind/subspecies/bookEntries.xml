@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="mastermind_BASIC"><![CDATA[
+	<p>
+		A huge demon with not much but a brain for body, only able to act independantly thanks to its exo-suit.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="mastermind_ADVANCED"><![CDATA[
+	<p>
+		This iteration of the mastermind appears to be humanoid. Maybe for better movement or combat effectiveness.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

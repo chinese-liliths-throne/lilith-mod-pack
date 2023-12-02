@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ass>
+	<race>sightglass_goblinoid</race>
+	<transformationName><![CDATA[bugbear]]></transformationName>
+	<coveringType>sightglass_goblinoid_fur</coveringType>
+	<anusType>sightglass_goblinoid_anus</anusType>
+	<names/>
+	<namesPlural/>
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	<transformationDescription><![CDATA[
+		[npc.She] now [npc.has] a [style.boldGreen(goblin-like)], [npc.assholeFullDescription].
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull] a goblin-like, [npc.anusFullDescription(true)]
+	]]></bodyDescription>
+</ass>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fluid>
+	<race>sightglass_goblinoid</race>
+	<transformationName><![CDATA[goblin]]></transformationName>
+	<baseFluidType>MILK</baseFluidType>
+	<flavour>MILK</flavour>
+	<namesMasculine/>
+	<namesFeminine/>
+	<descriptorsMasculine>
+		<name><![CDATA[goblin]]></name>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<name><![CDATA[goblin]]></name>
+	</descriptorsFeminine>
+	<defaultFluidModifiers/>
+</fluid>

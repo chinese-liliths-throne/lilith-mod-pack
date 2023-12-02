@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookText>
+	
+	<htmlContent tag="cyberdemon_BASIC"><![CDATA[
+	<p>
+		A modified demon with mechanical augments.
+	</p>
+	]]>
+	</htmlContent>
+
+	<htmlContent tag="cyberdemon_ADVANCED"><![CDATA[
+	<p>
+		This demon can take an insane amount of pain and damage and still keep on fighting. This demon uses argent energy to fight.
+	</p>
+	]]>
+	</htmlContent>
+	
+</bookText>

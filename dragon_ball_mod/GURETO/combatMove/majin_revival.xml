@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<combatMove>
+
+	<category>SPECIAL</category>
+	
+	<type>ATTACK_DEFEND</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[Majin Gift]]></name>
+	
+	<description><![CDATA[
+		Use your unique body to recover from any damage. Consumes 750 arcane essence.
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		1
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		1
+	]]></APcost>
+	
+	<!-- These three values set whether or not the move can target enemies, allies, or the performer of the move themselves. -->
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<!-- The name of the icon which should be used to represent this combat move. The icon must be an svg file, and must be placed in the same folder as this XML file. -->
+	<imageName>HEAL.svg</imageName>
+	
+	<colourPrimary>BASE_RED</colourPrimary> <!-- This has to have a value defined, or else this XML file will fail to load. -->
+	<colourSecondary/> <!-- This can optionally be left blank, like the 'colourTertiary' element below. -->
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getRace()==RACE_GURETO_majin]
+	]]>
+	</availabilityCondition>
+	
+	<!-- A short description to let the player know what the conditions are for this move being available to them. -->
+	<availabilityDescription><![CDATA[
+		Available to majin characters.
+	]]></availabilityDescription>
+	
+<weighting><![CDATA[
+        #IF(npc.getEssenceCount() < 750)
+            0
+        #ELSE
+            3.0
+        #ENDIF
+]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<!-- A short description to let the player know what the conditions are for this move to inflict a critical hit. -->
+	<criticalDescription><![CDATA[
+		Cannot critically hit.
+	]]></criticalDescription>
+	
+	-->
+	<movePredictionDescriptionWithTarget><![CDATA[
+		[npc.name] [npc.verb(regenerate)] [npc.namePos] body in an instant. Consumes 750 arcane essence.
+        #IF(npc.getEssenceCount() < 750)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionWithTarget>
+	
+	<!-- This is almost identical to the defined description above, with the difference being that there is no targeted character. As such, the description cannot use any 'npc2' parsing. -->
+	<movePredictionDescriptionNoTarget><![CDATA[
+		[npc.name] [npc.verb(regenerate)] [npc.namePos] body in an instant. Consumes 750 arcane essence.
+        #IF(npc.getEssenceCount() < 750)
+            You don't have enough essences to do this attack!
+        #ENDIF
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><![CDATA[
+            #IF(npc.getEssenceCount() < 750)
+                Your attack fails due to the lack in your essence reserves.
+            #ELSE
+			[npc.Name] [npc.verb(regenerate)] [npc.namePos] body using [npc.namePos] legendary majin body.
+                [##npc.incrementEssenceCount(-750,false)]
+				[##npc.setHealth(1000)]
+                #ENDIF
+		]]></execute>
+		<critDescription><![CDATA[
+			[npc.NamePos] below 25% HP, [npc.Name] [npc.verb(need)] to end it now!
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			[npc2.name] [npc.verb(receive)] the hit directly!
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

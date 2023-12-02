@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<weapon>
+	<coreAttributes>
+		
+		<authorTag><![CDATA["There is a small inscription stating how Shadow products have 99% chance of working correctly. We've yet to hear back from that 1%."]]></authorTag>
+		
+		<!-- How much this weapon is worth. -->
+		<value>100</value> 
+		
+		<!-- Use "true" if this is a melee weapon, and "false" if it's ranged. (Without quotation marks.) -->
+		<melee>false</melee>
+		
+		<!-- Use "true" if this weapon is two-handed, and thus cannot be simultaneously wielded with an offhand weapon, and "false" if it's one-handed. (Without quotation marks.) -->
+		<twoHanded>false</twoHanded>
+		<oneShotWeapon>true</oneShotWeapon>
+		<oneShotWeaponChanceToRecoverAfterTurn>0</oneShotWeaponChanceToRecoverAfterTurn>
+		<oneShotWeaponChanceToRecoverAfterCombat>0</oneShotWeaponChanceToRecoverAfterCombat>
+		<determiner><![CDATA[a]]></determiner>
+		
+		<!-- The name of this weapon. -->
+		<name appendDamageName="false"><![CDATA[Flashbang]]></name> <!-- You can leave out the 'appendDamageName' attribute, but if you never want this weapon to be described by its damage type, then set it as false. (i.e. If set to false, this dagger would always be called 'Demon's Dagger' instead of, for example, 'Forceful Demon's Dagger')-->
+		
+		<!-- The plural name of this weapon. If pluralByDefault's "false" is changed to "true", then the game will always the plural name when referring to this weapon. -->
+		<namePlural pluralByDefault="false"><![CDATA[Flashbangs]]></namePlural> 
+		
+		<!-- The description/lore of this weapon. -->
+		<description><![CDATA[In the heat of battle, this tactical device illuminates the battlefield with a blinding burst of light and deafening sound. Used to disorient and temporarily blind enemies.]]></description> 
+		
+		<!-- How the weapon is used. This should be a single verb, and is used as the title of attacking actions in combat. -->
+		<attackDescriptor>deploy</attackDescriptor>
+		
+		<!-- The description that's displayed when hovering over the attack action in combat. Follow the same guidelines as equipText (a couple of entries further down this page).
+		As this tooltip is only ever seen from the player's perspective, you can always write in the first-person narrative. (Still use npc2 for the target, though.)-->
+		<attackTooltipDescription>Throw your Flashbang at [npc2.name]</attackTooltipDescription>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<!-- What set this weapon is a part of. Values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/ClothingSet.java -->
+		<weaponSet/> 
+	
+		<equipText><![CDATA[[npc.Name] retrieves a flashbang from [npc.her] equipment and holds it firmly, ready for deployment.]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name] stows away the flashbang, securely returning it to [npc.her] equipment.]]></unequipText>
+		
+		<!-- The file name of this weapon's image when in the character's inventory. The only supported file type is .svg. I use the free program "Inkscape" to make .svg images for the game. -->
+		<imageName>Flashbang.svg</imageName>
+		
+		<imageEquippedName>Flashbang.svg</imageEquippedName>
+		
+		<!-- How much natural physical resistance this weapon provides when equipped. Should only really be above 0 for shields or other such protective weapons. -->
+		<physicalResistance>0</physicalResistance> 
+		
+		<!-- The base damage that this weapon deals. -->
+		<damage>30</damage>
+		<aoe chance="50">10</aoe>
+		
+		<!-- How many arcane essences are required, and drained, by firing this weapon. Ranged weapons should usually use the value 1, while melee weapons should usually be 0. -->
+		<arcaneCost>0</arcaneCost> 
+		
+		<!-- The variance in base damage when this weapon is actually used to attack. Values can be found here: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/combat/DamageVariance.java -->
+		<damageVariance>HIGH</damageVariance> 
+		
+		<!-- The available damage types that this weapon can spawn in with. Values can be found here (MISC should not be used): https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/combat/DamageType.java -->
+		<availableDamageTypes>
+			<damageType>FIRE</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<combatMoves/>
+		
+		<enchantmentLimit>1</enchantmentLimit>
+		
+		<effects/>
+		
+		<extraEffects>
+			<effect><![CDATA[[style.boldPhysical("Dazed")] for 5 turns on hit.]]></effect>
+		</extraEffects>
+		
+		<onHitEffect>
+		<![CDATA[
+		#IF !npc2.hasStatusEffect(SE_DAZED)
+		#THEN [##npc2.addStatusEffect(SE_DAZED, 6)] [npc2.Name] [npc2.is] [style.boldPhysical(dazed)] from the flash!
+		#ENDIF
+		]]>
+		</onHitEffect>
+	
+		<onCriticalHitEffect/>
+		
+		<primaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours> 
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>CONTRABAND_HEAVY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<hitDescriptions>
+	<hitText><![CDATA[
+		Throwing the flashbang with precision, [npc.name] manages to hit [npc2.name] dead-on, engulfing them in a blinding burst of light and disorienting sound!
+		]]></hitText>
+	<hitText><![CDATA[
+		Expertly tossing the flashbang towards [npc2.name], [npc.name] triggers a powerful explosion of light and sound, stunning [npc2.herHim] in the process!
+		]]></hitText>
+	<hitText><![CDATA[
+		[npc.Name] lobs the flashbang directly at [npc2.name], causing a blinding flash and a deafening blast that momentarily incapacitates [npc2.herHim]!
+		]]></hitText>
+	</hitDescriptions>
+
+<missDescriptions>
+	<missText><![CDATA[
+		Throwing the flashbang, [npc.name] misses [npc2.name], as the device lands off-target and fails to create the desired effect.
+		]]></missText>
+	<missText><![CDATA[
+		Despite the intent, [npc.name] fails to hit [npc2.name] with the flashbang, leaving both confused and unaffected by the disorienting explosion.
+		]]></missText>
+	<missText><![CDATA[
+		[npc.Name] hurls the flashbang, but it veers off course, missing [npc2.name] and resulting in no disruption to their senses.
+		]]></missText>
+</missDescriptions>
+	
+</weapon>

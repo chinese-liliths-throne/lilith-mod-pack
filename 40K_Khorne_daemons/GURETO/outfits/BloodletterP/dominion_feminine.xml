@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- Look in the mods folder for a commented version of this. -->
+<outfit>
+	<coreAttributes>
+		<name><![CDATA[space marine mugger (feminine)]]></name>
+		
+		<description><![CDATA[Simple clothing, with the possibility of a weapon or two...]]></description>
+		
+		<femininity>FEMININE</femininity>
+		
+		<worldTypes>
+			<world>DOMINION</world>
+		</worldTypes>
+		
+		<outfitTypes>
+		  <type>PROSTITUTE</type>
+		</outfitTypes>
+		
+        <acceptableLegConfigurations>
+            <legConfiguration>BIPEDAL</legConfiguration>
+        </acceptableLegConfigurations>
+				
+		<conditional><![CDATA[npc.getRace()==RACE_GURETO_bloodletter]]></conditional>
+		
+		<weight>10000</weight>
+	</coreAttributes>
+	
+	<generationAttributes>
+		<cond1 constant="true"><![CDATA[RND.nextInt(100)<=75]]></cond1>
+		<cond2 constant="true"><![CDATA[RND.nextInt(100)<=100]]></cond2> <!-- knuckle dusters or pipe -->
+		<cond3 constant="true"><![CDATA[RND.nextInt(100)<=25]]></cond3>
+		<cond4 constant="true"><![CDATA[RND.nextInt(100)<=25]]></cond4> <!-- For legwear femininity -->
+		<cond5 constant="true"><![CDATA[RND.nextInt(100)<=100]]></cond5> <!-- weapons -->
+		<cond6 constant="true"><![CDATA[npc.getLegConfiguration()==LEG_CONFIGURATION_BIPEDAL && npc.getFootStructure()==FOOT_STRUCTURE_PLANTIGRADE]]></cond6> <!-- is bipedal -->
+		
+		<presetColourGroup1>
+			<randomColour>CLOTHING_BLACK</randomColour>
+			<randomColour>CLOTHING_RED</randomColour>
+		</presetColourGroup1>
+		
+		<presetColourGroup2 values="ALL_METAL"/>
+		
+		<presetColourGroup3>
+			<randomColour>CLOTHING_BLACK</randomColour>
+			<randomColour>CLOTHING_RED</randomColour>
+		</presetColourGroup3>
+		
+        <mainWeapons>
+			<weapon>
+				<conditional><![CDATA[cond5]]></conditional>
+				<types>
+				<type>GURETO_40K_daemonsword</type>
+				<type>GURETO_40K_daemonsword</type>
+				<type>GURETO_40K_daemonsword</type>
+				<type>GURETO_40K_daemonsword</type>
+				<type>GURETO_40K_daemonsword</type>
+				</types>
+				<damageTypes/>
+				<primaryColours/>
+				<secondaryColours/>
+			</weapon>
+        </mainWeapons>
+		
+        <offhandWeapons>
+			<weapon>
+				<conditional><![CDATA[RND.nextInt(100)<=20]]></conditional>
+				<types>
+				<type>GURETO_40K_daemonsword</type>
+				<type>GURETO_40K_daemonsword</type>
+				<type>GURETO_40K_daemonsword</type>
+				<type>GURETO_40K_daemonsword</type>
+				<type>GURETO_40K_daemonsword</type>
+				</types>
+				<damageTypes/>
+				<primaryColours/>
+				<secondaryColours/>
+			</weapon>
+        </offhandWeapons>
+		
+		
+		<guaranteedClothingEquips/>
+		
+		
+
+		
+
+		
+
+		
+		<clothingType>
+			<conditional><![CDATA[RND.nextInt(100)<=100]]></conditional>
+			<types>
+				<type>dsg_eep_riotarmorset_riotbelt</type>
+			</types>
+			<primaryColours>
+				<colour>presetColourGroup3</colour>
+			</primaryColours>
+			<secondaryColours/>
+			<tertiaryColours/>
+		</clothingType>
+
+		<clothingType>
+			<conditional><![CDATA[RND.nextInt(100)<=100]]></conditional>
+			<types>
+				<type>dsg_eep_riotarmorset_riotarmor</type>
+			</types>
+			<primaryColours>
+				<colour>presetColourGroup3</colour>
+			</primaryColours>
+			<secondaryColours/>
+			<tertiaryColours/>
+		</clothingType>
+
+		<clothingType>
+			<conditional><![CDATA[RND.nextInt(100)<=100]]></conditional>
+			<types>
+				<type>innoxia_loinCloth_loin_cloth</type>
+			</types>
+			<primaryColours>
+				<colour>presetColourGroup3</colour>
+			</primaryColours>
+			<secondaryColours/>
+			<tertiaryColours/>
+		</clothingType>
+		
+
+		
+	</generationAttributes>
+
+</outfit>

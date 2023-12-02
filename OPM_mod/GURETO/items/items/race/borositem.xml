@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[Nothing indicates its origin.]]></authorTag>
+		
+		<value>100000</value> 
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[Extra-terrestrial energy]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Extra-terrestrial energies]]></namePlural>
+		<description><![CDATA[.]]></description> 
+		
+		<useDescriptor>eat</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+
+		<imageName>borositem.svg</imageName>
+		
+		<colourPrimary>BASE_GREY_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[boros]]></potionDescriptor>
+		<associatedRace>GURETO_boros</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(Restores)] 100% [style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name] [npc.verb(hold)] the energy and it fully replenishes [npc.namePos] mana.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name] [npc.verb(hold)] the energy and it fully replenishes [npc2.namePos] mana.
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

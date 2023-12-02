@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tongue>
+
+	<race>GURETO_mastermind</race>
+	
+	<coveringType>TONGUE</coveringType>
+	
+	<defaultLength>8</defaultLength>
+	
+	<!-- The singular and plural names of this tongue. -->
+	<name><![CDATA[tongue]]></name>
+	<namePlural><![CDATA[tongues]]></namePlural>
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[mastermind]]></descriptor>
+	</descriptorsMasculine>
+	<!-- Same as above, but for feminine characters. -->
+	<descriptorsFeminine>
+		<descriptor><![CDATA[mastermind]]></descriptor>
+	</descriptorsFeminine>
+	
+	<!-- How this tongue is described in a character's description page. -->
+	<bodyDescription><![CDATA[
+		[npc.Her] mouth holds [npc.a_tongueLength], [npc.tongueColour(true)], mastermind [npc.tongue]#IF(npc.isPiercedTongue()), which has been pierced#ENDIF.
+	]]></bodyDescription>
+	
+	<defaultTongueModifiers>
+		<modifier>TAPERED</modifier>
+	</defaultTongueModifiers>
+	
+</tongue>

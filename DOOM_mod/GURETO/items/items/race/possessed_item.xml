@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<item>
+	<coreAttributes>
+		<value>2000</value> 
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[Demonic Energy : Possessed]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Demonic Energy : Possessed]]></namePlural>
+		<description><![CDATA[Demonic Energy, it's not like this world's demons. You've been warned.]]></description>
+		
+		<useDescriptor>absorbing</useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName>possessed_item.svg</imageName>
+		
+		<colourPrimary>CLOTHING_BLACK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[possessed]]></potionDescriptor>
+		<associatedRace>GURETO_possessed</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+		</effectTooltipLines>
+
+		<applyEffects><![CDATA[
+		[#npc.setBody(npc.getGender(), SUBSPECIES_GURETO_possessed_subspecies_possessed, RACE_STAGE_GREATER, false)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>RACIAL_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		After absorbing the energy, [npc.name] [npc.verb(start)] to change into a Possessed.
+		]]></selfUse>
+		<otherUse><![CDATA[
+		After absorbing the energy, [npc2.name] [npc.verb(start)] to change into a Possessed.
+		]]></otherUse>
+	</useDescriptions>
+	
+</item>
